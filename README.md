@@ -12,6 +12,7 @@ This repository develops explicit replacements for several numerical and algebra
 - **Exact challenge family.** Coefficients in `{-2,-1,0,1,2}` give exactly `5^64` challenges, with deterministic operator norm at most 128. Appropriate prime moduli ensure invertible differences. There is no rejection-sampling cardinality estimate in this choice.
 - **Certified filtered alternative.** Restricting the same cube to operator norm strictly below 31 retains more than `(9/16)*5^64` challenges, with expected raw candidate count below `16/9`. An exact integer predicate handles the strict boundary. The proof supplies a cardinality lower bound without assuming that conditioned coefficients remain independent.
 - **Certified Fourier predicate.** Integer Fourier enclosures with an exact fallback decide precisely the same filtered set. The fast path uses quadratic arithmetic operations; unresolved inputs retain the cubic exact check.
+- **Filtered folding moments.** Covariance symmetry, the paired real spectrum of ring multiplication, and centered conditional variance give a rigorous honest-fold bound. At d=64,T=34, the cap `Gamma^2=(21/2)*d*beta^2` has rejection probability at most `1/16` for any fixed ring vectors of total squared norm at most beta squared.
 - **Affine-R1CS repair.** The proposed reduction specifies a constant wire, public-input constraints, centered lifts, both commitment equations, corrected aggregation indices and residual equations, and the sufficient lifting condition `sqrt(Md/2)*beta + beta^2/2 < q/2`.
 - **Universal ordinary-core extraction.** One classical expected-polynomial-time extractor needs no acceptance-rate estimate. Its statistical knowledge error is `delta_JL + q^(-m) + q^(-d/2) + (r+2)/|C|`, with explicit computational losses and MSIS assumptions. The output uses the stated relaxed norm relation.
 - **Controlled composition.** Ordinary layers compose additively under explicit fresh-randomness, relation-matching and runtime-product conditions. The affine-R1CS-plus-core corollary uses the actual extracted norm in the lifting and binding bounds.
@@ -39,6 +40,7 @@ python examples/gated_rows.py
 python examples/certified_challenges.py
 python examples/certified_fourier.py
 python examples/bounded_restarts.py
+python examples/filtered_folding.py
 ```
 
 The tests check exact rational constants, finite distributions, boundary counterexamples, all small NAF encodings, all degree-4 challenge differences, affine public-input pinning, and integer lifting. They support the proofs; finite tests do not prove universally quantified theorems by themselves.
@@ -51,6 +53,7 @@ The tests check exact rational constants, finite distributions, boundary counter
 - [Challenge family and parameter obligations](docs/challenges.md)
 - [Certified operator-norm-filtered alternative](docs/certified-filtered-challenges.md)
 - [Exact Fourier enclosure and fallback](docs/certified-fourier.md)
+- [Filtered folding covariance and fourth moments](docs/filtered-folding-moments.md)
 - [Conditional main-protocol algebra](docs/protocol-conditional.md)
 - [Finite computational extraction theorem](docs/finite-extraction.md)
 - [Universal extraction without a known acceptance gap](docs/unknown-gap-extraction.md)

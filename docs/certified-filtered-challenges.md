@@ -202,6 +202,8 @@ Deterministically, every selected challenge has `||c||₂²≤4d`. An additional
 
 Any use of this average in honest folding must still establish the required covariance/chronology statements. The deterministic main soundness bounds may safely use operator threshold T=31 and the appropriate coefficient bound. Replacing the old challenge family changes honest response statistics and MSIS bounds; it does not preserve old proof-size estimates automatically.
 
+The [folding-moment theorem](filtered-folding-moments.md) establishes those covariance and chronology conditions, including stacked ring-vector outputs. Its displayed stronger cap uses T=34 and a separately certified acceptance lower bound 901/1024; it is not a substitution of that cap into the T=31 profile.
+
 The repaired main-layer challenge term becomes `(r+2)/|C|≤(r+2)/N_min`. Using only the weaker half-acceptance N_min, the checker certifies that:
 
 - r=112 gives a challenge term at most 2^(−140);

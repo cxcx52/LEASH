@@ -21,3 +21,4 @@ jobs:
       - run: python examples/certified_challenges.py
       - run: python examples/certified_fourier.py
       - run: python examples/bounded_restarts.py
+      - run: python examples/filtered_folding.py
