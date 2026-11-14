@@ -242,21 +242,21 @@ An honest prover for any witness satisfying (AR1CS) is accepted with probability
 
 **Quantifiers.** The theorem is for all x and all allowed provers. It does not restrict the assertion to (x,w) already belonging to the source relation. The latter restriction would omit false statements and is insufficient for the claimed result.
 
-## 10. Composition and parameters: what follows, what still needs a proof
+## 10. Composition and parameter conditions
 
 Let a separate target proof be complete for honest target witnesses of norm at most β_h and knowledge-sound for all target statements with extracted norm at most β. It must check *all* equations in (T), including the constant-wire pin and both commitments. Its extracted norm β must be used in (NW) and in the 2β MSIS binding assumptions.
 
-Conditional on a valid all-statements proof-of-knowledge composition theorem with additive target error κ_core, the composed source knowledge error is bounded by
+The [ordinary-core composition theorem and affine corollary](unknown-gap-extraction.md) supply an all-statements expected-time extractor under explicit fresh-randomness, runtime and relation-matching conditions. With target error κ_core, the composed source knowledge error is bounded by
 
     κ_core+2p^(−ℓ)+sqrt(η_0)+sqrt(η_1).
 
-This is a conditional composition corollary, not a certification that the original printed Lemma 3.7 and principal-protocol numerical budgets already establish all its premises. In particular, the principal protocol's JL bound and its challenge-space error must be repaired independently. If norm slack is only justified heuristically, it cannot be inserted here as an established value of β.
+This corollary requires those composition conditions and the separate [JL](modular-jl.md) and [challenge](challenges.md) theorems. It does not certify that the original printed Lemma 3.7 or numerical parameters establish its premises. A heuristic norm estimate cannot replace the actual extracted β.
 
 For symbolic slack β=s sqrt(Md/2), the exact sufficient lifting restriction becomes
 
     Md < q / (s+s²/2).
 
-At s=sqrt(128/30), this is approximately Md<0.2381562258 q. This substitution is arithmetic only: the present proof does not certify that the main protocol rigorously achieves that slack at its original statistical error. The old sufficient value 0.3q should not be retained unchanged under the repaired centered-lift argument.
+For the repaired JL slack s=sqrt(23/5), use the exact condition `Md < q/(sqrt(23/5)+23/10)`. The old sufficient value 0.3q should not be retained unchanged. The actual composition must also satisfy the JL modulus restriction and every binding bound.
 
 Adding h public linear constraints does not change this expression or M: their contributions enter the single combined coefficient H^Tη_i on w. It increases second-stage challenges by h scalars per row. If a new constant coordinate is needed, n and M each increase by one. The pin equation adds one principal-relation constraint. Both commitment equations and the ℓ residual equations also contribute to the actual target statement size and must be counted in a full implementation ledger.
 
@@ -276,8 +276,8 @@ Not established here:
 
 - an optimized or necessary lifting threshold;
 - a refreshed MSIS estimator result at the changed norms and dimensions;
-- the principal LaBRADOR protocol's strict JL and challenge errors;
-- a fully checked replacement for the general composition lemma;
+- preservation of the original principal-protocol JL and challenge parameters;
+- a concrete recursive schedule satisfying every condition of the separate composition theorem;
 - Fiat–Shamir/ROM/QROM, concurrent or reset-resistant deployment guarantees;
 - zero knowledge (the bare reduction deliberately exposes its final witness);
 - preservation of the reported proof size or practical running time.

@@ -288,7 +288,7 @@ The original strict-PPT prover remains strict-PPT. Only the reduction's controll
 
 ## 11. Affine-R1CS reduction followed by an ordinary core
 
-A useful narrower corollary follows even without a growing-depth runtime analysis. Use the repaired affine-R1CS bare reduction in `r1cs_repair.md`, including its public-input/constant-wire equations, all target equations, and the centered-lift condition computed at the actual extracted target norm β_actual.
+A useful narrower corollary follows even without a growing-depth runtime analysis. Use the repaired affine-R1CS bare reduction in `affine-r1cs.md`, including its public-input/constant-wire equations, all target equations, and the centered-lift condition computed at the actual extracted target norm β_actual.
 
 Replace its final target witness by the ordinary core extractor. That extractor's internal coins are sampled only after the bare prefix, independently for each wrapper invocation. Its output is checked against the complete target relation; any early bare rejection forces ⊥.
 

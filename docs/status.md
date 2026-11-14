@@ -12,7 +12,8 @@
 | Finite, gap-parameterized main-protocol extraction | Proved under explicit classical reset/MSIS model; independently reviewed | Full bounded samplers, norms, canonical-mass losses and runtime |
 | Universal expected-time ordinary-core extractor | Proved under explicit classical reset/MSIS model; independently reviewed | Original accept gate, at most 1+r/(1-1/N) expected executions, additional r/N statistical loss |
 | Ordinary-core statistical parameter family | Proved | Ring degree, challenge size, aggregation count and JL parameters all scale; exact examples |
-| General recursive composition | Under separate review | Requires controlled late randomness, compatible relations and a polynomial total cost |
+| Ordinary-layer composition and affine-plus-core corollary | Proved under explicit wrapper conditions; independently reviewed | Fresh final-reply coins, exact relaxed relations, actual norm caps and a checked polynomial runtime product |
+| Original concrete recursive schedule | Not certified | Must instantiate those conditions and every computational norm bound |
 | Optimized final round and all retry schedules | Not certified | Must be budgeted separately |
 | Fiat-Shamir / QROM | Not certified | Interactive extraction alone is insufficient |
 | 58 KB or refreshed 128-bit Module-SIS estimate | Not certified | Changed norms and ranks require new accounting |
