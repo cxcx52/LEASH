@@ -36,8 +36,8 @@ checks the bare target, directly checks the decoded source as a separate
 oracle, and encodes/decodes the complete witness. All 11 target checks, all
 3 oracle checks, and all 27 byte-roundtrip checks passed.
 
-Parameters are `q=4294967197`, `d=64`, source rank 2, 160 independent binary
-rows and squared norm slack `16/3`. The sparse synthetic generator fits C to
+Parameters are `q=4294967197`, `d=64`, source rank 2, 160 binary rows generated
+by the deterministic benchmark PRNG, and squared norm slack `16/3`. The sparse synthetic generator fits C to
 the honest assignment. This is a bounded correctness fixture, not a realistic
 application circuit or the large rank-6 parameter profile.
 

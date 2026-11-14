@@ -1,0 +1,2 @@
+# Preserve the byte-identical generated experiment summary on Windows checkouts.
+docs/experiment-results/**/summary.json text eol=lf
