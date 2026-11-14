@@ -8,6 +8,8 @@ An experiment passing does not establish a cryptographic security level.
 
 | Location | Responsibility | Current scope |
 |---|---|---|
+| `crates/` | Rust binary frontend, recursive prover/verifier and canonical codec | Callable library, generic relation API and CLI |
+| `experiments/run_rust_benchmarks.py` | Clean-revision Rust measurement recorder | Nine full proof/encoding/verification runs; source, lockfile and log hashes |
 | `src/labrador_repair/` | Exact arithmetic and reference semantics | Includes a small native binary frontend with a full-witness transport |
 | `examples/native_frontend_smoke.py` | Honest source/target/encoding round trip | Bare source reduction, not the recursive succinct core |
 | `benchmarks/` | Explicitly scoped kernel measurements | Energy-ball fixtures; exact Fourier versus SPD membership predicates |
@@ -21,6 +23,18 @@ The engineering plan and acceptance matrix are in
 The recorder interface is documented in [harness/README.md](harness/README.md).
 
 ## Run and evidence discipline
+
+For the Rust implementation, commit the source and run:
+
+```sh
+python experiments/run_rust_benchmarks.py --out work/rust-results --rounds 1
+```
+
+The directory must be new. This recorder uses the OS randomness in the library,
+records complete-session retries and validates all nine returned proofs. Its
+[first result report](../benchmarks/results/2026-11-14-rust-v0.1/README.md)
+includes the precise profile and measurement scope. The remaining instructions
+describe the earlier Python and remote experiment harness.
 
 Use a fresh experiment branch and an immutable Git revision for measured runs.
 Deploy only the tracked release archive, retain its SHA-256, and hash the deployed

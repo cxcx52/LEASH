@@ -38,6 +38,13 @@ The [proof-chain assessment](research/notes/critical_path_assessment.md) connect
 
 ## Recorded measurements
 
+The [Rust end-to-end batch](benchmarks/results/2026-11-14-rust-v0.1/README.md)
+contains nine verified proofs on all-one identity R1CS instances of size 64,
+256 and 1,024. With one ordinary reduction and the default profile, actual
+proofs occupy 83,923–84,899 bytes. On an Intel Core i9-13980HX, generation
+medians are 401–865 ms and verification medians are 161–487 ms. The report
+records the source revision, complete logs and one observed full-session retry.
+
 The first CPU batch contains 38 completed processes: 27 native-source runs, nine challenge-predicate runs, the 66-test package suite and the 102-file archive check. Measurements use source revision `fac2517e163517540f09cbf866d4a7cae8e3d40e`.
 
 **Environment.** AMD EPYC 7742, Ubuntu 24.04.4 and Python 3.12.3; container limits of 40 CPU equivalents and 200 GiB. Workloads ran sequentially in fresh, single-threaded Python processes. Each native size used three seeds and three repetitions per seed.

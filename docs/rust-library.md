@@ -58,7 +58,7 @@ The repository remains private, so callers need read access.
 
 ```toml
 [dependencies]
-leash = { git = "https://github.com/cxcx52/labrador-rigorous-repair", branch = "main" }
+leash = { git = "https://github.com/cxcx52/labrador-rigorous-repair", rev = "4bac7e0cd7a38aea924f637896b285987b0c25de" }
 ```
 
 ```rust

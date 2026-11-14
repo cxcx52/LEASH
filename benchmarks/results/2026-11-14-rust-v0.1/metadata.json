@@ -1,0 +1,33 @@
+{
+  "source_revision": "508a5b3ae73825c819e55825bfe6c40f72f9fcbd",
+  "source_clean_before": true,
+  "source_clean_after": true,
+  "cargo_lock_sha256": "c1d660e54a45d7c7b1f8665680a0226a8400d2d90f32c462889e903ed6a66354",
+  "cargo_lock_unchanged": true,
+  "started_utc": "2026-11-14T15:24:43.237474+00:00",
+  "argv": [
+    "cargo",
+    "run",
+    "--release",
+    "--locked",
+    "-p",
+    "leash",
+    "--example",
+    "measure",
+    "--",
+    "1"
+  ],
+  "cwd": "repository root",
+  "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "logical_cpus": 32,
+  "execution": "sequential fresh setups; one native process; single-threaded protocol",
+  "whole_process_seconds_including_cargo_build": 9.322335899982136,
+  "returncode": 0,
+  "stdout_sha256": "d9dfeec068e41e76a095c27f9fa4a06bfc405bb2156888da76dd0cea50cd37a6",
+  "stderr_sha256": "b9b29c96506cd59e7ce64f8694d4f47e5863ef967da74902ee595a56b08e5bc1",
+  "peak_memory": null
+}
