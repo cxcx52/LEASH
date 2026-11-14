@@ -1,5 +1,10 @@
 # Claims, evidence, and remaining obligations
 
+Research concluded at the author's request on 14 November 2026. See
+[the final handoff](../CLOSEOUT.md). Open obligations below are limitations of
+the saved deliverable, not active development tasks. Historical reports retain
+the status at their own source revisions.
+
 | Claim | Status | Evidence |
 |---|---|---|
 | 1024-row fixed-vector modular JL bound <2^-164 | Proved and independently reviewed | Full three-case proof; rational constants; endpoint enumeration |
@@ -23,14 +28,18 @@
 | 155.1484375 KiB ordinary-core encoding bound | Certified accounting for the specified parameter path | Inner rank 24, outer rank 9; excludes source frontend, verifier messages, setup, statement, framing, FS and rejected attempts |
 | Five-model SIS cost screens | Heuristic model evaluations, not security lower bounds | Clean pinned estimator; all matrix roles, fit-range and CRT-model limitations recorded in the research archive |
 | Complete native binary source-to-core interface | Proved under the stated core-extraction premises; independently reviewed | Coefficient pins, conjugation, aligned padding, integer parity, separate source MSIS role and sqrt(eta_src) loss |
-| Source and ordinary aggregation fingerprints | Algebraically proved and independently reviewed | Explicit irreducible fields, fixed-candidate root bounds, revised whole-attempt statistical budget, unchanged prover dimensions; all complete experiments use the new laws and runtimes |
+| Source and ordinary aggregation fingerprints | Algebraically proved and independently reviewed | Explicit irreducible fields, fixed-candidate root bounds, revised whole-attempt statistical budget and unchanged prover dimensions; the security reduction's full collision experiments must use the new laws and runtimes. These variants are not implemented in the recorded native CPU runs. |
 | 157.265625 KiB source-plus-core prover encoding | Exact accounting for the specified fingerprint variant | 161040 bytes with final byte padding; setup, statement, framing, verifier traffic, FS and rejected attempts excluded |
 | Complete concrete computational security / succinct verifier | Not certified | Heuristic costs do not bound full reduction advantages; dense JL matrices remain dominant |
 | Original concrete recursive schedule | Not certified | Must instantiate those conditions and every computational norm bound |
 | Optimized final round, local retries and noninteractive retry selection | Not certified | The complete-protocol restart theorem does not cover these changes |
 | Fiat-Shamir / QROM | Not certified | Interactive extraction alone is insufficient |
-| 58 KB or refreshed 128-bit Module-SIS estimate | Not certified | Changed norms and ranks require new accounting |
-| Stronger backend or new security property | Research in progress | Parameter feasibility, structural limits and current prior art must be checked together |
+| Original 58 KB claim or complete refreshed 128-bit security | Not certified | Exact repaired encoding ledgers and pinned heuristic screens exist; complete computation-time/advantage accounting and a matching full-system implementation remain absent |
+| Small native source reference and strict byte roundtrip | Implemented and tested on honest synthetic fixtures | 27 recorded runs; 11 target checks and 3 separate source-oracle checks; sends the entire witness; toy source rank 2 |
+| Recorded CPU experiment batch | Completed, with reproducible raw records | 38 successful processes, 66 package tests, 102 archive files; see the experiment report for distinct scopes |
+| Certified Fourier kernel timing | Measured on specified fixtures only | 96 candidate positions, three repeats; median paired warm SPD/Fourier ratio 180.58; cold initialization separate; no full-protocol speedup claim |
+| Full repaired recursive prover/verifier and compact serialization | Not implemented; outside the closed batch | A mathematical interface and parameter ledger are not an executing recursive backend |
+| Stronger complete SNARK or integrated Pikkufold backend | Not established; research closed at current scope | No completed terminal-proof adapter, complete computational-security result or system performance comparison |
 
 The code certifies arithmetic steps of the mathematical arguments. It is not a machine-checked proof in a proof assistant, and passing tests do not discharge the open obligations in this table.
 

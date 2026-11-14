@@ -2,6 +2,12 @@
 
 Mathematical repair notes and exact, executable certificates for the 34-page version of [LaBRADOR: Compact Proofs for R1CS from Module-SIS](https://eprint.iacr.org/2022/1341), by Ward Beullens and Gregor Seiler.
 
+**Research closeout, 14 November 2026.** At the author's request this work is
+concluded at the documented audit, conditional repairs, parameter certificates
+and bounded implementation experiments. Start with [the final handoff](CLOSEOUT.md)
+and [claim ledger](docs/status.md). Full-backend development and cross-project
+integration are outside this completed batch; historical plans are not active tasks.
+
 This repository develops explicit replacements for several numerical and algebraic steps. It is a research contribution, not a production proof system or a claim that the original construction is irreparable. Classical tools are credited; no priority claim is made for the probability inequalities used here.
 
 Start with the [assessment of the main proof chain](research/notes/critical_path_assessment.md): the findings affect necessary dependencies of the advertised end-to-end conclusions, including probability bounds, source arithmetic, extraction interfaces, and concrete accounting. The contributions include exact counterexamples, corrected theorems, quantitative refinements, and explicit reconstruction costs, beyond the protocol variants themselves.
@@ -26,6 +32,13 @@ Start with the [assessment of the main proof chain](research/notes/critical_path
 - **Short source and aggregation challenges.** Classical random-evaluation fingerprints replace the respective independent coefficient families, with explicit field certificates and revised error bounds. The native source challenge uses 187 bits; seven layers of the two core aggregation challenges use 1960 bytes. The dense JL challenge family is unchanged.
 
 ## What is not established
+
+The standalone `552 beta^2` completeness theorem and the final `H=640`,
+squared-slack `16/3` parameter path are separate instantiations. The statistical
+formula shown above for ordinary-core extraction uses independent aggregation
+coins; the fingerprint variant uses the revised polynomial-degree terms in its
+ledger. The smallest encoding reported below is limited to the recorded paths
+and finite search domain, not a global optimum over all protocols or parameters.
 
 The changed projection and challenge parameters do **not** certify the original 58 KB result. This package does not implement a cryptographic prover or verifier, prove Fiat-Shamir or QROM security, or claim zero knowledge. The optional [research archive](research/README.md) supplies exact recursive schedules and pinned heuristic SIS cost outputs, with separate Sage reproduction scripts. These are cost-model evaluations, not lattice-solving experiments or a complete security level.
 
