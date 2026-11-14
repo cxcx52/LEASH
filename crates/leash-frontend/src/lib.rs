@@ -231,12 +231,10 @@ impl CircuitBuilder {
     }
 }
 fn xor_pair(a: Wire, b: Wire) -> Vec<Wire> {
-    if a == b {
-        vec![]
-    } else if a < b {
-        vec![a, b]
-    } else {
-        vec![b, a]
+    match a.cmp(&b) {
+        std::cmp::Ordering::Equal => vec![],
+        std::cmp::Ordering::Less => vec![a, b],
+        std::cmp::Ordering::Greater => vec![b, a],
     }
 }
 
@@ -489,10 +487,10 @@ fn compile(
         scalar: vec![],
     };
     let columns: usize = layout.original.iter().sum();
-    for row_index in 0..config.rank {
+    for (row_index, commitment) in message.commitment.iter().enumerate() {
         let coefficients = matrix_row(seed, SOURCE_MATRIX_DOMAIN, row_index, columns);
         let mut equation = empty_constraint();
-        equation.constant = Poly::zero().sub(&message.commitment[row_index]);
+        equation.constant = Poly::zero().sub(commitment);
         let mut column = 0;
         for group in 0..4 {
             for ring in 0..layout.original[group] {

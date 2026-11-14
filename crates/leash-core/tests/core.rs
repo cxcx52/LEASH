@@ -2,6 +2,7 @@ use leash_core::*;
 use serde::Serialize;
 use serde_json::{json, Value};
 use sha3::{Digest, Sha3_256};
+use std::fmt::Write;
 
 fn kat() -> Value {
     serde_json::from_str(include_str!("known_answers.json")).unwrap()
@@ -21,7 +22,10 @@ fn hash(polys: &[Poly]) -> String {
             h.update(x.to_le_bytes());
         }
     }
-    h.finalize().iter().map(|b| format!("{b:02x}")).collect()
+    h.finalize().iter().fold(String::new(), |mut text, b| {
+        write!(&mut text, "{b:02x}").unwrap();
+        text
+    })
 }
 fn scalar(value: i64) -> Poly {
     Poly::constant(value)

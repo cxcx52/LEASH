@@ -331,6 +331,8 @@ fn scalar_aggregations(
         equations.push(equation);
     }
     let mut pi = Xof::new(pi_seed, b"ordinary/JL/entries");
+    // Sample one JL coefficient per coordinate, shared by every aggregation.
+    #[allow(clippy::needless_range_loop)]
     for (row, _) in projection.iter().enumerate() {
         for block in 0..relation.r {
             for position in 0..relation.n {
@@ -553,9 +555,9 @@ fn build_target(
         }
     }
     full.extend([gram, linear_fold, consistency]);
-    for row in 0..config.outer_rank {
+    for (row, commitment) in message.u1.iter().enumerate() {
         let mut equation = empty_constraint();
-        equation.constant = Poly::zero().sub(&message.u1[row]);
+        equation.constant = Poly::zero().sub(commitment);
         let coefficients = matrix_row(
             seed,
             &domain(round, "outer-u1"),
@@ -567,9 +569,9 @@ fn build_target(
         }
         full.push(equation);
     }
-    for row in 0..config.outer_rank {
+    for (row, commitment) in message.u2.iter().enumerate() {
         let mut equation = empty_constraint();
-        equation.constant = Poly::zero().sub(&message.u2[row]);
+        equation.constant = Poly::zero().sub(commitment);
         let coefficients = matrix_row(seed, &domain(round, "outer-u2"), row, layout.g_count);
         for (index, coefficient) in coefficients.into_iter().enumerate() {
             linear_at(

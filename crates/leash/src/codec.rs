@@ -406,7 +406,11 @@ mod tests {
         // print((bytes([w]) + sum(v << (w*i) for i,v in enumerate(z))
         //        .to_bytes(8*w, "little")).hex())
         let p = Poly::from_signed(&[-13, -8, -1, 0, 1, 7, 8, 13]).unwrap();
-        let hex: String = encode_poly(&p).iter().map(|b| format!("{b:02x}")).collect();
+        use std::fmt::Write;
+        let hex = encode_poly(&p).iter().fold(String::new(), |mut text, b| {
+            write!(&mut text, "{b:02x}").unwrap();
+            text
+        });
         assert_eq!(
             hex,
             "05f905201cd40000000000000000000000000000000000000000000000000000000000000000000000"
