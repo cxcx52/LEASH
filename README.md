@@ -39,6 +39,9 @@ The [recorded implementation experiments](experiments/README.md) add a portable
 native-frontend reference, full-witness encoding/decoding, exact-predicate
 microbenchmarks, and a subprocess recorder. Their scope is separate from a
 complete compact recursive prover or a numerical security certification.
+The [first recorded CPU batch](docs/experiment-results/2026-11-14-first-cpu/README.md)
+includes 38 successful processes, actual full-witness transport sizes, paired
+kernel timings, and the raw records needed to reproduce the summary.
 
 Python 3.10 or later; the package has no runtime dependencies.
 

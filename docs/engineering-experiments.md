@@ -37,6 +37,7 @@ Run directly from a source checkout with standard Python:
 python examples/native_frontend_smoke.py --log-size 6 --seed 1 --rows 160
 python examples/native_frontend_smoke.py --log-size 8 --seed 2 --rows 160
 python examples/native_frontend_smoke.py --log-size 10 --seed 3 --rows 160
+python -m pip install -e .  # Needed for the unittest package imports below.
 python -m unittest discover -s tests -p test_native_reference.py -v
 ```
 
