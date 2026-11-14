@@ -18,3 +18,4 @@ jobs:
       - run: python examples/certify.py
       - run: python examples/statistical_family.py
       - run: python examples/gated_rows.py
+      - run: python examples/certified_challenges.py

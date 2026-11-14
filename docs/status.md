@@ -6,6 +6,7 @@
 | Honest threshold 552 beta^2; rejection <=8/33 | Proved | Exact second/fourth moments and Cantelli |
 | JL family for every integer lambda>=128 | Proved and independently reviewed | Uniform scaling proof, exact base certificates, integer parameter generator |
 | Cube challenge cardinality and norms | Proved | Product count and triangle inequality |
+| Filtered d64 challenges with strict operator norm below 31 | Proved and independently reviewed | Exact rational tail certificate; cardinality above (9/16)5^64; integer Sylvester/Bareiss predicate; independent small spectral formula checks |
 | Invertible challenge differences | Derived from LS18 under stated ring conditions | Corollary 1.2; small exhaustive regression |
 | Centered-lift sufficient inequality | Proved | Coefficientwise Cauchy-Schwarz and disjoint quadratic blocks |
 | Affine-R1CS bare reduction | Proposed complete proof, internal review | Explicit chronology, composite-modulus aggregation, canonical-opening lemma |

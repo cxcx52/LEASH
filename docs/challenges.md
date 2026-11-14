@@ -18,6 +18,8 @@ For a nonzero polynomial of total degree t, evaluation on independent uniform el
 
 This choice repairs the missing exact cardinality guarantee conservatively. It increases T from the original filtered target 15 to 128. All commitment-binding norms depending on T, the decomposition parameters, ranks, and proof sizes must therefore be recomputed. No claim of preserving the reported concrete efficiency follows from this family.
 
+An [optional certified filtered family](certified-filtered-challenges.md) reduces the strict operator threshold to 31 at d=64 and proves that more than `(9/16)*5^64` challenges remain. It has an exact integer membership predicate and retains unit differences under the same modulus hypotheses. Its cardinality bound and conditioned distribution are analyzed separately; the unfiltered API retains the values above.
+
 The helper `statistical_budget` evaluates only
 
 \[
