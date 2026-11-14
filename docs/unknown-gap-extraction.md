@@ -2,6 +2,12 @@
 
 Date: 2026-11-14. This document closes the single-extractor wrapper for the **repaired ordinary main protocol**, with an explicitly enlarged challenge error. It retains the all-statements knowledge-soundness definition and does not take a limit of gap-parameterized extractors. A separate section below treats composition and its runtime conditions.
 
+**Refined computational bound.** The arguments below remain valid, but [bad-mass-weighted averaging](refined-computational-loss.md) gives a stronger computational loss for these same algorithms:
+
+    nu <= sqrt(eta_0)+(2eta_h+2r eta_y+eta_g)^(1/3)+eta_E.
+
+Its exact version is tighter still. The statistical term, collision norms, complete reduction times, fresh-reply conditions and composition hypotheses are unchanged. Wherever composition below uses the earlier `sqrt(L)+eta_E`, it may instead use the independently proved refined loss for that layer's complete collision experiments.
+
 ## 1. Model, output relation, and fixed parameters
 
 Adopt the model corrections in `finite-extraction.md`: a reproducible PPT initial-state generator receives independently uniform CRS matrices; it produces an efficiently generated public instance and a classical resettable prover. No unexplained CRS-correlated advice or trapdoor is available. The original prover has a fixed per-execution polynomial time bound. Its original random tape can be restored. Nonuniform advice is allowed only as permitted by the stated MSIS model.

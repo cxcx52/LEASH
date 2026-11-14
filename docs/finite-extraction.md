@@ -2,6 +2,8 @@
 
 Date: 2026-11-14. This extends `protocol-conditional.md` and uses the canonical-mass lemma developed in `affine-r1cs.md`. It concerns the repaired ordinary main protocol only, with outer commitments, a single projection attempt, and the same strict modular-JL hypothesis as `protocol-conditional.md`.
 
+The original bounds below remain valid. [Weighted collision averaging](refined-computational-loss.md#7-the-bounded-non-gated-anchor-theorem-is-different) gives a tighter finite bound on `Pr[Bad AND High]`, with the same bounded anchor and time obligations. Its finite formula differs from the cubic-root theorem for a single accept-gated anchor; the latter must not be substituted here.
+
 ## Result in brief
 
 The ideal promise that every opening in the prover's entire mathematical transcript tree is unique can be removed from a **finite, gap-parameterized witness-or-MSIS theorem**. One efficiently sampled anchor witness suffices. Two-suffix collision experiments account for subsequent inconsistencies. The resulting binding loss contains square roots and an explicit coordinate factor:

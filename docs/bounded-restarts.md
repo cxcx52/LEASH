@@ -2,6 +2,8 @@
 
 Date: 2026-11-14. Status: a conditional classical interactive composition theorem for the repaired ordinary protocol family. The proof uses the reviewed extraction/composition theorems and an explicit ordinary-gate interface. It does not establish Fiat--Shamir, ROM/QROM grinding bounds, simulation extractability, or concrete MSIS security.
 
+The per-attempt computational losses may use the [refined cubic-root bound](refined-computational-loss.md). Each bound must use its own complete initialized rejection-history experiment; the theorem still sums those losses and charges their full reduction times.
+
 The real-gate interface, recursive initial-call-chain argument, adaptive Gen_i experiments, disjoint first-acceptance coupling and expected-cost initializer extension were independently checked by the extraction reviewer against the [ordinary composition theorem](unknown-gap-extraction.md); no blocker was found. The numerical illustration in Section 7 is conditional on a complete single-attempt parameter manifest; the arithmetic example by itself does not certify that manifest or MSIS hardness.
 
 ## 1. The restart policy and the required interface

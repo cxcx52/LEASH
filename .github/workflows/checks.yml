@@ -23,3 +23,4 @@ jobs:
       - run: python examples/bounded_restarts.py
       - run: python examples/filtered_folding.py
       - run: python examples/bounded_energy.py
+      - run: python examples/refined_loss.py

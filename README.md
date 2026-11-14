@@ -16,6 +16,7 @@ This repository develops explicit replacements for several numerical and algebra
 - **Bounded-energy alternative.** At d=64, restricting squared coefficient norm to 104 and operator norm to strictly below 30 leaves a certified challenge set above `2^143`. Exact counting and dependent-coordinate moments permit `Gamma^2=9*d*beta^2` at folding failure at most `1/16`. This trades some challenge entropy for smaller norm bounds.
 - **Affine-R1CS repair.** The proposed reduction specifies a constant wire, public-input constraints, centered lifts, both commitment equations, corrected aggregation indices and residual equations, and the sufficient lifting condition `sqrt(Md/2)*beta + beta^2/2 < q/2`.
 - **Universal ordinary-core extraction.** One classical expected-polynomial-time extractor needs no acceptance-rate estimate. Its statistical knowledge error is `delta_JL + q^(-m) + q^(-d/2) + (r+2)/|C|`, with explicit computational losses and MSIS assumptions. The output uses the stated relaxed norm relation.
+- **Tighter computational loss.** Retaining bad-anchor probability mass improves the earlier fourth-root scaling to a cubic-root bound for the same full collision experiments. The refined term is `sqrt(eta_0)+(2*eta_h+2*r*eta_y+eta_g)^(1/3)+eta_E`, with a tighter exact version. Every advantage still refers to the complete reduction at its actual runtime.
 - **Controlled composition.** Ordinary layers compose additively under explicit fresh-randomness, relation-matching and runtime-product conditions. The affine-R1CS-plus-core corollary uses the actual extracted norm in the lifting and binding bounds.
 - **Bounded complete-protocol restarts.** A gate-preserving extractor extends to adaptive rejected histories under a fixed statement. With at most Q complete attempts, statistical errors add across attempts; honest failure is at most `(1-a)^Q` when every reached attempt accepts with probability at least a.
 - **Full statistical parameter family.** Scaling the ring degree and aggregation count as well as the projection gives a negligible ordinary-core statistical budget. The arithmetic certificate separates this budget from lattice hardness and lifting conditions.
@@ -43,6 +44,7 @@ python examples/certified_fourier.py
 python examples/bounded_restarts.py
 python examples/filtered_folding.py
 python examples/bounded_energy.py
+python examples/refined_loss.py
 ```
 
 The tests check exact rational constants, finite distributions, boundary counterexamples, all small NAF encodings, all degree-4 challenge differences, affine public-input pinning, and integer lifting. They support the proofs; finite tests do not prove universally quantified theorems by themselves.
@@ -60,6 +62,7 @@ The tests check exact rational constants, finite distributions, boundary counter
 - [Conditional main-protocol algebra](docs/protocol-conditional.md)
 - [Finite computational extraction theorem](docs/finite-extraction.md)
 - [Universal extraction without a known acceptance gap](docs/unknown-gap-extraction.md)
+- [Refined computational losses and their limits](docs/refined-computational-loss.md)
 - [Bounded complete-protocol restarts](docs/bounded-restarts.md)
 - [Statistical parameter family](docs/statistical-family.md)
 - [Claim and verification ledger](docs/status.md)
