@@ -15,8 +15,9 @@
 | Universal expected-time ordinary-core extractor | Proved under explicit classical reset/MSIS model; independently reviewed | Original accept gate, at most 1+r/(1-1/N) expected executions, additional r/N statistical loss |
 | Ordinary-core statistical parameter family | Proved | Ring degree, challenge size, aggregation count and JL parameters all scale; exact examples |
 | Ordinary-layer composition and affine-plus-core corollary | Proved under explicit wrapper conditions; independently reviewed | Fresh final-reply coins, exact relaxed relations, actual norm caps and a checked polynomial runtime product |
+| Bounded complete ordinary restarts | Proved under the gate-preserving interface; independently reviewed | Disjoint first-acceptance coupling, adaptive rejected histories, additive errors, uniform expected cost and exact completeness bound |
 | Original concrete recursive schedule | Not certified | Must instantiate those conditions and every computational norm bound |
-| Optimized final round and all retry schedules | Not certified | Must be budgeted separately |
+| Optimized final round, local retries and noninteractive retry selection | Not certified | The complete-protocol restart theorem does not cover these changes |
 | Fiat-Shamir / QROM | Not certified | Interactive extraction alone is insufficient |
 | 58 KB or refreshed 128-bit Module-SIS estimate | Not certified | Changed norms and ranks require new accounting |
 | Stronger backend or new security property | Research in progress | Parameter feasibility, structural limits and current prior art must be checked together |

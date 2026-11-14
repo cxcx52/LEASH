@@ -15,6 +15,7 @@ This repository develops explicit replacements for several numerical and algebra
 - **Affine-R1CS repair.** The proposed reduction specifies a constant wire, public-input constraints, centered lifts, both commitment equations, corrected aggregation indices and residual equations, and the sufficient lifting condition `sqrt(Md/2)*beta + beta^2/2 < q/2`.
 - **Universal ordinary-core extraction.** One classical expected-polynomial-time extractor needs no acceptance-rate estimate. Its statistical knowledge error is `delta_JL + q^(-m) + q^(-d/2) + (r+2)/|C|`, with explicit computational losses and MSIS assumptions. The output uses the stated relaxed norm relation.
 - **Controlled composition.** Ordinary layers compose additively under explicit fresh-randomness, relation-matching and runtime-product conditions. The affine-R1CS-plus-core corollary uses the actual extracted norm in the lifting and binding bounds.
+- **Bounded complete-protocol restarts.** A gate-preserving extractor extends to adaptive rejected histories under a fixed statement. With at most Q complete attempts, statistical errors add across attempts; honest failure is at most `(1-a)^Q` when every reached attempt accepts with probability at least a.
 - **Full statistical parameter family.** Scaling the ring degree and aggregation count as well as the projection gives a negligible ordinary-core statistical budget. The arithmetic certificate separates this budget from lattice hardness and lifting conditions.
 
 ## What is not established
@@ -37,6 +38,7 @@ python examples/statistical_family.py
 python examples/gated_rows.py
 python examples/certified_challenges.py
 python examples/certified_fourier.py
+python examples/bounded_restarts.py
 ```
 
 The tests check exact rational constants, finite distributions, boundary counterexamples, all small NAF encodings, all degree-4 challenge differences, affine public-input pinning, and integer lifting. They support the proofs; finite tests do not prove universally quantified theorems by themselves.
@@ -52,6 +54,7 @@ The tests check exact rational constants, finite distributions, boundary counter
 - [Conditional main-protocol algebra](docs/protocol-conditional.md)
 - [Finite computational extraction theorem](docs/finite-extraction.md)
 - [Universal extraction without a known acceptance gap](docs/unknown-gap-extraction.md)
+- [Bounded complete-protocol restarts](docs/bounded-restarts.md)
 - [Statistical parameter family](docs/statistical-family.md)
 - [Claim and verification ledger](docs/status.md)
 
