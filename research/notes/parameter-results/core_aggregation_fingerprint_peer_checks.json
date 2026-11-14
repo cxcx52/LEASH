@@ -1,0 +1,25 @@
+{
+  "scope": "Public field certificate and algebraic fingerprints only",
+  "independent_degree6_certificate_verified": true,
+  "modulus_coefficients_ascending": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "q_prime_by_trial_division": true,
+  "crt_order_mod128": 32,
+  "small_scalar_coordinate_evaluations": 720,
+  "small_ring_evaluations_including_zero_divisors": 17415,
+  "largest_small_ring_root_count": 18,
+  "seven_layer_scalar_degree_sum_native160": 134225055,
+  "seven_layer_scalar_degree_sum_fingerprint187": 134225082,
+  "seven_layer_ring_degree_sum": 407,
+  "scalar_point_wire_bits_per_layer": 192,
+  "ring_point_wire_bits_per_layer": 2048,
+  "seven_layer_aggregation_point_wire_bits": 15680,
+  "all_checks_passed": true
+}

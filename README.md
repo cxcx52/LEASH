@@ -4,6 +4,8 @@ Mathematical repair notes and exact, executable certificates for the 34-page ver
 
 This repository develops explicit replacements for several numerical and algebraic steps. It is a research contribution, not a production proof system or a claim that the original construction is irreparable. Classical tools are credited; no priority claim is made for the probability inequalities used here.
 
+Start with the [assessment of the main proof chain](research/notes/critical_path_assessment.md): the findings affect necessary dependencies of the advertised end-to-end conclusions, including probability bounds, source arithmetic, extraction interfaces, and concrete accounting. The contributions include exact counterexamples, corrected theorems, quantitative refinements, and explicit reconstruction costs, beyond the protocol variants themselves.
+
 ## What is established
 
 - **Uniform modular JL bound.** For a fixed centered integer vector with norm at least b, b<=q/250, a 1024-row ternary projection satisfies `Pr(||Pi w mod q||^2 <= 120 b^2) < 2^-164`. The proof covers all dimensions and all positive integer moduli, with closed-event boundaries.
@@ -20,12 +22,14 @@ This repository develops explicit replacements for several numerical and algebra
 - **Controlled composition.** Ordinary layers compose additively under explicit fresh-randomness, relation-matching and runtime-product conditions. The affine-R1CS-plus-core corollary uses the actual extracted norm in the lifting and binding bounds.
 - **Bounded complete-protocol restarts.** A gate-preserving extractor extends to adaptive rejected histories under a fixed statement. With at most Q complete attempts, statistical errors add across attempts; honest failure is at most `(1-a)^Q` when every reached attempt accepts with probability at least a.
 - **Full statistical parameter family.** Scaling the ring degree and aggregation count as well as the projection gives a negligible ordinary-core statistical budget. The arithmetic certificate separates this budget from lattice hardness and lifting conditions.
+- **Complete native binary interface.** Coefficient-level public pins, explicit conjugation, aligned padding, integer parity and a separate source-binding role connect the native frontend to the core under stated extraction premises.
+- **Short source and aggregation challenges.** Classical random-evaluation fingerprints replace the respective independent coefficient families, with explicit field certificates and revised error bounds. The native source challenge uses 187 bits; seven layers of the two core aggregation challenges use 1960 bytes. The dense JL challenge family is unchanged.
 
 ## What is not established
 
 The changed projection and challenge parameters do **not** certify the original 58 KB result. This package does not implement a cryptographic prover or verifier, prove Fiat-Shamir or QROM security, or claim zero knowledge. The optional [research archive](research/README.md) supplies exact recursive schedules and pinned heuristic SIS cost outputs, with separate Sage reproduction scripts. These are cost-model evaluations, not lattice-solving experiments or a complete security level.
 
-The current smallest ordinary-core encoding bound is **155.1484375 KiB per complete attempt**, using the bounded-energy family and independently screened outer ranks. It excludes the source frontend, setup and statement, verifier messages, framing, Fiat-Shamir material, and rejected attempts. The archive preserves the full parameter path, exact finite-domain optimization, earlier comparison stages, and original result hashes. A complete source-to-core interface and end-to-end computational security budget remain open.
+The current smallest ordinary-core encoding bound is **155.1484375 KiB per complete attempt**, using the bounded-energy family and independently screened outer ranks. The specified native source raises the prover-message bound to 157.17578125 KiB, or **157.265625 KiB (161040 bytes)** with its fingerprint variant and byte padding. Setup and statement, verifier messages, framing, Fiat-Shamir material, and rejected attempts are separate. The complete fingerprint variant still has about 67.54 GiB of explicitly encoded verifier traffic, dominated by independent JL matrices. This is not a succinct-verifier result. The archive preserves the full parameter path, source interface, finite-domain optimization, earlier comparison stages, and original result hashes. Complete computational security at the actual reduction runtimes remains open.
 
 The source audit identifies the PDF by SHA-256 `87b99030c9cc11d922ebcb7cc475a5f44ccb20188ec18b1442c2d8f45412e581`. Third-party PDFs are not redistributed.
 

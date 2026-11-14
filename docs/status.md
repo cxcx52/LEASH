@@ -22,7 +22,10 @@
 | Exact ordinary-core parameter paths and finite digit-domain search | Arithmetic certificates; independently reviewed | Archived cube/energy paths, norm and padding checks, exact Pareto search, and byte-preserving provenance |
 | 155.1484375 KiB ordinary-core encoding bound | Certified accounting for the specified parameter path | Inner rank 24, outer rank 9; excludes source frontend, verifier messages, setup, statement, framing, FS and rejected attempts |
 | Five-model SIS cost screens | Heuristic model evaluations, not security lower bounds | Clean pinned estimator; all matrix roles, fit-range and CRT-model limitations recorded in the research archive |
-| Complete native binary source-to-core parameter interface | Under separate audit | Source binding, coefficient pins, aligned conjugate padding, and total interactive communication remain to be discharged |
+| Complete native binary source-to-core interface | Proved under the stated core-extraction premises; independently reviewed | Coefficient pins, conjugation, aligned padding, integer parity, separate source MSIS role and sqrt(eta_src) loss |
+| Source and ordinary aggregation fingerprints | Algebraically proved and independently reviewed | Explicit irreducible fields, fixed-candidate root bounds, revised whole-attempt statistical budget, unchanged prover dimensions; all complete experiments use the new laws and runtimes |
+| 157.265625 KiB source-plus-core prover encoding | Exact accounting for the specified fingerprint variant | 161040 bytes with final byte padding; setup, statement, framing, verifier traffic, FS and rejected attempts excluded |
+| Complete concrete computational security / succinct verifier | Not certified | Heuristic costs do not bound full reduction advantages; dense JL matrices remain dominant |
 | Original concrete recursive schedule | Not certified | Must instantiate those conditions and every computational norm bound |
 | Optimized final round, local retries and noninteractive retry selection | Not certified | The complete-protocol restart theorem does not cover these changes |
 | Fiat-Shamir / QROM | Not certified | Interactive extraction alone is insufficient |

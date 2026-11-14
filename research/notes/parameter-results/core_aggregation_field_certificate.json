@@ -1,0 +1,81 @@
+{
+  "scope": "Public field arithmetic certificate only; independent of R_q",
+  "sage_version": "10.9",
+  "q": 4294967197,
+  "q_is_prime": true,
+  "extension_degree": 6,
+  "modulus_coefficients_ascending": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "modulus_display": "Z^6 + Z + 2",
+  "frobenius_gcd_checkpoints": {
+    "2": {
+      "frobenius_remainder": [
+        1420250611,
+        4266725518,
+        2998382645,
+        2972162723,
+        3599343893,
+        3422287612
+      ],
+      "gcd": [
+        1
+      ],
+      "bezout_residual": [
+        4245152145,
+        3297656898,
+        2432710150,
+        337342414,
+        3916023902,
+        1553925397
+      ],
+      "bezout_modulus": [
+        785061489,
+        951978649,
+        3577706053,
+        3298613542,
+        3617399283
+      ]
+    },
+    "3": {
+      "frobenius_remainder": [
+        2789138364,
+        2767621188,
+        1087987640,
+        1220661148,
+        3281184592,
+        1628979158
+      ],
+      "gcd": [
+        1
+      ],
+      "bezout_residual": [
+        2016896332,
+        343121704,
+        1793862149,
+        3839024598,
+        547890016,
+        1561282159
+      ],
+      "bezout_modulus": [
+        980851451,
+        3593751870,
+        3870288452,
+        3281684551,
+        591469235
+      ]
+    }
+  },
+  "final_frobenius_remainder": [
+    0,
+    1
+  ],
+  "field_order": "6277100867254758215890091391876473090085076331139163423129",
+  "irreducible": true
+}
