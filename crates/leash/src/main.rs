@@ -17,7 +17,7 @@ use std::{
 
 type Result<T> = std::result::Result<T, String>;
 const JSON_LIMIT: usize = 64 * 1024 * 1024;
-const HELP: &str = "LEASH research argument library
+const HELP: &str = "LEASH proof library
 
 leash demo --out demo-output [--rounds N] [--development]
 leash setup --out parameters.json [--rounds N] [--development]

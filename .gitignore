@@ -1,11 +1,4 @@
-__pycache__/
-*.pyc
-*.egg-info/
-build/
-dist/
-.venv/
-/work/
-/experiments/results/
-/experiments/runs/
 /target/
 /demo-output/
+/work/
+__pycache__/

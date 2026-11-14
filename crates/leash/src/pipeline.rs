@@ -230,7 +230,7 @@ fn plan_shape(r: usize, n: usize, bound: u128, config: &Config) -> Result<Parame
             2 * 17 * root_actual + 4 * 128 * ceil_sqrt(relaxed_squared(shape.bound_squared)?);
         let inner = weak.max(strong);
         // q times a unit vector is always an integer kernel vector. Profiles
-        // including it cannot invoke the archived nontrivial MSIS assumptions.
+        // including it would admit a trivial MSIS solution.
         if outer >= Q as u128 || inner >= Q as u128 {
             return Err(format!("layer {index}: collision radius reaches q; this fixed profile does not support the requested recursion"));
         }

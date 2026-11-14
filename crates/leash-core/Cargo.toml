@@ -5,7 +5,7 @@ edition.workspace = true
 license.workspace = true
 rust-version.workspace = true
 repository.workspace = true
-description = "Fixed-ring arithmetic and explicit transcripts for the Leash research library"
+description = "Ring arithmetic and transcripts for LEASH"
 
 [dependencies]
 serde.workspace = true

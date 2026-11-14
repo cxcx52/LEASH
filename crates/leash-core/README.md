@@ -44,6 +44,5 @@ one byte and subtracts bit 1 from bit 0; ideal bytes give probabilities
 modulo 5, each shifted by -2. The interpretation of hash-derived coefficients
 still requires the protocol's cryptographic model.
 
-Run `cargo test -p leash-core`. The checked-in known answers are produced by
-`python crates/leash-core/tests/python_reference.py`, using only Python's
-independent hashlib implementation and arbitrary-precision arithmetic.
+Run `cargo test -p leash-core`. The checked-in reference vectors were computed
+independently with arbitrary-precision arithmetic and Python's hashlib.

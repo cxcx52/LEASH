@@ -20,5 +20,6 @@ jobs:
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - run: cargo test --workspace --all-targets --release --locked
       - run: cargo run --release --locked -p leash --example library
+      - run: cargo run --release --locked -p leash --example completeness
       - run: cargo run --release --locked -p leash -- demo --out demo-output --development
       - run: cargo run --release --locked -p leash -- verify --parameters demo-output/parameters.json --circuit demo-output/circuit.json --proof demo-output/proof.leash --context leash/example/v1

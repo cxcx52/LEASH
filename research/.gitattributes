@@ -1,5 +1,0 @@
-notes/parameter-results/*.json -text whitespace=cr-at-eol
-*.py text eol=lf
-*.md text eol=lf
-.gitignore text eol=lf
-.gitattributes text eol=lf

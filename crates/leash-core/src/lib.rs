@@ -1,4 +1,4 @@
-//! Arithmetic and transcript primitives for an experimental research library.
+//! Arithmetic and transcript primitives for LEASH.
 //!
 //! This crate makes no production security, zero-knowledge, or Fiat--Shamir
 //! security claim. Public `Result` boundaries reject invalid ring elements.

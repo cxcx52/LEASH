@@ -1,8 +1,7 @@
 //! Callable binary-circuit frontend and ordinary recursive lattice backend.
 //!
-//! This research implementation uses a seed-expanded CRS and SHAKE Fiat--Shamir.
-//! The archived interactive theorems do not certify this compiler's ROM/QROM
-//! security, and the protocol is not zero knowledge.
+//! Uses a seed-expanded CRS and an experimental SHAKE Fiat--Shamir compiler.
+//! The compiler has no established security proof. The protocol is not zero knowledge.
 
 mod codec;
 pub mod ordinary;

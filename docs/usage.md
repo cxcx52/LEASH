@@ -1,16 +1,13 @@
-# Calling the LEASH Rust library
+# Using LEASH
 
-LEASH now includes an executable binary-circuit frontend and an ordinary
+LEASH includes a binary-circuit frontend and an ordinary
 recursive lattice-argument backend. A caller can build a circuit, supply its
 assignment, generate a proof, send its bytes and verify them in another process.
 The generic backend also accepts quadratic ring relations directly.
 
-The implementation is a research library. It uses a public seed to expand the
-commitment matrices and SHAKE256 to compile the interactive messages. The
-archived theorems analyze interactive protocols; they do not establish the
-security of this Fiat–Shamir compiler. The library has no zero-knowledge or
-certified security-level claim. These properties are also explicit in its
-verification reports.
+The implementation uses a public seed to expand the commitment matrices and
+SHAKE256 to compile the interactive messages. This compiler is experimental,
+with no established security proof; the implementation is not zero knowledge.
 
 ## Build and run
 
@@ -53,13 +50,15 @@ A project in a neighboring checkout can depend on the package by path:
 leash = { path = "../labrador-rigorous-repair/crates/leash" }
 ```
 
-For a Git dependency, use the repository URL and pin the reviewed revision.
-The repository remains private, so callers need read access.
+For a Git dependency that follows the main branch:
 
 ```toml
 [dependencies]
-leash = { git = "https://github.com/cxcx52/labrador-rigorous-repair", rev = "4bac7e0cd7a38aea924f637896b285987b0c25de" }
+leash = { git = "https://github.com/cxcx52/labrador-rigorous-repair", branch = "main" }
 ```
+
+Replace `branch` with `rev = "<commit>"` to pin a revision. Callers need read
+access while the repository is private.
 
 ```rust
 use leash::{frontend::CircuitBuilder, prove, setup, verify, Config, Proof};
@@ -116,8 +115,7 @@ messages and checks the terminal opening.
 
 The executable path uses full centered-residue base-16 decomposition with eight
 digits for commitments and Gram entries. Its norm budgets are deterministic
-upper bounds. Structured all-one witnesses therefore do not depend on the
-original Gaussian heuristic. Zero padding is enforced by explicit equations,
+upper bounds. Zero padding is enforced by explicit equations,
 including padding introduced by recursive repartitioning.
 
 `plan_binary` and `plan_relation` calculate every layer before proving. They
@@ -130,15 +128,12 @@ The default profile uses source rank 6, inner rank 24, outer rank 9, 160 source
 challenge rows, six scalar aggregations and one core round. `Config::development`
 uses rank 2 commitments for tests. Both profiles use 1024 JL rows and the full
 challenge cube `{-2,-1,0,1,2}^64`, whose operator norm is bounded by 128.
-This differs from the filtered, tighter parameter path in the research ledger.
 Supported depth is 0–3, subject to the per-layer parameter checks; unsupported
 combinations return an error. Depth zero sends the source target opening directly.
 
 Complete honest attempts are bounded by `max_attempts`. A failed JL check restarts
 the whole source-and-core execution with a new attempt domain. This is an honest
 generator policy; it does not limit a malicious party's random-oracle queries.
-
-See [the executable protocol](rust-protocol.md) for the equations and norm bounds.
 
 ## Calling the backend from another proof system
 
@@ -152,9 +147,8 @@ blocks. A linear term addresses one polynomial in one block. All terms plus
 For a generic relation with core rounds, the interactive extraction theorem
 allows squared input norm up to `23/5` times the honest bound. The parameter plan
 and verification report expose the ceiling of this quantity. With no core
-rounds, the strict input norm is checked directly. A caller such as Pikkufold
-must map its terminal equations and **actual extracted norm** into this interface;
-this repository does not yet contain a Pikkufold-specific adapter.
+rounds, the strict input norm is checked directly. Applications must map their
+terminal equations and extracted norm into this interface.
 
 For the binary frontend, the source lifting inequalities already account for
 the relaxed cap, so its intended source statement is still the original binary
@@ -170,7 +164,7 @@ verification. Verifier challenges are regenerated, not accepted from a proof fil
 
 The current frontend supports at most 4096 variables and 4096 constraints, with
 65536 sparse nonzeros. Its JSON helper accepts at most 4 MiB. Proof transport is
-limited to 64 MiB and at most 262144 terminal polynomials. Generic relation limits
+limited to 64 MiB and at most 262144 decoded polynomials across the whole proof. Generic relation limits
 are exposed by `leash-core`; they bound structure, not peak memory. These limits
 are deliberate properties of this portable release.
 
@@ -193,14 +187,6 @@ For sequential end-to-end measurements on sizes 64, 256 and 1024:
 cargo run --release -p leash --example measure -- 1
 ```
 
-To retain the source revision, environment, logs, hashes and summary from a clean
-checkout, use:
-
-```sh
-python experiments/run_rust_benchmarks.py --out work/rust-measurement --rounds 1
-```
-
 Each size uses three fresh setups. The synthetic identity circuits have all-one
-assignments. Reported proof sizes are measured bytes; their easy constraints
-and the current conservative profile are stated explicitly. These measurements
-do not compare against the original C backend or reproduce the old 157 KiB ledger.
+assignments. See [the benchmark results](../benchmarks/README.md) for the
+configuration, actual proof sizes, and per-run timings.

@@ -1,79 +1,46 @@
-# Papers and implementation dependencies
+# Affected papers
 
-Reviewed on **14 November 2026**. The register covers 24 distinct papers, including LaBRADOR. It identifies **12 downstream papers** with a numerical premise or substantial composition dependency, plus three optional compression configurations and one comparison baseline.
+LaBRADOR's numerical bounds, norm slack, and proof backend appear in 12 substantive downstream dependencies and three optional configurations. The tables identify the specific claims and configurations involved. Page references use physical PDF pages unless printed pagination is also given.
 
-Each entry follows a specific claim to its source. The paper register fixes the reviewed PDF by SHA-256 and records physical page numbers. The repository register fixes source evidence to a Git commit.
+[Implementation dependencies](REPOSITORIES.md)
 
-[Paper versions and full evidence](papers.json) · [Repository register](REPOSITORIES.md) · [Repository evidence as JSON](repositories.json)
+## LaBRADOR
 
-## Twelve substantive dependencies
-
-| Category | Count | Meaning |
-| --- | ---: | --- |
-| A1 | 2 | Exact lower-tail statements contradicted by the existing certificate |
-| A2 | 5 | Heuristic numerical premises or derived norm slack requiring recalibration |
-| B | 5 | A concrete backend or composition whose guarantees require revalidation |
-
-The original LaBRADOR is counted separately. Including it gives 13 papers in this core count. The classifications concern the claims listed below; the hypotheses of conditional composition theorems remain explicit.
-
-### Exact numerical statements
-
-| Paper | Evidence | Scope |
+| Paper | Affected claim | Pages |
 | --- | --- | --- |
-| [RoKoko](https://eprint.iacr.org/2026/575) (2026/575) | p19; pp21–23; p57: Lemma 5 repeats the exact 256-row, sqrt(30) lower-tail budget; Lemmas 6–7 use it in structured projection. | Independent commitments and sumcheck claims have their own proof obligations. |
-| [Orthus](https://eprint.iacr.org/2026/398) (2026/398) | PDF p32 (printed p30); pp20,22,38: Theorem 5 repeats the strict lower-tail bound; Theorems 3–4 use its failure budget. | The revised compressed configuration uses a separate infinity-norm theorem with threshold 0.49. |
+| [LaBRADOR](https://eprint.iacr.org/2022/1341) | The exact lower-tail probability exceeds the nominal `2^-128` budget in its JL calibration. Parts of the paper use approximate notation; the discrepancy concerns the numerical calibration and its use in the projection analysis. | pp10,30–31 |
 
-### Numerical premises and derived parameters
+## Exact lower-tail statements
 
-| Paper | Evidence | Scope |
+| Paper | Affected claim | Pages |
 | --- | --- | --- |
-| [Grand Danois](https://eprint.iacr.org/2026/1196) (2026/1196) | p15; p17; p22: Lemma 2.5 uses the same numerical lower-tail premise, introduced explicitly as heuristic; later projection proofs use it. | The existing strict lower-tail certificate also covers this lemma’s norm-relative event. |
-| [Falcon 聚合](https://eprint.iacr.org/2024/311) (2024/311) | p10; p19; pp67–69: The heuristic JL lemma sets C2=30 at lambda=128; the later failure-density analysis uses a 2^-lambda term. | The numerical instantiation needs recalibration; the general predicate-special-soundness framework is a separate contribution. |
-| [Symphony](https://eprint.iacr.org/2025/1905) (2025/1905) | p12; p24; p27: Lemma 2.2 imports the approximate JL constants used by the range-proof slack and extraction analysis. | The paper uses approximate inequalities. Its generic compiler remains a conditional result. |
-| [Toolkit](https://eprint.iacr.org/2026/1289) (2026/1289) | p4; pp15–16; p27; p42: The terminal uses sqrt(128/30), 256-row Bin1 projections and the original LaBRADOR composition theorem. | The November revision also includes a distinct infinity-norm result and changes to LNP-Lite. |
-| [Lemur+](https://eprint.iacr.org/2026/2054) (2026/2054) | p15; p19: The extracted-norm and MSIS estimates use delta_LB=sqrt(128/30); opening soundness relies on the selected backend. | The generic HVC-SOP/KOTS construction is stated separately from this instantiation. |
+| [RoKoko](https://eprint.iacr.org/2026/575) | Lemma 5 repeats the exact 256-row, `sqrt(30)` lower-tail bound; Lemmas 6–7 use it for structured projections. | p19; pp21–23; p57 |
+| [Orthus](https://eprint.iacr.org/2026/398) | Theorem 5 repeats the strict L2 lower-tail bound, and Theorems 3–4 use its failure budget. | p32 (printed p30); pp20,22,38 |
 
-### Concrete backends and compositions
+## Numerical premises and derived parameters
 
-| Paper | Evidence | Scope |
+| Paper | Affected claim or configuration | Pages |
 | --- | --- | --- |
-| [Greyhound](https://eprint.iacr.org/2024/1293) (2024/1293) | p6; pp23–24; pp27–28: The succinct evaluation proof delegates its final short relation to LaBRADOR. | The C implementation uses Rademacher projection entries. The ternary mathematical example requires a separate implementation-level analysis. |
-| [Hachi](https://eprint.iacr.org/2026/156) (2026/156) | p26; pp27–28: The 55.1KB composition estimate includes a Greyhound tail, which in turn invokes LaBRADOR. | The Rust prototype measures the first Hachi round; ring switching and sumcheck are independently described. |
-| [LaZer](https://eprint.iacr.org/2024/1846) (2024/1846) | p8 §4; pp8–9: The succinct-proof branch uses the LaBRADOR implementation and its parameter assumptions. | LaZer also exposes a separate linear-size proof branch. |
-| [Unmasking TRaccoon](https://eprint.iacr.org/2025/849) (2025/849) | p53 Lemma B.6; p67 §B.6.2: The LaBRADOR-based ZK composition imports failure-density and knowledge-error premises from the Falcon analysis. | Its binary-projection lemma uses a different distribution and constants; the underlying TRaccoon signature is a separate layer. |
-| [LaBinius](https://eprint.iacr.org/2026/2103) (2026/2103) | p23; p27; pp47–48: Recursive opening links a vendored LaBRADOR backend; Theorem 2 explicitly includes kappa_Lab. | The nonrecursive PCS and binary-field arithmetic have separate analysis and measurements. |
+| [Grand Danois](https://eprint.iacr.org/2026/1196) | Lemma 2.5 explicitly introduces the same numerical lower-tail premise as a heuristic. Later projection proofs use it; the strict lower-tail calculation also covers its norm-relative event. | p15; p17; p22 |
+| [Aggregating Falcon Signatures with LaBRADOR](https://eprint.iacr.org/2024/311) | The heuristic JL lemma sets `C2=30` at `lambda=128`; the later failure-density analysis uses a `2^-lambda` term. This numerical instantiation requires recalibration. | p10; p19; pp67–69 |
+| [Symphony](https://eprint.iacr.org/2025/1905) | Lemma 2.2 imports approximate JL constants used in the range-proof slack and extraction analysis. The resulting instantiation depends on those numerical premises. | p12; p24; p27 |
+| [A Toolkit for Succinct Lattice-Based Zero Knowledge Proofs](https://eprint.iacr.org/2026/1289) | The L2 terminal uses `sqrt(128/30)`, 256-row Bin1 projections, and the original LaBRADOR composition theorem. | p4; pp15–16; p27; p42 |
+| [Lemur+](https://eprint.iacr.org/2026/2054) | The selected backend's extracted-norm and MSIS estimates use `delta_LB=sqrt(128/30)`. Its opening-soundness instantiation depends on that backend. | p15; p19 |
 
-## Optional configurations and comparison baselines
+## Backend and composition dependencies
 
-| Paper | Configuration | PDF pages |
+| Paper | Affected configuration | Pages |
 | --- | --- | --- |
-| [RoK, Paper, SISsors](https://eprint.iacr.org/2024/1972) | An optional LaBRADOR second compression underlies the roughly 100KB estimate. The main subtractive-set/vSIS protocol has its own proof chain. | p49; pp54–55 |
-| [LatticeFold](https://eprint.iacr.org/2024/257) | LaBRADOR is one possible final compressor for the IVC proof. The paper also offers a Stark terminal and uses sumcheck for its core range checks. | p52; pp7,55 |
-| [Serval（旧名 HyperWolf）](https://eprint.iacr.org/2025/1903) | The optional compressed construction includes epsilon_La in its error expression. The measured prototype implements the baseline. LaBRADOR compression is an analytical extension in the reviewed version. | pp25–27; p28; pp40–41 |
-| [TTRP shortness check](https://eprint.iacr.org/2026/2146) | The comparison table and host-integration examples use the older JL calibration. TTRP replaces the old projection with its own probability and composition results. | p5; pp17–19 |
+| [Greyhound](https://eprint.iacr.org/2024/1293) | The succinct evaluation proof delegates its final short relation to LaBRADOR. The C implementation uses Rademacher projection entries, so the ternary calculation requires a separate implementation-level analysis. | p6; pp23–24; pp27–28 |
+| [Hachi](https://eprint.iacr.org/2026/156) | The 55.1KB composition estimate includes a Greyhound terminal, which invokes LaBRADOR. The Rust prototype measures the first Hachi round. | p26; pp27–28 |
+| [LaZer](https://eprint.iacr.org/2024/1846) | The succinct-proof branch uses the LaBRADOR implementation and its parameter assumptions. | p8 §4; pp8–9 |
+| [Unmasking TRaccoon](https://eprint.iacr.org/2025/849) | The LaBRADOR-based ZK composition imports failure-density and knowledge-error premises from the Falcon analysis. Its binary-projection lemma uses a different distribution and constants. | p53 Lemma B.6; p67 §B.6.2 |
+| [LaBinius](https://eprint.iacr.org/2026/2103) | Recursive opening links a vendored LaBRADOR backend; Theorem 2 explicitly includes `kappa_Lab`. | p23; p27; pp47–48 |
 
-The three optional configurations increase the downstream dependency count from 12 to 15. The TTRP comparison entry is listed separately. Serval and its former title HyperWolf under ePrint 2025/1903 are one paper in this census.
+## Optional configurations
 
-## Separate result paths
-
-The following papers were reviewed and kept outside the confirmed dependency count.
-
-| Paper | Evidence and reason |
-| --- | --- |
-| [Non-Malleable Reductions of Knowledge](https://eprint.iacr.org/2026/1822) | p10; p34; p43; p49: The zk-LaBRADot case study uses separate heuristic premises. Bin2, 512 rows and sqrt(26) differ from the audited event; a transfer of the existing counterexample remains unestablished. |
-| [RoK and Roll](https://eprint.iacr.org/2025/1220) | p21; pp36–37; p20: Independent direct projection bounds and a final explicit witness. The concrete parameters use the paper’s own Lemmas 4–5. |
-| [SALSAA](https://eprint.iacr.org/2025/2124) | pp27–30; p39: Projection guarantees follow RoK and Roll; the terminal sends the remaining witness. The dependency direction runs from SALSAA to later RoKoko work, rather than importing RoKoko’s numerical lemma into SALSAA. |
-| [LatticeFold+](https://eprint.iacr.org/2025/247) | pp7,43,46: LaBRADOR appears in related work and performance comparisons. The reviewed construction has no identified LaBRADOR terminal dependency. |
-| [Akita](https://eprint.iacr.org/2026/1983) | pp8,10,74; pp151–152: Exact norm sumchecks and a separate filtered-challenge support certificate. The paper expressly avoids JL projection and develops its own commitment-opening analysis. |
-| [Jindo](https://eprint.iacr.org/2026/044) | p2 footnote; p12: Its own Quad/Agg/Split composition. The paper explicitly evaluates the construction without LaBRADOR composition. |
-| [LatticeBlindFold](https://eprint.iacr.org/2026/1857) | p31; pp1,52: An ABDLOP-based construction. The reviewed work leaves a complete decider as a further step. |
-
-The independent PikkuFold audit is outside this LaBRADOR propagation census.
-
-## Version and evidence notes
-
-Orthus and Toolkit published revisions on 3 November 2026. The entries distinguish their retained L2 premises from the revised infinity-norm construction. Local and official abstract text differ slightly for Lemur+ and SALSAA, so the technical judgments remain tied to the recorded local PDF hashes.
-
-The search combined the local paper collection with official ePrint records and author-provided artifacts. The counts describe this reviewed set. Download copies, alternative titles, source-code forks and the author’s own drafts each have separate identities and are not added as extra papers.
-
-The underlying mathematical evidence is summarized in the [proof-chain assessment](../research/notes/critical_path_assessment.md). The [strict probability checker](../research/scripts/jl_exact_checks.py) and replacement proofs are preserved in the research archive.
+| Paper | Affected configuration | Pages |
+| --- | --- | --- |
+| [RoK, Paper, SISsors](https://eprint.iacr.org/2024/1972) | An optional second compression with LaBRADOR underlies the roughly 100KB estimate. | p49; pp54–55 |
+| [LatticeFold](https://eprint.iacr.org/2024/257) | The configuration that uses LaBRADOR as the final compressor for the IVC proof. | p52; pp7,55 |
+| [Serval (formerly HyperWolf)](https://eprint.iacr.org/2025/1903) | The optional compressed construction includes `epsilon_La` in its error expression. LaBRADOR compression is an analytical extension; the measured prototype implements the baseline. | pp25–27; p28; pp40–41 |

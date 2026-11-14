@@ -24,4 +24,4 @@ fn main() -> Result<(), String> {
 This is a research implementation. Its seed-expanded CRS and SHAKE Fiat–Shamir
 compiler have no certified security level; the protocol is not zero knowledge.
 The complete API, parameter semantics, generic backend integration and CLI are
-described in [the library guide](../../docs/rust-library.md).
+described in [the library guide](../../docs/usage.md).

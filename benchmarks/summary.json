@@ -1,0 +1,37 @@
+{
+  "source_revision": "508a5b3ae73825c819e55825bfe6c40f72f9fcbd",
+  "rounds": 1,
+  "scope": "Default-profile proof bytes and timings for synthetic all-one identity R1CS",
+  "sizes": [
+    {
+      "size": 64,
+      "runs": 3,
+      "proof_bytes_min": 83923,
+      "proof_bytes_max": 84099,
+      "prove_ms_median": 400.807,
+      "verify_ms_median": 160.8068,
+      "encode_ms_median": 0.7126,
+      "decode_ms_median": 3.1523
+    },
+    {
+      "size": 256,
+      "runs": 3,
+      "proof_bytes_min": 84603,
+      "proof_bytes_max": 84731,
+      "prove_ms_median": 477.447,
+      "verify_ms_median": 226.6226,
+      "encode_ms_median": 0.6433,
+      "decode_ms_median": 2.8146
+    },
+    {
+      "size": 1024,
+      "runs": 3,
+      "proof_bytes_min": 84787,
+      "proof_bytes_max": 84899,
+      "prove_ms_median": 864.8884,
+      "verify_ms_median": 486.9452,
+      "encode_ms_median": 0.6845,
+      "decode_ms_median": 2.9271000000000003
+    }
+  ]
+}
