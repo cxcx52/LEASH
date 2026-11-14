@@ -20,7 +20,7 @@
 | 严格替代引理与接口 | 固定向量模 JL、诚实完备性、源提升与公开系数固定、普通核心提取、层组合、完整有界重启 | [主张台账](docs/status.md)及逐项证明；明确条件和计算假设 |
 | 更紧的定量界 | 条件协方差与四阶矩、能量上限挑战、同一完整碰撞实验下的三次根损失改进 | [折叠矩界](docs/filtered-folding-moments.md)、[能量挑战](docs/bounded-energy-challenges.md)、[计算损失](docs/refined-computational-loss.md)；比较对象是指定严格基线 |
 | 参数与架构分析 | 实际提取范数、各类承诺矩阵、逐层填充、有限域内参数选择、源及聚合指纹、限定模型的通信限制 | [研究档案](research/README.md)；精确账目、启发式格成本与一般不可能性分开 |
-| 可执行证据 | 小规模二元源归约、完整见证编解码、精确挑战谓词、远端记录与离线重放 | [CPU 实验](docs/experiment-results/2026-11-14-first-cpu/README.md)；不包含完整紧凑递归证明 |
+| 可执行证据 | 小规模二元源归约、完整见证编解码、精确挑战谓词、远端记录与离线重放 | [CPU 实验](benchmarks/results/2026-11-14-first-cpu/README.md)；不包含完整紧凑递归证明 |
 
 “独立复核”指开发过程中的另一轮推导或代码检查，不是外部同行评审或证明助手认证。经典概率工具、CRT、sumcheck、指纹方法及既有格困难性结果保留原有归属；本轮不提供未经文献核验的优先权声明。
 
@@ -100,7 +100,7 @@
 | 原论文必要依赖链 | [critical_path_assessment.md](research/notes/critical_path_assessment.md) |
 | 定理及精确参数复算 | [README.md](README.md)、[research/README.md](research/README.md) |
 | 实现覆盖范围 | [engineering-experiments.md](docs/engineering-experiments.md) |
-| 实测及原始记录重放 | [CPU 报告](docs/experiment-results/2026-11-14-first-cpu/README.md) |
+| 实测及原始记录重放 | [CPU 报告](benchmarks/results/2026-11-14-first-cpu/README.md) |
 
 历史节点：数学参数归档 `a524136`；实测源码 `fac2517`；实验记录及说明 `5daedc4`。最终整理提交和本地审计仓库提交由交付包 `DELIVERY.json` 精确记录，避免自引用尚未生成的提交哈希。
 

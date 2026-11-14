@@ -12,7 +12,7 @@ import random
 import sys
 from time import perf_counter
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from labrador_repair.challenges import exact_operator_norm_below
 from labrador_repair.energy import energy_ball_count, energy_ball_unrank
 from labrador_repair.fourier import certified_operator_norm_below

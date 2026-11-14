@@ -2,7 +2,7 @@
 
 Date: 2026-11-14. This extends `protocol-conditional.md` and uses the canonical-mass lemma developed in `affine-r1cs.md`. It concerns the repaired ordinary main protocol only, with outer commitments, a single projection attempt, and the same strict modular-JL hypothesis as `protocol-conditional.md`.
 
-The original bounds below remain valid. [Weighted collision averaging](refined-computational-loss.md#7-the-bounded-non-gated-anchor-theorem-is-different) gives a tighter finite bound on `Pr[Bad AND High]`, with the same bounded anchor and time obligations. Its finite formula differs from the cubic-root theorem for a single accept-gated anchor; the latter must not be substituted here.
+The original bounds below remain valid. [Weighted collision averaging](refined-computational-loss.md#6-finite-non-gated-anchors-require-a-different-bound) gives a tighter finite bound on `Pr[Bad AND High]`, with the same bounded anchor and time obligations. Its finite formula differs from the cubic-root theorem for a single accept-gated anchor; the latter must not be substituted here.
 
 ## Result in brief
 

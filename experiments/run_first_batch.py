@@ -69,7 +69,7 @@ def main():
                 'Bare native source reduction with full witness and diagnostic source oracle; no recursive core'))
     for seed in (20261114, 20261115, 20261116):
         specs.append((f'energy-membership-seed{seed}',
-            [sys.executable, 'experiments/benchmarks/challenge_membership.py',
+            [sys.executable, 'benchmarks/challenge_membership.py',
              '--degree','64','--energy','104','--threshold','30','--samples','32','--seed',str(seed)],
             120, 3, 'stdout', 'CHALLENGE_MEMBERSHIP_BENCHMARK_PASS',
             'Exact Python predicate microbenchmark; acceptance count is fixture-only'))

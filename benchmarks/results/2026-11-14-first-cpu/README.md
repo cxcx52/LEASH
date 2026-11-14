@@ -111,7 +111,7 @@ From the repository root (the result-report commit contains the summarizer):
 
 ```sh
 mkdir -p work/replay-first-cpu
-tar -xzf docs/experiment-results/2026-11-14-first-cpu/raw-records.tar.gz -C work/replay-first-cpu
+tar -xzf benchmarks/results/2026-11-14-first-cpu/raw-records.tar.gz -C work/replay-first-cpu
 git archive --format=tar fac2517e163517540f09cbf866d4a7cae8e3d40e > work/first-cpu-source.tar
 python experiments/summarize_first_batch.py --import-root work/replay-first-cpu --source-archive work/first-cpu-source.tar --output work/replayed-first-cpu-summary.json
 ```

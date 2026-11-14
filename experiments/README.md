@@ -10,7 +10,7 @@ An experiment passing does not establish a cryptographic security level.
 |---|---|---|
 | `src/labrador_repair/` | Exact arithmetic and reference semantics | Includes a small native binary frontend with a full-witness transport |
 | `examples/native_frontend_smoke.py` | Honest source/target/encoding round trip | Bare source reduction, not the recursive succinct core |
-| `experiments/benchmarks/` | Explicitly scoped kernel measurements | Energy-ball fixtures; exact Fourier versus SPD membership predicates |
+| `benchmarks/` | Explicitly scoped kernel measurements | Energy-ball fixtures; exact Fourier versus SPD membership predicates |
 | `experiments/harness/` | Local subprocess recording and bounded execution | Config, UTC times, exit status, logs, hashes, optional resource data |
 | `experiments/environment_probe.py` | Read-only environment inventory | CPU features, container limits, toolchains, visible CUDA/GPU capabilities |
 | `experiments/adapters/` | Optional pinned external implementation adapters | Upstream C preparation; never silently substitutes a different relation |

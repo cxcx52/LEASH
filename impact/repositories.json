@@ -1,0 +1,539 @@
+{
+  "as_of": "2026-11-14",
+  "scope": "12篇已确认论文依赖与3篇可选实例中的作者公开仓库映射",
+  "method": "GitHub connector GET：repository metadata、main ref、recursive tree、commit-pinned README/config/source。仅静态读取。",
+  "verified_repository_count": 8,
+  "labels": {
+    "paper-associated repo": "论文提供仓库链接或README明确对应论文",
+    "declared backend dependency": "README或依赖声明明确指定后端",
+    "source-inspected dependency": "在固定提交的构建配置、FFI、调用路径或参数脚本中确认依赖"
+  },
+  "note": "这里记录论文关联和源码依赖；数学结论、具体参数与各版本实现的安全性另行评估。",
+  "repositories": [
+    {
+      "repo": "lattice-dogs/labrador",
+      "papers": [
+        {
+          "eprint": "2022/1341",
+          "name": "LaBRADOR",
+          "pages": []
+        },
+        {
+          "eprint": "2024/1293",
+          "name": "Greyhound",
+          "pages": [
+            28
+          ]
+        }
+      ],
+      "label": "shared backend",
+      "strength": [
+        "paper-associated repo",
+        "declared backend dependency",
+        "source-inspected dependency"
+      ],
+      "kind": "proof-backend",
+      "scope": "LaBRADOR 与 Chihuahua、Dachshund、Greyhound 共用的 C 实现；Greyhound 的组合证明路径在同一仓库中。",
+      "url": "https://github.com/lattice-dogs/labrador",
+      "default_branch": "main",
+      "public_head_commit": "8b6626b26afd4c0162ddd089759d21d3d51bfbdf",
+      "commit_url": "https://github.com/lattice-dogs/labrador/commit/8b6626b26afd4c0162ddd089759d21d3d51bfbdf",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README",
+          "line": 3,
+          "end_line": 5,
+          "description": "README 将 Greyhound 前端与后续 LaBRADOR 迭代一起说明。",
+          "url": "https://github.com/lattice-dogs/labrador/blob/8b6626b26afd4c0162ddd089759d21d3d51bfbdf/README#L3-L5"
+        },
+        {
+          "path": "test_greyhound.c",
+          "line": 88,
+          "end_line": 89,
+          "description": "调用 composite_prove_polcom 和 composite_verify_polcom。",
+          "url": "https://github.com/lattice-dogs/labrador/blob/8b6626b26afd4c0162ddd089759d21d3d51bfbdf/test_greyhound.c#L88-L89"
+        },
+        {
+          "path": "pack.c",
+          "line": 164,
+          "end_line": 164,
+          "description": "Greyhound 组合证明入口 composite_prove_polcom。",
+          "url": "https://github.com/lattice-dogs/labrador/blob/8b6626b26afd4c0162ddd089759d21d3d51bfbdf/pack.c#L164"
+        },
+        {
+          "path": "pack.c",
+          "line": 292,
+          "end_line": 310,
+          "description": "Greyhound 组合验证入口。",
+          "url": "https://github.com/lattice-dogs/labrador/blob/8b6626b26afd4c0162ddd089759d21d3d51bfbdf/pack.c#L292-L310"
+        }
+      ]
+    },
+    {
+      "repo": "lazer-crypto/labrador",
+      "papers": [
+        {
+          "eprint": "2026/398",
+          "name": "Orthus",
+          "pages": [
+            27
+          ]
+        },
+        {
+          "eprint": "2026/1289",
+          "name": "Toolkit",
+          "pages": [
+            21
+          ]
+        }
+      ],
+      "label": "backend implementation",
+      "strength": [
+        "paper-associated repo",
+        "declared backend dependency",
+        "source-inspected dependency"
+      ],
+      "kind": "proof-backend",
+      "scope": "Orthus 与 Toolkit 的可组合 LaBRADOR 重实现；README 将两个论文明确列为对应工作。",
+      "url": "https://github.com/lazer-crypto/labrador",
+      "default_branch": "main",
+      "public_head_commit": "c1ae0e612d5accd9e7d9d1c264951c1afe949c83",
+      "commit_url": "https://github.com/lazer-crypto/labrador/commit/c1ae0e612d5accd9e7d9d1c264951c1afe949c83",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 1,
+          "end_line": 5,
+          "description": "论文关联及对原始 LaBRADOR 算术的复用。",
+          "url": "https://github.com/lazer-crypto/labrador/blob/c1ae0e612d5accd9e7d9d1c264951c1afe949c83/README.md#L1-L5"
+        },
+        {
+          "path": "Makefile",
+          "line": 12,
+          "end_line": 19,
+          "description": "构建源文件包括 labrador_core.c、labrador_tail.c、labrador.c、jlproj.c。",
+          "url": "https://github.com/lazer-crypto/labrador/blob/c1ae0e612d5accd9e7d9d1c264951c1afe949c83/Makefile#L12-L19"
+        },
+        {
+          "path": "Makefile",
+          "line": 97,
+          "end_line": 104,
+          "description": "Orthus 与签名聚合目标链接这些组件。",
+          "url": "https://github.com/lazer-crypto/labrador/blob/c1ae0e612d5accd9e7d9d1c264951c1afe949c83/Makefile#L97-L104"
+        },
+        {
+          "path": "pack.c",
+          "line": 280,
+          "end_line": 312,
+          "description": "组合层包含 LaBRADOR 与 terminal tail 的证明、验证阶段。",
+          "url": "https://github.com/lazer-crypto/labrador/blob/c1ae0e612d5accd9e7d9d1c264951c1afe949c83/pack.c#L280-L312"
+        }
+      ]
+    },
+    {
+      "repo": "lazer-crypto/lazer",
+      "papers": [
+        {
+          "eprint": "2024/1846",
+          "name": "LaZer",
+          "pages": [
+            5
+          ]
+        },
+        {
+          "eprint": "2026/1289",
+          "name": "Toolkit",
+          "pages": [
+            21
+          ]
+        }
+      ],
+      "label": "submodule",
+      "strength": [
+        "paper-associated repo",
+        "declared backend dependency",
+        "source-inspected dependency"
+      ],
+      "kind": "proof-backend",
+      "scope": "src/labrados 子模块连接到 lazer-crypto/labrador；简洁证明和 Toolkit benchmarks 通过该后端。",
+      "submodules": [
+        {
+          "path": "src/labrados",
+          "repository": "lazer-crypto/labrador",
+          "pinned_commit": "c1ae0e612d5accd9e7d9d1c264951c1afe949c83"
+        }
+      ],
+      "paper_reproduction_refs": [
+        {
+          "eprint": "2024/1846",
+          "commit": "10eafeca4cd53ff4fc54193dce904dbd0026fefd",
+          "status": "README-declared; historical content not inspected"
+        },
+        {
+          "eprint": "2026/1289",
+          "commit": "51baa16c4a642ad90b964b9c1592c230aa0c0941",
+          "status": "README-declared; historical content not inspected"
+        }
+      ],
+      "url": "https://github.com/lazer-crypto/lazer",
+      "default_branch": "main",
+      "public_head_commit": "b958e247a2fdb9593b3c25c9603c6c5305c19420",
+      "commit_url": "https://github.com/lazer-crypto/lazer/commit/b958e247a2fdb9593b3c25c9603c6c5305c19420",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": ".gitmodules",
+          "line": 1,
+          "end_line": 4,
+          "description": "子模块路径 src/labrados，远端 lazer-crypto/labrador.git。",
+          "url": "https://github.com/lazer-crypto/lazer/blob/b958e247a2fdb9593b3c25c9603c6c5305c19420/.gitmodules#L1-L4"
+        },
+        {
+          "path": "Makefile",
+          "line": 206,
+          "end_line": 206,
+          "description": "LABRADOR_DIR = src/labrados。",
+          "url": "https://github.com/lazer-crypto/lazer/blob/b958e247a2fdb9593b3c25c9603c6c5305c19420/Makefile#L206"
+        },
+        {
+          "path": "Makefile",
+          "line": 232,
+          "end_line": 265,
+          "description": "编译 LaBRADOR 源码并生成相应共享库。",
+          "url": "https://github.com/lazer-crypto/lazer/blob/b958e247a2fdb9593b3c25c9603c6c5305c19420/Makefile#L232-L265"
+        },
+        {
+          "path": "README.md",
+          "line": 36,
+          "end_line": 40,
+          "description": "README 分别列出 LaZer 与 Toolkit 的论文复现提交。",
+          "url": "https://github.com/lazer-crypto/lazer/blob/b958e247a2fdb9593b3c25c9603c6c5305c19420/README.md#L36-L40"
+        }
+      ]
+    },
+    {
+      "repo": "dfaranha/aggregate-falcon",
+      "papers": [
+        {
+          "eprint": "2024/311",
+          "name": "Falcon 聚合",
+          "pages": [
+            7,
+            23
+          ]
+        }
+      ],
+      "label": "paper artifact",
+      "strength": [
+        "paper-associated repo",
+        "source-inspected dependency"
+      ],
+      "kind": "parameter-estimation",
+      "scope": "论文参数与大小估计的配套材料；proof_size_estimate.py 使用 JL_slack = sqrt(128/30)。",
+      "url": "https://github.com/dfaranha/aggregate-falcon",
+      "default_branch": "main",
+      "public_head_commit": "971472cd8f75513ed963f3b3e4ffa8adc490b794",
+      "commit_url": "https://github.com/dfaranha/aggregate-falcon/commit/971472cd8f75513ed963f3b3e4ffa8adc490b794",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 2,
+          "end_line": 7,
+          "description": "README 对应论文，并说明 jl.py 与参数估计脚本之间的数据关系。",
+          "url": "https://github.com/dfaranha/aggregate-falcon/blob/971472cd8f75513ed963f3b3e4ffa8adc490b794/README.md#L2-L7"
+        },
+        {
+          "path": "proof_size_estimate.py",
+          "line": 36,
+          "end_line": 37,
+          "description": "第一组参数中的 JL_const 与 JL_slack。",
+          "url": "https://github.com/dfaranha/aggregate-falcon/blob/971472cd8f75513ed963f3b3e4ffa8adc490b794/proof_size_estimate.py#L36-L37"
+        },
+        {
+          "path": "proof_size_estimate.py",
+          "line": 47,
+          "end_line": 70,
+          "description": "其余参数组也设置同一 JL_slack。",
+          "url": "https://github.com/dfaranha/aggregate-falcon/blob/971472cd8f75513ed963f3b3e4ffa8adc490b794/proof_size_estimate.py#L47-L70"
+        },
+        {
+          "path": "proof_size_estimate.py",
+          "line": 200,
+          "end_line": 202,
+          "description": "后续参数约束使用 JL_slack。",
+          "url": "https://github.com/dfaranha/aggregate-falcon/blob/971472cd8f75513ed963f3b3e4ffa8adc490b794/proof_size_estimate.py#L200-L202"
+        }
+      ]
+    },
+    {
+      "repo": "georgeorourke/hachi-pcs",
+      "papers": [
+        {
+          "eprint": "2026/156",
+          "name": "Hachi",
+          "pages": [
+            27
+          ]
+        }
+      ],
+      "label": "paper artifact",
+      "strength": [
+        "paper-associated repo"
+      ],
+      "kind": "prototype",
+      "scope": "公开 Rust 原型对应 Hachi 自身的 Commit/Prove/Verify；论文估计中的 Greyhound 终端保留为论文层设计依赖。",
+      "url": "https://github.com/georgeorourke/hachi-pcs",
+      "default_branch": "main",
+      "public_head_commit": "6d90caca64386e506bdd5d0097f87ccb98fc0926",
+      "commit_url": "https://github.com/georgeorourke/hachi-pcs/commit/6d90caca64386e506bdd5d0097f87ccb98fc0926",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 1,
+          "end_line": 8,
+          "description": "README 标明 Hachi PCS prototype 和 Commit/Prove/Verify benchmark。",
+          "url": "https://github.com/georgeorourke/hachi-pcs/blob/6d90caca64386e506bdd5d0097f87ccb98fc0926/README.md#L1-L8"
+        },
+        {
+          "path": "Cargo.toml",
+          "line": 8,
+          "end_line": 18,
+          "description": "所列依赖为 Rust 算术和工具库。",
+          "url": "https://github.com/georgeorourke/hachi-pcs/blob/6d90caca64386e506bdd5d0097f87ccb98fc0926/Cargo.toml#L8-L18"
+        },
+        {
+          "path": "src/main.rs",
+          "line": 29,
+          "end_line": 63,
+          "description": "入口调用 Hachi::setup、commit、prove、verify。",
+          "url": "https://github.com/georgeorourke/hachi-pcs/blob/6d90caca64386e506bdd5d0097f87ccb98fc0926/src/main.rs#L29-L63"
+        }
+      ]
+    },
+    {
+      "repo": "osdnk/labinius",
+      "papers": [
+        {
+          "eprint": "2026/2103",
+          "name": "LaBinius",
+          "pages": [
+            24,
+            27
+          ]
+        }
+      ],
+      "label": "vendored backend",
+      "strength": [
+        "paper-associated repo",
+        "declared backend dependency",
+        "source-inspected dependency"
+      ],
+      "kind": "proof-backend",
+      "scope": "递归 opening 使用仓库内的 LaBRADOR C 后端；清文和 bit-dropped opening 是另两种模式。",
+      "vendored": [
+        {
+          "path": "crates/pcs/labrador",
+          "upstream_repository": "lattice-dogs/labrador",
+          "upstream_commit_declared": "8b6626b",
+          "upstream_commit_resolved": "8b6626b26afd4c0162ddd089759d21d3d51bfbdf",
+          "local_modifications": true
+        }
+      ],
+      "url": "https://github.com/osdnk/labinius",
+      "default_branch": "main",
+      "public_head_commit": "96b57f724fc15c8e40495015c01dc3e6d8dfe595",
+      "commit_url": "https://github.com/osdnk/labinius/commit/96b57f724fc15c8e40495015c01dc3e6d8dfe595",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 6,
+          "end_line": 12,
+          "description": "README 列出三种 opening 模式及 C bridge。",
+          "url": "https://github.com/osdnk/labinius/blob/96b57f724fc15c8e40495015c01dc3e6d8dfe595/README.md#L6-L12"
+        },
+        {
+          "path": "crates/pcs/labrador/VENDORED.md",
+          "line": 3,
+          "end_line": 7,
+          "description": "vendored 来源为 lattice-dogs/labrador 的 8b6626b，包含本地修改。",
+          "url": "https://github.com/osdnk/labinius/blob/96b57f724fc15c8e40495015c01dc3e6d8dfe595/crates/pcs/labrador/VENDORED.md#L3-L7"
+        },
+        {
+          "path": "crates/pcs/build.rs",
+          "line": 11,
+          "end_line": 16,
+          "description": "定位 vendored 后端目录。",
+          "url": "https://github.com/osdnk/labinius/blob/96b57f724fc15c8e40495015c01dc3e6d8dfe595/crates/pcs/build.rs#L11-L16"
+        },
+        {
+          "path": "crates/pcs/build.rs",
+          "line": 105,
+          "end_line": 107,
+          "description": "构建产物静态链接 labrador。",
+          "url": "https://github.com/osdnk/labinius/blob/96b57f724fc15c8e40495015c01dc3e6d8dfe595/crates/pcs/build.rs#L105-L107"
+        },
+        {
+          "path": "crates/pcs/src/labrador/ffi.rs",
+          "line": 27,
+          "end_line": 33,
+          "description": "FFI 声明 LaBRADOR composite prove/verify 接口。",
+          "url": "https://github.com/osdnk/labinius/blob/96b57f724fc15c8e40495015c01dc3e6d8dfe595/crates/pcs/src/labrador/ffi.rs#L27-L33"
+        }
+      ]
+    },
+    {
+      "repo": "lattice-arguments/rokoko",
+      "papers": [
+        {
+          "eprint": "2026/575",
+          "name": "RoKoko",
+          "pages": [
+            48,
+            50
+          ]
+        }
+      ],
+      "label": "paper artifact",
+      "strength": [
+        "paper-associated repo"
+      ],
+      "kind": "independent-implementation",
+      "scope": "RoKoko 的独立 Rust 实现；README 与源码对应 coarse/fine 投影及范数检查。",
+      "url": "https://github.com/lattice-arguments/rokoko",
+      "default_branch": "main",
+      "public_head_commit": "c7c4d9e5d684eee71efac5bc8059fcb94559a9d3",
+      "commit_url": "https://github.com/lattice-arguments/rokoko/commit/c7c4d9e5d684eee71efac5bc8059fcb94559a9d3",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 5,
+          "end_line": 13,
+          "description": "README 对应 RoKoko 论文和两种投影变体。",
+          "url": "https://github.com/lattice-arguments/rokoko/blob/c7c4d9e5d684eee71efac5bc8059fcb94559a9d3/README.md#L5-L13"
+        },
+        {
+          "path": "README.md",
+          "line": 99,
+          "end_line": 103,
+          "description": "列出 coarse/fine projection 与 norm-check gadgets。",
+          "url": "https://github.com/lattice-arguments/rokoko/blob/c7c4d9e5d684eee71efac5bc8059fcb94559a9d3/README.md#L99-L103"
+        },
+        {
+          "path": "src/common/projection_matrix.rs",
+          "line": 1,
+          "end_line": 20,
+          "description": "投影矩阵实现文件已读取。",
+          "url": "https://github.com/lattice-arguments/rokoko/blob/c7c4d9e5d684eee71efac5bc8059fcb94559a9d3/src/common/projection_matrix.rs#L1-L20"
+        },
+        {
+          "path": ".gitmodules",
+          "line": 1,
+          "end_line": 3,
+          "description": "公开子模块声明为 lattice-estimator。",
+          "url": "https://github.com/lattice-arguments/rokoko/blob/c7c4d9e5d684eee71efac5bc8059fcb94559a9d3/.gitmodules#L1-L3"
+        }
+      ]
+    },
+    {
+      "repo": "dingdangdangwhx/Lemur-plus",
+      "papers": [
+        {
+          "eprint": "2026/2054",
+          "name": "Lemur+",
+          "pages": [
+            19
+          ]
+        }
+      ],
+      "label": "vendored backend",
+      "strength": [
+        "paper-associated repo",
+        "declared backend dependency",
+        "source-inspected dependency"
+      ],
+      "kind": "proof-backend",
+      "scope": "Lemur+ vendored LaBRADOR，并在自己的 relation/proof driver 中调用 Chihuahua/LaBRADOR 组合接口。",
+      "url": "https://github.com/dingdangdangwhx/Lemur-plus",
+      "default_branch": "main",
+      "public_head_commit": "8b9b1beb246113ff5fcee26cf52f197f5231dfbb",
+      "commit_url": "https://github.com/dingdangdangwhx/Lemur-plus/commit/8b9b1beb246113ff5fcee26cf52f197f5231dfbb",
+      "visibility": "public",
+      "evidence": [
+        {
+          "path": "README.md",
+          "line": 3,
+          "end_line": 17,
+          "description": "README 对应论文，并列出 vendored backend 与 Chihuahua 集成目录。",
+          "url": "https://github.com/dingdangdangwhx/Lemur-plus/blob/8b9b1beb246113ff5fcee26cf52f197f5231dfbb/README.md#L3-L17"
+        },
+        {
+          "path": "NOTICE.md",
+          "line": 10,
+          "end_line": 12,
+          "description": "第三方后端来源及许可说明。",
+          "url": "https://github.com/dingdangdangwhx/Lemur-plus/blob/8b9b1beb246113ff5fcee26cf52f197f5231dfbb/NOTICE.md#L10-L12"
+        },
+        {
+          "path": "labrador/lemur_plus/proof_driver.c",
+          "line": 23,
+          "end_line": 25,
+          "description": "包含 chihuahua.h、labrador.h 和 pack.h。",
+          "url": "https://github.com/dingdangdangwhx/Lemur-plus/blob/8b9b1beb246113ff5fcee26cf52f197f5231dfbb/labrador/lemur_plus/proof_driver.c#L23-L25"
+        },
+        {
+          "path": "labrador/lemur_plus/proof_driver.c",
+          "line": 1082,
+          "end_line": 1084,
+          "description": "调用 composite_prove_principle。",
+          "url": "https://github.com/dingdangdangwhx/Lemur-plus/blob/8b9b1beb246113ff5fcee26cf52f197f5231dfbb/labrador/lemur_plus/proof_driver.c#L1082-L1084"
+        }
+      ]
+    }
+  ],
+  "supplemental_leads": [
+    {
+      "eprint": "2025/1905",
+      "paper": "Symphony",
+      "status": "supplemental-unverified",
+      "url": "https://github.com/syscoin/latticefold/tree/main/crates/symphony",
+      "source": "本地 PDF p54 的链接；作者归属、当前内容与提交尚未核对"
+    },
+    {
+      "eprint": "2024/1972",
+      "paper": "RoK, Paper, SISsors",
+      "status": "supplemental-unverified",
+      "url": "https://github.com/russell-lai/rok-paper-sissors-estimator/blob/v2/example-params.ipynb",
+      "source": "本地 PDF p49 给出的参数估计 notebook 链接；远端内容与提交尚未核对"
+    },
+    {
+      "eprint": "2025/1903",
+      "paper": "Serval",
+      "status": "supplemental-unverified-non-github",
+      "url": "https://gitlab.com/LatticePCSReview/servalPCS",
+      "source": "本地 PDF p27 给出的实现链接；p28 表明尚未集成 LaBRADOR 压缩"
+    }
+  ],
+  "official_repository_unconfirmed": [
+    {
+      "eprint": "2026/1196",
+      "paper": "Grand Danois",
+      "status": "official-repository-unconfirmed"
+    },
+    {
+      "eprint": "2025/849",
+      "paper": "Unmasking TRaccoon",
+      "status": "official-repository-unconfirmed"
+    },
+    {
+      "eprint": "2024/257",
+      "paper": "LatticeFold",
+      "status": "official-repository-unconfirmed"
+    }
+  ]
+}
