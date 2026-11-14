@@ -19,3 +19,4 @@ jobs:
       - run: python examples/statistical_family.py
       - run: python examples/gated_rows.py
       - run: python examples/certified_challenges.py
+      - run: python examples/certified_fourier.py

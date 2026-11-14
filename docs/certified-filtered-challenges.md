@@ -174,6 +174,8 @@ The reference checker computes these minors using fraction-free Bareiss eliminat
 
 All entries are integers. Their bit lengths and the bit lengths of the intermediate minors are polynomial in d and log T, so this is a polynomial-time exact predicate. The reference implementation uses O(d³) integer arithmetic operations; it is a correctness reference, not a performance claim. Faster certified numerical enclosures could be added later, provided uncertain cases fall back to an exact decision and the sampler's distribution remains exactly specified.
 
+The optional [certified Fourier implementation](certified-fourier.md) now provides such an enclosure. Its public API constructs the certified table internally; it returns exactly the same strict decision and falls back to this integer predicate whenever the interval is inconclusive.
+
 The sampler is conceptually:
 
 1. draw d independent unbiased symbols in {−2,−1,0,1,2};

@@ -7,6 +7,7 @@
 | JL family for every integer lambda>=128 | Proved and independently reviewed | Uniform scaling proof, exact base certificates, integer parameter generator |
 | Cube challenge cardinality and norms | Proved | Product count and triangle inequality |
 | Filtered d64 challenges with strict operator norm below 31 | Proved and independently reviewed | Exact rational tail certificate; cardinality above (9/16)5^64; integer Sylvester/Bareiss predicate; independent small spectral formula checks |
+| Certified Fourier membership predicate | Proved and independently reviewed | Rational twiddle enclosures, strict integer comparisons and exact fallback; equality and low-precision tests |
 | Invertible challenge differences | Derived from LS18 under stated ring conditions | Corollary 1.2; small exhaustive regression |
 | Centered-lift sufficient inequality | Proved | Coefficientwise Cauchy-Schwarz and disjoint quadratic blocks |
 | Affine-R1CS bare reduction | Proposed complete proof, internal review | Explicit chronology, composite-modulus aggregation, canonical-opening lemma |
