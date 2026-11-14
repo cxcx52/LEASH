@@ -1,0 +1,20 @@
+[package]
+name = "leash"
+description = "Experimental repaired lattice argument frontend and recursive backend"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+leash-core = { path = "../leash-core", version = "0.1.0" }
+leash-frontend = { path = "../leash-frontend", version = "0.1.0" }
+serde.workspace = true
+serde_json.workspace = true
+sha3.workspace = true
+getrandom.workspace = true
+
+[[bin]]
+name = "leash"
+path = "src/main.rs"

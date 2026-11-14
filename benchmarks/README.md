@@ -1,5 +1,11 @@
 # Benchmarks
 
+The Rust frontend and recursive backend can be measured end to end with
+`cargo run --release -p leash --example measure -- 1`. The example records
+actual serialized proof bytes and separate prove/verify/codec timings on
+all-one identity R1CS instances. Its [profile and scope](../docs/rust-library.md)
+differ from the earlier Python source-reference batch below.
+
 The first CPU batch records 27 native-source runs, nine challenge-predicate runs and two verification jobs. All 38 processes completed. The [result report](results/2026-11-14-first-cpu/README.md) includes per-run hashes, environment details and raw logs.
 
 | Input size n = k | Runs | Encoded full-witness transport | Whole-flow median |

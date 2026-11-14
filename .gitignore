@@ -7,3 +7,5 @@ dist/
 /work/
 /experiments/results/
 /experiments/runs/
+/target/
+/demo-output/

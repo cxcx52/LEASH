@@ -1,0 +1,16 @@
+[workspace]
+members = ["crates/leash-core", "crates/leash-frontend", "crates/leash"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/cxcx52/labrador-rigorous-repair"
+rust-version = "1.85"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha3 = "0.10"
+getrandom = "0.2"

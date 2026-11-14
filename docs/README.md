@@ -13,6 +13,11 @@ The audit follows the proof chain from probability bounds and source relations t
 | Composition | [Protocol algebra](protocol-conditional.md) · [Complete restarts](bounded-restarts.md) | [Layer composition](../research/proofs/composition_repair.md) |
 | Parameters and measurements | [Statistical family](statistical-family.md) | [Recorded benchmarks](../benchmarks/README.md) |
 
-The current executable package covers exact certificates, challenge predicates and a native source reference with full-witness encoding. The compact recursive prover, Fiat–Shamir compilation and a complete concrete computational-security analysis remain open parts of the construction.
+The [Rust library](rust-library.md) implements the binary frontend and ordinary
+recursive prover/verifier, including proof transport and a CLI. Its
+[protocol guide](rust-protocol.md) connects each executed check to the equations.
+The Python package retains the exact certificates and earlier native reference.
+The noninteractive compiler is experimental; a security proof for that compiler
+and complete concrete computational-security analysis remain open.
 
 The [research archive](../research/README.md) retains the longer derivations, internal reviews, earlier parameter paths and pinned model outputs. The [14 November handoff](../CLOSEOUT.md) records the completed research scope.

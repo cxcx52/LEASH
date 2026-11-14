@@ -1,2 +1,9 @@
 # Preserve the byte-identical generated experiment summary on Windows checkouts.
 docs/experiment-results/**/summary.json text eol=lf
+benchmarks/results/** -text
+Cargo.toml text eol=lf
+Cargo.lock text eol=lf
+crates/** text eol=lf
+.github/workflows/rust.yml text eol=lf
+docs/rust-*.md text eol=lf
+experiments/run_rust_benchmarks.py text eol=lf

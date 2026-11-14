@@ -1,9 +1,9 @@
 # Claims, evidence, and remaining obligations
 
-Research concluded at the author's request on 14 November 2026. See
-[the final handoff](../CLOSEOUT.md). Open obligations below are limitations of
-the saved deliverable, not active development tasks. Historical reports retain
-the status at their own source revisions.
+The author closed the initial research batch on 14 November 2026 and later
+authorized a callable frontend and backend. The [earlier handoff](../CLOSEOUT.md)
+remains a historical snapshot. The [Rust library](rust-library.md) adds an
+executing implementation; historical reports retain their own source revisions.
 
 | Claim | Status | Evidence |
 |---|---|---|
@@ -38,8 +38,9 @@ the status at their own source revisions.
 | Small native source reference and strict byte roundtrip | Implemented and tested on honest synthetic fixtures | 27 recorded runs; 11 target checks and 3 separate source-oracle checks; sends the entire witness; toy source rank 2 |
 | Recorded CPU experiment batch | Completed, with reproducible raw records | 38 successful processes, 66 package tests, 102 archive files; see the experiment report for distinct scopes |
 | Certified Fourier kernel timing | Measured on specified fixtures only | 96 candidate positions, three repeats; median paired warm SPD/Fourier ratio 180.58; cold initialization separate; no full-protocol speedup claim |
-| Full repaired recursive prover/verifier and compact serialization | Not implemented; outside the closed batch | A mathematical interface and parameter ledger are not an executing recursive backend |
-| Stronger complete SNARK or integrated Pikkufold backend | Not established; research closed at current scope | No completed terminal-proof adapter, complete computational-security result or system performance comparison |
+| Rust binary frontend, ordinary recursive backend and serialization | Implemented and tested | Full source-to-core pipeline, two-round generic relation, public-input/context binding, canonical bounded codec and separate CLI verification; conservative full-residue profile |
+| Seed-expanded CRS and SHAKE Fiat–Shamir implementation | Executable experimental compiler | Its ROM/QROM security is not established by the interactive proofs; verification reports expose this status |
+| Stronger complete SNARK or integrated Pikkufold backend | Not established | Generic relation API is available; a Pikkufold-specific adapter, complete computational-security result and system performance comparison remain open |
 
 The code certifies arithmetic steps of the mathematical arguments. It is not a machine-checked proof in a proof assistant, and passing tests do not discharge the open obligations in this table.
 

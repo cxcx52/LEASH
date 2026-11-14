@@ -1,5 +1,10 @@
 # Engineering experiments and acceptance contract
 
+This document records the earlier Python experiment batch. The subsequently
+implemented Rust source-to-core pipeline has its own [library guide](rust-library.md)
+and [protocol specification](rust-protocol.md). The stage table below preserves
+the implementation status of that earlier batch.
+
 The first executable repaired component is a **portable CPU reference for the
 bare native binary source reduction**. It computes a small source commitment,
 constructs and checks the complete target witness, sends that witness in full,

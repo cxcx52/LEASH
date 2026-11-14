@@ -1,0 +1,24 @@
+name: Rust library
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  rust:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        toolchain: [stable, '1.85.0']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install Rust toolchain
+        run: rustup toolchain install ${{ matrix.toolchain }} --profile minimal --component rustfmt --component clippy
+      - name: Select toolchain
+        run: rustup default ${{ matrix.toolchain }}
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo test --workspace --all-targets --release --locked
+      - run: cargo run --release --locked -p leash --example library
+      - run: cargo run --release --locked -p leash -- demo --out demo-output --development
+      - run: cargo run --release --locked -p leash -- verify --parameters demo-output/parameters.json --circuit demo-output/circuit.json --proof demo-output/proof.leash --context leash/example/v1

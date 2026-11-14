@@ -1,12 +1,25 @@
 ![LaBRADOR audit and repair](assets/labrador.png)
 
-# LaBRADOR: audit and repair
+# LEASH: When LaBRADOR's Guarantees Go Astray
 
 This repository audits the proof chain of [LaBRADOR](https://eprint.iacr.org/2022/1341) and develops a rigorous reconstruction. The findings concern probability bounds, source arithmetic, extraction, challenge sampling and concrete parameter accounting. The repair supplies explicit theorems, exact certificates and a record of the resulting costs.
 
-The Python package implements the arithmetic certificates, challenge predicates and a native binary source reference. Detailed proofs, parameter ledgers and recorded experiments accompany the code.
+The Rust workspace provides a callable binary R1CS frontend, an ordinary recursive prover/verifier, proof serialization and a CLI. The Python package preserves the arithmetic certificates, challenge predicates and earlier native source reference. Detailed proofs, parameter ledgers and recorded experiments accompany both.
 
-[Mathematics](docs/README.md) · [Parameters](parameters/README.md) · [Benchmarks](benchmarks/README.md) · [Downstream papers and repositories](impact/README.md)
+[Rust library](docs/rust-library.md) · [Mathematics](docs/README.md) · [Parameters](parameters/README.md) · [Benchmarks](benchmarks/README.md) · [Downstream papers and repositories](impact/README.md)
+
+## Use the Rust frontend and backend
+
+Build a binary circuit with AND, XOR and NOT gates, pin its public inputs and outputs, and call `setup`, `prove` and `verify`. `prove_relation` and `verify_relation` accept a generic quadratic ring relation directly. Proofs have a canonical byte encoding and can be verified in a separate process.
+
+```sh
+cargo test --workspace --all-targets --release --locked
+cargo run --release -p leash --example library
+cargo run --release -p leash -- demo --out demo-output
+cargo run --release -p leash -- verify --parameters demo-output/parameters.json --circuit demo-output/circuit.json --proof demo-output/proof.leash --context leash/example/v1
+```
+
+The implemented path uses deterministic norm bounds, full residue decomposition, explicit padding constraints and complete-session retries. The seed-expanded setup and SHAKE Fiat–Shamir compiler are experimental; this release makes no zero-knowledge or certified security-level claim. The generic relation interface exposes its extraction norm slack. [API, CLI and integration guide](docs/rust-library.md) · [Implemented equations](docs/rust-protocol.md).
 
 ## Findings and reconstruction
 
@@ -47,7 +60,7 @@ The final recorded path has seven ordinary-core layers, ring degree 64, inner ra
 
 The source fingerprint uses 187 challenge bits; the two core aggregation challenges total 1,960 bytes across seven layers. Dense independent JL matrices still dominate verifier communication, at about 67.54 GiB in the explicit encoding. The [parameter ledger](parameters/README.md) gives the complete accounting and the exact statistical expression.
 
-These figures describe the reconstructed encoding. A compact recursive implementation, Fiat–Shamir compilation and concrete computational-security bounds at the extraction runtimes remain open. The measured implementation above covers the native source and exact predicates.
+These figures describe the reconstructed encoding. The Rust backend follows a different, conservative decomposition profile and reports its actual serialized sizes. It does not implement this optimized ledger. A proved Fiat–Shamir compiler and concrete computational-security bounds at the extraction runtimes remain open. The CPU batch above covers the earlier Python native source and exact predicates.
 
 ## Build and reproduce
 
@@ -84,6 +97,7 @@ The [experiment runner](experiments/README.md) records configurations, logs, exi
 
 ```text
 assets/         Homepage artwork
+crates/         Rust arithmetic, circuit frontend, recursive backend and CLI
 src/            Python arithmetic and reference implementation
 examples/       Executable certificates and native source example
 tests/          Exact arithmetic and interface regression tests
@@ -97,13 +111,16 @@ research/       Detailed proofs, reviews, scripts and hashed records
 
 | Component | Entry point |
 | --- | --- |
+| Callable frontend, backend and CLI | [leash](crates/leash) · [Usage guide](docs/rust-library.md) |
+| Rust binary circuit and native source | [leash-frontend](crates/leash-frontend) |
+| Rust ring arithmetic and relations | [leash-core](crates/leash-core) |
 | Modular projection certificates | [bounds.py](src/labrador_repair/bounds.py) |
 | Challenge families and exact membership | [challenges.py](src/labrador_repair/challenges.py) · [fourier.py](src/labrador_repair/fourier.py) |
 | Energy counting and folding moments | [energy.py](src/labrador_repair/energy.py) · [folding.py](src/labrador_repair/folding.py) |
 | Source relations and full-witness codec | [r1cs.py](src/labrador_repair/r1cs.py) · [native_reference.py](src/labrador_repair/native_reference.py) |
 | Extraction-loss certificates | [extraction_bounds.py](src/labrador_repair/extraction_bounds.py) |
 
-The [14 November 2026 handoff](CLOSEOUT.md) records the completed research scope. The tag `research-closeout-2026-11-14` preserves that snapshot; the paper census and repository presentation are subsequent additions.
+The [14 November 2026 handoff](CLOSEOUT.md) records the earlier research closeout. The tag `research-closeout-2026-11-14` preserves that snapshot. The paper census, repository presentation and Rust implementation are subsequent additions authorized by the author.
 
 ## Papers and implementation dependencies
 
