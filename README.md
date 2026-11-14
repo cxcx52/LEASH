@@ -73,13 +73,52 @@ identity R1CS instance of the indicated size.
 All nine proofs verified after serialization and decoding.
 [Configuration, results, and reproduction](benchmarks/README.md).
 
-The [completeness example](docs/completeness.md) checks a small, deterministic
-counterexample to the original fixed-profile norm budget, then completes a
-LEASH proof and verification for the same binary instance:
+## Completeness example
+
+The example uses a valid 448-variable binary R1CS instance with `A = B = C = I`
+and an all-one assignment. It checks the original fixed-profile norm budget,
+then proves and verifies the same instance with LEASH's default parameters.
+Both profiles use inner commitment rank 24.
 
 ```sh
 cargo run --release --locked -p leash --example completeness
 ```
+
+The Gram digits alone require more squared norm than the original budget
+allows for the entire target witness:
+
+| Quantity | Exact value | Approximate value |
+| --- | ---: | ---: |
+| Lower bound for the Gram digits | 154,215,936 / 101 | 1,526,890.46 |
+| Original total norm budget | 102,115,328 / 81 | 1,260,683.06 |
+
+The lower bound is about **21.1% over budget**, independently of the random
+challenges. Selected fields from one run:
+
+```json
+{
+  "source_assignment_valid": true,
+  "result": "Gram digits alone exceed the fixed ordinary-round target norm budget",
+  "original_protocol_or_library_executed": false
+}
+```
+
+LEASH completed proof generation, encoding, decoding, and full verification:
+
+```json
+{
+  "canonical_round_trip_matches": true,
+  "proof_bytes": 85147,
+  "verification": {
+    "accepted": true,
+    "attempt": 0,
+    "recursive_rounds": 1
+  }
+}
+```
+
+Proof sizes and retry counts can vary with setup and proof randomness.
+[Derivation and checked scope](docs/completeness.md).
 
 ## Development
 
@@ -103,10 +142,10 @@ cargo doc --workspace --no-deps --open
 
 | Dependency | Papers |
 | --- | --- |
-| Exact lower-tail bound | RoKoko (ASIACRYPT), Orthus (CRYPTO) |
-| Numerical premise or norm slack | Grand Danois (ePrint), Aggregating Falcon Signatures (CRYPTO), Symphony (ASIACRYPT), Toolkit (CCS), Lemur+ (ePrint) |
-| Backend or composition | Greyhound (CRYPTO), Hachi (ePrint), LaZer (CCS), Unmasking TRaccoon (CRYPTO), LaBinius (ePrint) |
-| Optional LaBRADOR compression | RoK, Paper, SISsors (ASIACRYPT); LatticeFold (ASIACRYPT); Serval (ePrint) |
+| Exact lower-tail bound | RoKoko (ASIACRYPT 2026), Orthus (CRYPTO 2026) |
+| Numerical premise or norm slack | Grand Danois (ePrint 2026), Aggregating Falcon Signatures (CRYPTO 2024), Symphony (ASIACRYPT 2026), Toolkit (CCS 2026), Lemur+ (ePrint 2026) |
+| Backend or composition | Greyhound (CRYPTO 2024), Hachi (ePrint 2026), LaZer (CCS 2024), Unmasking TRaccoon (CRYPTO 2025), LaBinius (ePrint 2026) |
+| Optional LaBRADOR compression | RoK, Paper, SISsors (ASIACRYPT 2024); LatticeFold (ASIACRYPT 2025); Serval (ePrint 2025) |
 
 The [paper table](impact/README.md) identifies the affected claim, configuration,
 and source pages. The [implementation table](impact/REPOSITORIES.md) covers
