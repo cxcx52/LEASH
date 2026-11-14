@@ -1,0 +1,43 @@
+{
+  "coarse_precision": [
+    {
+      "bits": 1,
+      "cases": 5625,
+      "paths": {
+        "exact_fallback": 3484,
+        "interval_accept": 2073,
+        "interval_reject": 68
+      }
+    },
+    {
+      "bits": 2,
+      "cases": 5625,
+      "paths": {
+        "interval_reject": 1024,
+        "exact_fallback": 1856,
+        "interval_accept": 2745
+      }
+    },
+    {
+      "bits": 4,
+      "cases": 5625,
+      "paths": {
+        "interval_reject": 1544,
+        "exact_fallback": 432,
+        "interval_accept": 3649
+      }
+    },
+    {
+      "bits": 8,
+      "cases": 5625,
+      "paths": {
+        "interval_reject": 1792,
+        "interval_accept": 3801,
+        "exact_fallback": 32
+      }
+    }
+  ],
+  "monomial_equality_cases": 376,
+  "nearest_rounding_cases": 9624,
+  "pi_nested_interval_cases": 20
+}

@@ -1,0 +1,103 @@
+{
+  "scope": "Arithmetic and heuristic-model comparison; not concrete security certification",
+  "old_cube_payload": {
+    "round_bits": 692224,
+    "final_bits": 829312,
+    "total_bits": 1521536,
+    "total_KiB": 185.734375
+  },
+  "old_choices_energy_payload": {
+    "round_bits": 691200,
+    "final_bits": 799936,
+    "total_bits": 1491136,
+    "total_KiB": 182.0234375
+  },
+  "energy_optimum_payload": {
+    "round_bits": 691200,
+    "final_bits": 780480,
+    "total_bits": 1471680,
+    "total_KiB": 179.6484375
+  },
+  "saving_ratio_exact": "779/23774",
+  "saving_percent_display": 3.2766888197190207,
+  "old_cube_minima": {
+    "core_classical_0292": {
+      "log2_cost": 164.10399999999998,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "core_quantum_0265": {
+      "log2_cost": 148.93,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "core_quantum_0257": {
+      "log2_cost": 144.434,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "matzov_classical": {
+      "log2_cost": 189.39066024663796,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "matzov_quantum_depth_width": {
+      "log2_cost": 179.2275047655653,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    }
+  },
+  "energy_minima": {
+    "core_classical_0292": {
+      "log2_cost": 168.19199999999998,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "core_quantum_0265": {
+      "log2_cost": 152.64000000000001,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "core_quantum_0257": {
+      "log2_cost": 148.032,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "matzov_classical": {
+      "log2_cost": 193.30074693612164,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    },
+    "matzov_quantum_depth_width": {
+      "log2_cost": 182.745290759244,
+      "level": 3,
+      "role": "inner",
+      "method": "generic"
+    }
+  },
+  "old_driver_regression_profiles_identical": true,
+  "matrix_role_count": 21,
+  "old_Q128_statistical_bound": "104042495597843366031603176873399812515096922462063317873143297845802005229282554860887849076497058041156101937192066225964078730420882682577392411249492907929924239409388847347207709155053899708739909219558543786535852254422179438602680186384928979123676752607131942555532576532723122429257458392954364367578297641293113961614713498029242124799851974305204447/1958121715151823246401976816267918530947572586344246514493167831788208754846814018599659260729533880012877479091088667655915276638624025284727352331928659406438534438524455426247986593795775598547385729866379548274737949775888085387238580556031639752464244720563738013187400738810907076238596854559454858481309448985041656542700975321805170922202441039911171656484818496255248624594585560206985396224",
+  "energy_Q128_statistical_bound": "92482005579931448903765612444334358360361684791179778178111952043074856207482445838746557488476039440035863409900636064199340209190144324123838563468472173519200000959060635421532553364587659429976996361752135881584998389906716161039836284733392878451229061457672988145331758839867230877474836285782554656832052212759509889838262482661007083610759705611477769/50856085011908616859260988791933814913231653650367067563694779869389486040455952932305319838067415122324439654594005926683808986289575568567612540597808237102345840774993824288036270922017698107406618171592936301444115984407948303501115432592906884535183236408113157606532993112235825956394288900814802666551320327406088830181717317800233551773406936305585112962448542993717614019734940747518967808",
+  "old_Q128_statistical_bits_display": 133.78942133012816,
+  "energy_Q128_statistical_bits_display": 128.69244342108797,
+  "energy_maximum_inner_radius": 771045600,
+  "energy_maximum_outer_radius": 162112,
+  "source_sha256": {
+    "scripts/joint_energy_parameter_search.py": "95473073f5faf087fd8649110cde0990df037422a0435b888be326a8dc1a3401",
+    "scripts/computational_parameter_screen.py": "ae9c220be6a1d33c23418a4c920b82d0452d2f6cf27ab5eeed9ec3b8147f943b",
+    "work/joint_parameter_search.json": "d53ccf7734a0c05c0093eac7af8064e591fac9e67a86d9460ff75230ae62924a",
+    "work/joint_parameter_model_screen.json": "b800608b7de58331912836c8105dd8c2259ea1318e0e89c5e16f7f7bd2cdcbd2",
+    "work/joint_energy_parameter_search.json": "9b1377cd4740da5d45a115998a1631f99244aa5721d47d12a83cd8d53125db7b",
+    "work/joint_energy_model_screen.json": "5d368972af236312108b7d81be5353ecd3ca92d2d174cf4f4fd08432b046f7d1"
+  }
+}

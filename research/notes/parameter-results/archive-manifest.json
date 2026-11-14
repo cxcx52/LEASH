@@ -1,0 +1,755 @@
+{
+  "scope": "Archive provenance; hashes identify files and do not certify security.",
+  "result_json_policy": "Archived result JSON bytes are preserved exactly. The local .gitattributes marks them -text.",
+  "text_policy": "Authored source/proofs may have portable path, CLI, reference, and newline edits. Original source hashes remain recorded.",
+  "files": [
+    {
+      "source_relative": "notes/parameter-results/markov.json",
+      "archive_relative": "notes/parameter-results/markov.json",
+      "source_sha256": "324b70bffea968b6049cca9fe31b928207996ad9fd1d25c832cf47fbca02390a",
+      "archive_sha256": "324b70bffea968b6049cca9fe31b928207996ad9fd1d25c832cf47fbca02390a",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/paired-fourth.json",
+      "archive_relative": "notes/parameter-results/paired-fourth.json",
+      "source_sha256": "1f806f3ecf562963b1f801d5772b9a09d35c6948cab3b9655b5dffa145a91ecd",
+      "archive_sha256": "1f806f3ecf562963b1f801d5772b9a09d35c6948cab3b9655b5dffa145a91ecd",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/centered-fourth.json",
+      "archive_relative": "notes/parameter-results/centered-fourth.json",
+      "source_sha256": "ecdde5717c73aabc3aa3d50f51e32dbab95041019253b152ef14468a6c44f444",
+      "archive_sha256": "ecdde5717c73aabc3aa3d50f51e32dbab95041019253b152ef14468a6c44f444",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/joint-cube.json",
+      "archive_relative": "notes/parameter-results/joint-cube.json",
+      "source_sha256": "d53ccf7734a0c05c0093eac7af8064e591fac9e67a86d9460ff75230ae62924a",
+      "archive_sha256": "d53ccf7734a0c05c0093eac7af8064e591fac9e67a86d9460ff75230ae62924a",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/joint-cube-models.json",
+      "archive_relative": "notes/parameter-results/joint-cube-models.json",
+      "source_sha256": "b800608b7de58331912836c8105dd8c2259ea1318e0e89c5e16f7f7bd2cdcbd2",
+      "archive_sha256": "b800608b7de58331912836c8105dd8c2259ea1318e0e89c5e16f7f7bd2cdcbd2",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/joint-energy.json",
+      "archive_relative": "notes/parameter-results/joint-energy.json",
+      "source_sha256": "9b1377cd4740da5d45a115998a1631f99244aa5721d47d12a83cd8d53125db7b",
+      "archive_sha256": "9b1377cd4740da5d45a115998a1631f99244aa5721d47d12a83cd8d53125db7b",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/joint-energy-models.json",
+      "archive_relative": "notes/parameter-results/joint-energy-models.json",
+      "source_sha256": "5d368972af236312108b7d81be5353ecd3ca92d2d174cf4f4fd08432b046f7d1",
+      "archive_sha256": "5d368972af236312108b7d81be5353ecd3ca92d2d174cf4f4fd08432b046f7d1",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "notes/parameter-results/outer-ranks.json",
+      "archive_relative": "notes/parameter-results/outer-ranks.json",
+      "source_sha256": "c7ba67ffbf2a7194559a4658d747aecc1dfaff4cbc13a9488b6c62acbc10044f",
+      "archive_sha256": "c7ba67ffbf2a7194559a4658d747aecc1dfaff4cbc13a9488b6c62acbc10044f",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/joint_energy_comparison.json",
+      "archive_relative": "notes/parameter-results/joint-energy-comparison.json",
+      "source_sha256": "f76cf2b08f696bce766fb17a29705428c303fafa76c157a063e8df07f972c1aa",
+      "archive_sha256": "f76cf2b08f696bce766fb17a29705428c303fafa76c157a063e8df07f972c1aa",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/joint_cube_model_regression.json",
+      "archive_relative": "notes/parameter-results/joint-cube-regression.json",
+      "source_sha256": "b800608b7de58331912836c8105dd8c2259ea1318e0e89c5e16f7f7bd2cdcbd2",
+      "archive_sha256": "b800608b7de58331912836c8105dd8c2259ea1318e0e89c5e16f7f7bd2cdcbd2",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/fixed_energy_challenge_checks.json",
+      "archive_relative": "notes/parameter-results/fixed-energy-challenge-checks.json",
+      "source_sha256": "3a80e1473fae3cfa8442f988c3f399eaf0915d8e6e10c4ac65e05eac274daab5",
+      "archive_sha256": "3a80e1473fae3cfa8442f988c3f399eaf0915d8e6e10c4ac65e05eac274daab5",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/fixed_energy_root_check.json",
+      "archive_relative": "notes/parameter-results/fixed-energy-root-check.json",
+      "source_sha256": "79448da2d39101a24926eb5cd82bd36bac4e8791eec66a66412d8f0105f7058d",
+      "archive_sha256": "79448da2d39101a24926eb5cd82bd36bac4e8791eec66a66412d8f0105f7058d",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/computational_loss_peer_checks.json",
+      "archive_relative": "notes/parameter-results/computational_loss_peer_checks.json",
+      "source_sha256": "d54841a923a269a29b3e24960b34857d665df35c37ade55b5bb7ea5eca1abac6",
+      "archive_sha256": "d54841a923a269a29b3e24960b34857d665df35c37ade55b5bb7ea5eca1abac6",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/filtered_fourth_moment_peer_checks.json",
+      "archive_relative": "notes/parameter-results/filtered_fourth_moment_peer_checks.json",
+      "source_sha256": "4660bd36dde987c7d2212db6fa6bce9158eec3d57c6e695133cf831d6c377bd8",
+      "archive_sha256": "4660bd36dde987c7d2212db6fa6bce9158eec3d57c6e695133cf831d6c377bd8",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/filtered_fourth_moment_author_rerun.json",
+      "archive_relative": "notes/parameter-results/filtered_fourth_moment_author_rerun.json",
+      "source_sha256": "f4637161569fa263820d47aca9d34bd2396adf1253f5b874eb29c14bbc1e073f",
+      "archive_sha256": "f4637161569fa263820d47aca9d34bd2396adf1253f5b874eb29c14bbc1e073f",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/parameter_feasibility_checks.json",
+      "archive_relative": "notes/parameter-results/parameter_feasibility_checks.json",
+      "source_sha256": "b14a6192a4a19860e72fee84feb954c6a740c5242e3405702659c6349b88e689",
+      "archive_sha256": "b14a6192a4a19860e72fee84feb954c6a740c5242e3405702659c6349b88e689",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/parameter_feasibility_peer_rerun.json",
+      "archive_relative": "notes/parameter-results/parameter_feasibility_peer_rerun.json",
+      "source_sha256": "b14a6192a4a19860e72fee84feb954c6a740c5242e3405702659c6349b88e689",
+      "archive_sha256": "b14a6192a4a19860e72fee84feb954c6a740c5242e3405702659c6349b88e689",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/certified_fourier_peer_run.json",
+      "archive_relative": "notes/parameter-results/certified_fourier_peer_run.json",
+      "source_sha256": "53336829328a96871ba3045a5daac0b3c37cd2807d7932ac2f322974bc4b89a0",
+      "archive_sha256": "53336829328a96871ba3045a5daac0b3c37cd2807d7932ac2f322974bc4b89a0",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "work/certified_fourier_peer_extra.json",
+      "archive_relative": "notes/parameter-results/certified_fourier_peer_extra.json",
+      "source_sha256": "d58b3c84b7721003ee7125a01891ba42ac7318ae60c30cce8b4c76566449900e",
+      "archive_sha256": "d58b3c84b7721003ee7125a01891ba42ac7318ae60c30cce8b4c76566449900e",
+      "byte_identical": true,
+      "editorial_changes": []
+    },
+    {
+      "source_relative": "proofs/protocol_repair.md",
+      "archive_relative": "proofs/protocol_repair.md",
+      "source_sha256": "3b4c15b6953698a6ed544e0ff40b9be2067d5eb12e7d3572a9a81c26c7101c9d",
+      "archive_sha256": "6fea4407bd9a479dfa24df3c96c5e6a372f1ea62fd5b862111e750468c3b1945",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/r1cs_repair.md",
+      "archive_relative": "proofs/r1cs_repair.md",
+      "source_sha256": "b8361988e74754d2dfcf77a7bc39c100b0a23f198dce11a1dce55416ace5223b",
+      "archive_sha256": "a93c7b39c98afec5f30afa2c7339138cb7656ae725268771a28fa0574d5db3f9",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/computational_binding_review.md",
+      "archive_relative": "proofs/computational_binding_review.md",
+      "source_sha256": "fbb950a57a87ad9cd13f93ce56dd7cb63b012279d55428871c8d9ec6c17617be",
+      "archive_sha256": "e4e85b8392e7add98acf0834c3ca0a5d09db94ca591711c8d2e62e90d1214d4f",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/computational_binding_peer_review.md",
+      "archive_relative": "proofs/computational_binding_peer_review.md",
+      "source_sha256": "b9fe659b69ecc4ad14985ef8e74120040dfef6dd9c3ecc4ac02bd70e378f557b",
+      "archive_sha256": "30dfa768b495377af46f7caca59239c42f31991fecd0308a8389c10e66d5ee3d",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/composition_repair.md",
+      "archive_relative": "proofs/composition_repair.md",
+      "source_sha256": "dd2937149921be24a0df96a4cf86180fd170f8053dcae2ba2df443e2647d69c8",
+      "archive_sha256": "b3c4586d3f6ffab776e129e5e3816e4377a1069d74612b78c62500b7516fb1e4",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/composition_peer_review.md",
+      "archive_relative": "proofs/composition_peer_review.md",
+      "source_sha256": "f19d1b546c4f4a87a1b41b0b29c2bcbe4b6574178f428e3a38e4b30e05974d6a",
+      "archive_sha256": "98b2534ca18a6137f4aeb708e84f62c92208b69e625a91d1ddc5254c62041c0c",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/computational_loss_refinement.md",
+      "archive_relative": "proofs/computational_loss_refinement.md",
+      "source_sha256": "e01193409c3511e3fd146361e637836049579f2611e845c4674e730c65b5c0e6",
+      "archive_sha256": "e01193409c3511e3fd146361e637836049579f2611e845c4674e730c65b5c0e6",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/computational_loss_refinement_peer_review.md",
+      "archive_relative": "proofs/computational_loss_refinement_peer_review.md",
+      "source_sha256": "81e8aef18fb0171c15adae08e3e338d23fb72c0679fb7cd662bad8e8f9e8b158",
+      "archive_sha256": "a1527b44997b049958d5e993f89ed7d1841d41a2fe895b1c1af4db2cbe936001",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/bounded_restart_repair.md",
+      "archive_relative": "proofs/bounded_restart_repair.md",
+      "source_sha256": "1c7d8a927ff9c1337ae4b226062fd478d0b702d33be76c9328cf5e51c0c42a70",
+      "archive_sha256": "1c7d8a927ff9c1337ae4b226062fd478d0b702d33be76c9328cf5e51c0c42a70",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/certified_filtered_challenges.md",
+      "archive_relative": "proofs/certified_filtered_challenges.md",
+      "source_sha256": "069f5afec582d371d5d978452765166b3d8ebd7e997bf9f9e199309f3fbe9646",
+      "archive_sha256": "b13391881662a1c17c4cf7c5888e7ef6406df5fac3c1b2aeaab1cff595b4bd86",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/filtered_challenges_peer_review.md",
+      "archive_relative": "proofs/filtered_challenges_peer_review.md",
+      "source_sha256": "0b8805bc5b4800ec784abc42b3cb2015dc0c25f2b3620b2a65be9258ae9bd5d7",
+      "archive_sha256": "0b8805bc5b4800ec784abc42b3cb2015dc0c25f2b3620b2a65be9258ae9bd5d7",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/filtered_fourth_moment.md",
+      "archive_relative": "proofs/filtered_fourth_moment.md",
+      "source_sha256": "3bb8f7bbe440e190077c9829fd6798da89e9cb8e1a125d6a0922562fc4aa47c0",
+      "archive_sha256": "3bb8f7bbe440e190077c9829fd6798da89e9cb8e1a125d6a0922562fc4aa47c0",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/filtered_fourth_moment_peer_review.md",
+      "archive_relative": "proofs/filtered_fourth_moment_peer_review.md",
+      "source_sha256": "81eb42561a90336f3532e53c3211b01a0d3a2eb1ab7b9c0929d02f201750c047",
+      "archive_sha256": "a617da0802adfa769dacd318f9210985679bea3a5a24313df7ee15bd82405868",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/fixed_energy_challenge_exploration.md",
+      "archive_relative": "proofs/fixed_energy_challenge_exploration.md",
+      "source_sha256": "83ff99a97e3d392833ef31158ffcbd986bd83befc961c04eb783b412bbf5d2da",
+      "archive_sha256": "225c3b8557e7d0359170cdf7f756e05244992e0b9445b73cdac0e0aa988fd3f7",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/bounded_energy_peer_review.md",
+      "archive_relative": "proofs/bounded_energy_peer_review.md",
+      "source_sha256": "cfbd7ec8367f91282e2f1520f378b824ea36446800965049aa3fc914459e3536",
+      "archive_sha256": "cfbd7ec8367f91282e2f1520f378b824ea36446800965049aa3fc914459e3536",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/parameter_feasibility.md",
+      "archive_relative": "proofs/parameter_feasibility.md",
+      "source_sha256": "cceff8977ce348dd623fe7248d1c869bf0bdda8a47fd54d820902adae80e2ec7",
+      "archive_sha256": "2c720281dbad1234d763f720b8e17e2c1e4f3d9c239bfe114f388f1cb8c0547d",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/parameter_feasibility_peer_review.md",
+      "archive_relative": "proofs/parameter_feasibility_peer_review.md",
+      "source_sha256": "030488a0bfbfae2d5683c84855cd3b8dcc125c8b9930f08e19bc8584f6db6832",
+      "archive_sha256": "dfb6f3a6c71b3ebc10daa56a5e2b42a3c14453b8432afcffedcb1890e41a4d24",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/jl_repair_review.md",
+      "archive_relative": "proofs/jl_repair_review.md",
+      "source_sha256": "5ab8aac58701514c522928cc9522a9e8f71a689cdc9466c6dad0c954b4f3b979",
+      "archive_sha256": "5ab8aac58701514c522928cc9522a9e8f71a689cdc9466c6dad0c954b4f3b979",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/jl_peer_review.md",
+      "archive_relative": "proofs/jl_peer_review.md",
+      "source_sha256": "1e0662f4c8eed9bb07cf2f8327b330285014d088e104040a94b42f41720027bd",
+      "archive_sha256": "e7d4c2d2e5f13c530239beb1ffe25001f4d99d7ef612ab787e91cf82f426c4bb",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/jl_security_family.md",
+      "archive_relative": "proofs/jl_security_family.md",
+      "source_sha256": "5d9bf788f7614de9f5ea6d7261141ead137272f0bcc171286cdc9dc822ff9b43",
+      "archive_sha256": "1fba5be7720534e77f63e717a0fbf14fb3167b227783ddb4ad4d66932914aa4e",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text.",
+        "Base English projection proof is linked inside this self-contained archive."
+      ]
+    },
+    {
+      "source_relative": "proofs/statistical_family.md",
+      "archive_relative": "proofs/statistical_family.md",
+      "source_sha256": "bead8917eb792effb442c2b055161fdfb1f19543617c4316853023731628a17d",
+      "archive_sha256": "bead8917eb792effb442c2b055161fdfb1f19543617c4316853023731628a17d",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/joint_parameter_peer_review.md",
+      "archive_relative": "proofs/joint_parameter_peer_review.md",
+      "source_sha256": "38a628f1baca69397dbee342d32c9aaa0d1273aa883d2b33f1bca27353cb1712",
+      "archive_sha256": "38a628f1baca69397dbee342d32c9aaa0d1273aa883d2b33f1bca27353cb1712",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/outer_rank_peer_review.md",
+      "archive_relative": "proofs/outer_rank_peer_review.md",
+      "source_sha256": "84b06c82d989264fdf74e33a5e7d0a51efa53da6003baba35031094adcbcf64c",
+      "archive_sha256": "84b06c82d989264fdf74e33a5e7d0a51efa53da6003baba35031094adcbcf64c",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/architecture_limits.md",
+      "archive_relative": "proofs/architecture_limits.md",
+      "source_sha256": "ee8321c35dbd86040ff8f60b62a56cb095ddb360f6348c84ed50f11e98349a55",
+      "archive_sha256": "468beb00412939ca8591a8300ebdba9035f2fdca0069e54bb3edc4a524fa0448",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/boolean_bridge_toy.md",
+      "archive_relative": "proofs/boolean_bridge_toy.md",
+      "source_sha256": "2dd980eae1204255390e7d9aaee8194903441bec2a0e0997bf41ce5c7cc6d198",
+      "archive_sha256": "2dd980eae1204255390e7d9aaee8194903441bec2a0e0997bf41ce5c7cc6d198",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/certified_fourier_predicate.md",
+      "archive_relative": "proofs/certified_fourier_predicate.md",
+      "source_sha256": "5c832cf0699b616977003c86c00c8480f7b76f1ba9a4f4c9fefae538f7a5a3c0",
+      "archive_sha256": "ca2ea684a9f58b034c4775c6512a033f620846b66944da18dd0236318e580cc2",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "proofs/certified_fourier_peer_review.md",
+      "archive_relative": "proofs/certified_fourier_peer_review.md",
+      "source_sha256": "eb08f3fc37d5859e1538fcd899607c107f9bc2be15bbbdf1540a01d69892bdd7",
+      "archive_sha256": "149b72f34dd782386758ac63e92c88b35723d764a2a9afaddc28360a463c34b2",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "notes/computational_parameter_screen.md",
+      "archive_relative": "notes/computational_parameter_screen.md",
+      "source_sha256": "e0dd9fbf6f70dd071cdecdd2c0333436b5075c0149a3713352bb9e1492cab853",
+      "archive_sha256": "e0dd9fbf6f70dd071cdecdd2c0333436b5075c0149a3713352bb9e1492cab853",
+      "byte_identical": true,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "notes/joint_parameter_search.md",
+      "archive_relative": "notes/joint_parameter_search.md",
+      "source_sha256": "1cb962c46c95c967b2e88c258701d05f1054c5a58999615f3139c5a613fb2ca2",
+      "archive_sha256": "fceea633fd81ba6adccea3a1b4e0a6f775d966b5e1faa34bf137e325676606d6",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "notes/joint_energy_parameter_search.md",
+      "archive_relative": "notes/joint_energy_parameter_search.md",
+      "source_sha256": "15373460dcd89a089b8e720a4340fbe33eb5934c30c45ade6c0b089209a5de0f",
+      "archive_sha256": "9a584e8c7e635ec4fc023485b16158620b787ee44ef3ea1a194050cdb318d989",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "notes/outer_rank_parameter_screen.md",
+      "archive_relative": "notes/outer_rank_parameter_screen.md",
+      "source_sha256": "3a8970c6ebd414684122be45ad36ce20c1dcb90447f8fd26ea85a21bd797d381",
+      "archive_sha256": "6b14d41f386b05a34fcfe596784178316f40258d9f1184d41b5bdb9dbf439390",
+      "byte_identical": false,
+      "editorial_changes": [
+        "Archive-result references and machine-specific reproduction commands made portable; mathematics and recorded values retained.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/parameter_feasibility_checks.py",
+      "archive_relative": "scripts/parameter_feasibility_checks.py",
+      "source_sha256": "ad9e548d7b549c2801ce9333f1b1e66fe14e6d21b2636e74413b685e8408f094",
+      "archive_sha256": "ad9e548d7b549c2801ce9333f1b1e66fe14e6d21b2636e74413b685e8408f094",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/certified_filtered_challenges_checks.py",
+      "archive_relative": "scripts/certified_filtered_challenges_checks.py",
+      "source_sha256": "d34113f51dbc80703422bf6d55b81bd8249819e343a72f446b542bd5aecca994",
+      "archive_sha256": "507f88f542fb94457e8ed5ef4bacb0d3782b77d5010f06b2d71f1fc5fd068445",
+      "byte_identical": false,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/fixed_energy_challenge_checks.py",
+      "archive_relative": "scripts/fixed_energy_challenge_checks.py",
+      "source_sha256": "d2ce9018c619557d339a4431d38b0ec8daf7bada158be1fa6a89065dd9ecbca0",
+      "archive_sha256": "d2ce9018c619557d339a4431d38b0ec8daf7bada158be1fa6a89065dd9ecbca0",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/joint_parameter_search.py",
+      "archive_relative": "scripts/joint_parameter_search.py",
+      "source_sha256": "c21d7ebb9a8e1e5cc523ba4f9ce295cf4485a1cfe6aabe165c852cbc4af67037",
+      "archive_sha256": "c21d7ebb9a8e1e5cc523ba4f9ce295cf4485a1cfe6aabe165c852cbc4af67037",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/joint_energy_parameter_search.py",
+      "archive_relative": "scripts/joint_energy_parameter_search.py",
+      "source_sha256": "95473073f5faf087fd8649110cde0990df037422a0435b888be326a8dc1a3401",
+      "archive_sha256": "95473073f5faf087fd8649110cde0990df037422a0435b888be326a8dc1a3401",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/computational_parameter_screen.py",
+      "archive_relative": "scripts/computational_parameter_screen.py",
+      "source_sha256": "ae9c220be6a1d33c23418a4c920b82d0452d2f6cf27ab5eeed9ec3b8147f943b",
+      "archive_sha256": "ff8e5f5f29662380d9e82f281ccd4a7eecb08c4ba9895217c7fb300ac509594f",
+      "byte_identical": false,
+      "editorial_changes": [
+        "External estimator path is now an explicit required CLI argument; no cost formulas changed.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/outer_rank_parameter_screen.py",
+      "archive_relative": "scripts/outer_rank_parameter_screen.py",
+      "source_sha256": "ee7d5c29d0233a582f18fee7310ea3a87733bc42ff3fffd3b331fce67ec4908f",
+      "archive_sha256": "b5321230682572d7f0b98e2312bf041359e4c7d780d96e81fdd88e34498cfc42",
+      "byte_identical": false,
+      "editorial_changes": [
+        "External estimator path is now an explicit required CLI argument; no cost formulas changed.",
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/filtered_fourth_moment_checks.py",
+      "archive_relative": "scripts/filtered_fourth_moment_checks.py",
+      "source_sha256": "6e2fae8137f0202b66568d6dc977eea6ac8c0ffa664a9c0c8173e48f047d4a21",
+      "archive_sha256": "6e2fae8137f0202b66568d6dc977eea6ac8c0ffa664a9c0c8173e48f047d4a21",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/filtered_fourth_moment_peer_checks.py",
+      "archive_relative": "scripts/filtered_fourth_moment_peer_checks.py",
+      "source_sha256": "5cdcb500addb8221d08fce32613f16e632f8f131111f11d854b38542de03e25d",
+      "archive_sha256": "5cdcb500addb8221d08fce32613f16e632f8f131111f11d854b38542de03e25d",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/filtered_covariance_peer_checks.py",
+      "archive_relative": "scripts/filtered_covariance_peer_checks.py",
+      "source_sha256": "bd1a58a16c1036904eb90c03789de462a55c881460a90f9d86cb2e95ae19b9cf",
+      "archive_sha256": "bd1a58a16c1036904eb90c03789de462a55c881460a90f9d86cb2e95ae19b9cf",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/computational_loss_refinement_checks.py",
+      "archive_relative": "scripts/computational_loss_refinement_checks.py",
+      "source_sha256": "2b0fbfe011a360ddfd9b42854c2469e1c913f8c4701824e87052f9c5813d1837",
+      "archive_sha256": "2b0fbfe011a360ddfd9b42854c2469e1c913f8c4701824e87052f9c5813d1837",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/computational_loss_peer_checks.py",
+      "archive_relative": "scripts/computational_loss_peer_checks.py",
+      "source_sha256": "8dec7736ee72a1563f4e9ea31d5c9b4f3864ab23050d71e0fdf3a79124c29709",
+      "archive_sha256": "8dec7736ee72a1563f4e9ea31d5c9b4f3864ab23050d71e0fdf3a79124c29709",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/bounded_restart_checks.py",
+      "archive_relative": "scripts/bounded_restart_checks.py",
+      "source_sha256": "db519efe6c5788db73def85351df45c92bed301a3fe07a6b0b133beb78a9d098",
+      "archive_sha256": "db519efe6c5788db73def85351df45c92bed301a3fe07a6b0b133beb78a9d098",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/gated_row_checks.py",
+      "archive_relative": "scripts/gated_row_checks.py",
+      "source_sha256": "07bf0b5603e9fd09ae239d6f94aed1d62ed6a133af620ecc1aed79d9001902a9",
+      "archive_sha256": "b5181396db1a4093ee210708a6232e7a7e590c1560ac97106d04fd67570b3263",
+      "byte_identical": false,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/jl_exact_checks.py",
+      "archive_relative": "scripts/jl_exact_checks.py",
+      "source_sha256": "c7934fff14386159d0184010d841c5be833b6b62aec0b1d8014721ed9420120c",
+      "archive_sha256": "c7934fff14386159d0184010d841c5be833b6b62aec0b1d8014721ed9420120c",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/jl_family_checks.py",
+      "archive_relative": "scripts/jl_family_checks.py",
+      "source_sha256": "93067b42d58839350503318e1d48c01dd6144d21ae5222027372124cd7b7007e",
+      "archive_sha256": "93067b42d58839350503318e1d48c01dd6144d21ae5222027372124cd7b7007e",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/jl_repair_review_checks.py",
+      "archive_relative": "scripts/jl_repair_review_checks.py",
+      "source_sha256": "cb4897caefb38e1ce7250d6f023f371409ca0e48bd0d5d1273a2444ec48fc339",
+      "archive_sha256": "cb4897caefb38e1ce7250d6f023f371409ca0e48bd0d5d1273a2444ec48fc339",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/statistical_family_checks.py",
+      "archive_relative": "scripts/statistical_family_checks.py",
+      "source_sha256": "b7b8a1d285b164346d1d4a663cdc13e3ea6e5999dba6b35cb2461af092028096",
+      "archive_sha256": "b7b8a1d285b164346d1d4a663cdc13e3ea6e5999dba6b35cb2461af092028096",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/r1cs_checks.py",
+      "archive_relative": "scripts/r1cs_checks.py",
+      "source_sha256": "367ca3c1902a96033b6b54ca93169a9487ac0eb6db8138574e38dc40f5b16e0c",
+      "archive_sha256": "f2c770bc3e5e7560d7069b48818034b9553b8d937af0e8f4689c27cb18ba6727",
+      "byte_identical": false,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/architecture_checks.py",
+      "archive_relative": "scripts/architecture_checks.py",
+      "source_sha256": "a65b84df1e51ebf5003361df031375d6400ad379074bfb96cf6bef24d70e184c",
+      "archive_sha256": "f30be0ccd6550b58d38e5fe96bc6d0f24ebc7fa7e523907a4aa485f5ac3e45db",
+      "byte_identical": false,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/boolean_bridge_toy.py",
+      "archive_relative": "scripts/boolean_bridge_toy.py",
+      "source_sha256": "5441153ef9751b19448cd495b538e071db65b977ed2385f375d544792a28206b",
+      "archive_sha256": "5441153ef9751b19448cd495b538e071db65b977ed2385f375d544792a28206b",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/certified_fourier_predicate.py",
+      "archive_relative": "scripts/certified_fourier_predicate.py",
+      "source_sha256": "375b2ea1bc82133bea86efbed485b6f835b0c29c6acf905924543ff63bbed16e",
+      "archive_sha256": "375b2ea1bc82133bea86efbed485b6f835b0c29c6acf905924543ff63bbed16e",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "scripts/certified_fourier_peer_checks.py",
+      "archive_relative": "scripts/certified_fourier_peer_checks.py",
+      "source_sha256": "3f0ac284f7bc9112670fd01996e99ba4f749cdfec4c8c90818d12884b8276b04",
+      "archive_sha256": "3f0ac284f7bc9112670fd01996e99ba4f749cdfec4c8c90818d12884b8276b04",
+      "byte_identical": true,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "notes/backend_directions.md",
+      "archive_relative": "notes/backend_directions.md",
+      "source_sha256": "3342972cf4463cf9b8b3b3fd09787bd0a51d1343a1c8bce80ad1b1a793b44b1a",
+      "archive_sha256": "0dd9cec7bc94b4e89c079f1d544f4e66bc23ec69da85463b6bc484d5c6b04e98",
+      "byte_identical": false,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text."
+      ]
+    },
+    {
+      "source_relative": "public/labrador-rigorous-repair/docs/modular-jl.md",
+      "archive_relative": "proofs/modular-jl.md",
+      "source_sha256": "4d6ce6dd400ddaa6d835af527140cc3e2397d827383a1c353f013f58e4003235",
+      "archive_sha256": "acbdb796bb36f7dbb8ff0cfc219e56f45bc679cff04314d3d1476944e1b0f0ce",
+      "byte_identical": false,
+      "editorial_changes": [
+        "UTF-8 without BOM and LF line endings for authored text.",
+        "Certificate reference points to the equivalent standalone arithmetic checker bundled here.",
+        "Code-correspondence field names and finite-check description adapted to the bundled standalone checkers, without changing the mathematical bounds."
+      ]
+    }
+  ]
+}

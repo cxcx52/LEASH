@@ -19,6 +19,10 @@
 | Ordinary-core statistical parameter family | Proved | Ring degree, challenge size, aggregation count and JL parameters all scale; exact examples |
 | Ordinary-layer composition and affine-plus-core corollary | Proved under explicit wrapper conditions; independently reviewed | Fresh final-reply coins, exact relaxed relations, actual norm caps and a checked polynomial runtime product |
 | Bounded complete ordinary restarts | Proved under the gate-preserving interface; independently reviewed | Disjoint first-acceptance coupling, adaptive rejected histories, additive errors, uniform expected cost and exact completeness bound |
+| Exact ordinary-core parameter paths and finite digit-domain search | Arithmetic certificates; independently reviewed | Archived cube/energy paths, norm and padding checks, exact Pareto search, and byte-preserving provenance |
+| 155.1484375 KiB ordinary-core encoding bound | Certified accounting for the specified parameter path | Inner rank 24, outer rank 9; excludes source frontend, verifier messages, setup, statement, framing, FS and rejected attempts |
+| Five-model SIS cost screens | Heuristic model evaluations, not security lower bounds | Clean pinned estimator; all matrix roles, fit-range and CRT-model limitations recorded in the research archive |
+| Complete native binary source-to-core parameter interface | Under separate audit | Source binding, coefficient pins, aligned conjugate padding, and total interactive communication remain to be discharged |
 | Original concrete recursive schedule | Not certified | Must instantiate those conditions and every computational norm bound |
 | Optimized final round, local retries and noninteractive retry selection | Not certified | The complete-protocol restart theorem does not cover these changes |
 | Fiat-Shamir / QROM | Not certified | Interactive extraction alone is insufficient |

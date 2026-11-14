@@ -23,7 +23,9 @@ This repository develops explicit replacements for several numerical and algebra
 
 ## What is not established
 
-The changed projection and challenge parameters do **not** certify the original 58 KB result. This package does not implement a cryptographic prover or verifier, rerun a Module-SIS hardness estimator, prove Fiat-Shamir or QROM security, or claim zero knowledge. Concrete recursive schedules, parameter feasibility, and backend improvements are tracked separately; a statistical budget is not a complete security level.
+The changed projection and challenge parameters do **not** certify the original 58 KB result. This package does not implement a cryptographic prover or verifier, prove Fiat-Shamir or QROM security, or claim zero knowledge. The optional [research archive](research/README.md) supplies exact recursive schedules and pinned heuristic SIS cost outputs, with separate Sage reproduction scripts. These are cost-model evaluations, not lattice-solving experiments or a complete security level.
+
+The current smallest ordinary-core encoding bound is **155.1484375 KiB per complete attempt**, using the bounded-energy family and independently screened outer ranks. It excludes the source frontend, setup and statement, verifier messages, framing, Fiat-Shamir material, and rejected attempts. The archive preserves the full parameter path, exact finite-domain optimization, earlier comparison stages, and original result hashes. A complete source-to-core interface and end-to-end computational security budget remain open.
 
 The source audit identifies the PDF by SHA-256 `87b99030c9cc11d922ebcb7cc475a5f44ccb20188ec18b1442c2d8f45412e581`. Third-party PDFs are not redistributed.
 
@@ -66,6 +68,7 @@ The tests check exact rational constants, finite distributions, boundary counter
 - [Bounded complete-protocol restarts](docs/bounded-restarts.md)
 - [Statistical parameter family](docs/statistical-family.md)
 - [Claim and verification ledger](docs/status.md)
+- [Research parameter archive and reproduction guide](research/README.md)
 
 ## Contribute
 
