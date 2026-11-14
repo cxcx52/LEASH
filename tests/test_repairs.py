@@ -1,8 +1,8 @@
 import itertools
 import unittest
 from fractions import Fraction as F
-from labrador_repair.bounds import (challenge_cube, jl_certificate, lifting_condition,
-                                    statistical_budget, validate_ring)
+from labrador_repair.bounds import (challenge_cube, jl_certificate, jl_security_profile,
+                                    lifting_condition, statistical_budget, validate_ring)
 from labrador_repair.ring import centered, encode, evaluate, gcd_mod, negacyclic_multiply
 from labrador_repair.r1cs import source_relation, linear_coefficients, encoded_residual
 
@@ -13,6 +13,63 @@ class Repairs(unittest.TestCase):
         for name in ("small_norm_upper", "large_coordinate_upper", "spread_upper"):
             self.assertLess(result[name], F(1, 2**164))
         self.assertEqual(result["honest_rejection_upper"], F(8, 33))
+
+    def test_jl_security_family_ceiling_boundaries(self):
+        # Exact multiples must not round up; the next bit must round up.
+        for k in (1, 2, 3, 4, 7, 16):
+            boundary = 164*k - 32
+            for bits, expected_k in ((boundary-1, k), (boundary, k), (boundary+1, k+1)):
+                with self.subTest(bits=bits):
+                    result = jl_security_profile(bits)
+                    self.assertEqual(result["scale_k"], expected_k)
+                    self.assertLess(164*(expected_k-1), bits+32)
+                    self.assertGreaterEqual(result["failure_bound_exponent"], bits+32)
+                    self.assertLessEqual(result["uniform_failure_bound"], F(1, 2**(bits+32)))
+        for invalid in (127, 0, -1, 128.0, True, "128"):
+            with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                jl_security_profile(invalid)
+
+    def test_jl_security_family_square_boundaries(self):
+        # A floor-square-root error would break the density and count bounds.
+        for root in (2, 3, 4, 16):
+            for k, expected_n in ((root*root-1, root), (root*root, root),
+                                  (root*root+1, root+1)):
+                with self.subTest(k=k):
+                    result = jl_security_profile(164*k-32)
+                    n = result["ceil_sqrt_scale_n"]
+                    self.assertEqual(n, expected_n)
+                    self.assertLessEqual(k, n*n)
+                    self.assertLessEqual(n*n, 2*k)
+                    alpha = result["bad_projection_squared_multiplier_alpha"]
+                    cutoff = result["modulus_cutoff_denominator_K"]
+                    c = result["large_coordinate_cutoff_C"]
+                    self.assertLess(F(4*alpha*c*c, cutoff*cutoff), 40)
+                    self.assertLessEqual(F(k, n*n), 1)
+                    self.assertLessEqual(250*k, cutoff)
+                    self.assertLessEqual(cutoff, 500*k)
+
+    def test_jl_security_family_completeness_and_base(self):
+        base = jl_certificate()
+        for bits in (128, 256, 512):
+            result = jl_security_profile(bits)
+            k = result["scale_k"]
+            rows = result["projection_rows_J"]
+            honest = result["honest_projection_squared_multiplier_H"]
+            alpha = result["bad_projection_squared_multiplier_alpha"]
+            variance = F(rows, 2)
+            cantelli = variance / (variance + (honest - variance)**2)
+            self.assertEqual(result["honest_rejection_upper"], cantelli)
+            self.assertEqual(result["honest_acceptance_lower"], 1-cantelli)
+            self.assertGreaterEqual(1-cantelli, F(25, 33))
+            self.assertEqual(F(honest, alpha), result["slack_squared"])
+            self.assertEqual(result["slack_squared"], F(23, 5))
+            for name in ("small_norm_upper", "large_coordinate_upper", "spread_upper"):
+                self.assertLess(base[name]**k, result["uniform_failure_bound"])
+        first = jl_security_profile(128)
+        self.assertEqual((first["projection_rows_J"],
+                          first["bad_projection_squared_multiplier_alpha"],
+                          first["honest_projection_squared_multiplier_H"],
+                          first["modulus_cutoff_denominator_K"]), (1024, 120, 552, 250))
 
     def test_fourth_moment_by_full_enumeration(self):
         for w in ((1,), (1, 1), (1, 2, 3), (2, -1, 0, 3)):

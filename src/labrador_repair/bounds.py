@@ -4,12 +4,18 @@ These certificates verify numerical steps of the proof in docs/. They do not
 replace the proof, certify Module-SIS hardness, or prove Fiat-Shamir security.
 """
 from fractions import Fraction as F
-from math import comb, factorial
+from math import comb, factorial, isqrt
+
+
+JL_MIN_SECURITY_BITS = 128
+JL_SECURITY_MARGIN_BITS = 32
+JL_BASE_FAILURE_BITS = 164
+JL_BASE_ROWS = 1024
 
 
 def jl_certificate():
     """Return rational upper bounds, using no floating-point decisions."""
-    rows = 1024
+    rows = JL_BASE_ROWS
     # Machin: pi=16 atan(1/5)-4 atan(1/239); alternating-series bounds.
     pi_lower = 16*(F(1,5)-F(1,3*5**3))-F(4,239)
     assert pi_lower > F(157,50)
@@ -33,7 +39,7 @@ def jl_certificate():
     assert F(4, 2**36) < F(1, 10000)
     assert F(6019+1339+1, 10000) < F(736, 1000)
     spread = F(736, 1000)**rows
-    target = F(1, 2**164)
+    target = F(1, 2**JL_BASE_FAILURE_BITS)
     assert all(bound < target for bound in (small_norm, large_coordinate, spread))
     return {
         "small_norm_upper": small_norm,
@@ -42,6 +48,43 @@ def jl_certificate():
         "uniform_bound": target,
         "honest_rejection_upper": F(512, 512+40**2),
         "slack_squared": F(552, 120),
+    }
+
+
+def jl_security_profile(security_bits):
+    """Integer JL family with failure <2^(-security_bits-32).
+
+    Applies to a fixed centered vector, independent projection entries, and
+    0<b<=q/K; see docs/jl-security-family.md for the all-parameter proof.
+    J denotes projection rows and H the honest squared-norm multiplier.
+    This profile does not parameterize the rest of a cryptographic protocol.
+    """
+    if type(security_bits) is not int or security_bits < JL_MIN_SECURITY_BITS:
+        raise ValueError("security_bits must be an integer >=128")
+    requested_bits = security_bits + JL_SECURITY_MARGIN_BITS
+    k = (requested_bits + JL_BASE_FAILURE_BITS - 1) // JL_BASE_FAILURE_BITS
+    n = 1 + isqrt(k - 1)
+    base = jl_certificate()
+    # These substitutions match the universal scaling proof, not a search.
+    assert (n - 1)**2 < k <= n*n <= 2*k
+    assert JL_BASE_FAILURE_BITS * (k - 1) < requested_bits <= JL_BASE_FAILURE_BITS * k
+    return {
+        "security_bits": security_bits,
+        "security_margin_bits": JL_SECURITY_MARGIN_BITS,
+        "scale_k": k,
+        "ceil_sqrt_scale_n": n,
+        "projection_rows_J": JL_BASE_ROWS * k,
+        "bad_projection_squared_multiplier_alpha": 120 * k,
+        "honest_projection_squared_multiplier_H": 552 * k,
+        "small_norm_cutoff_A": 12 * n,
+        "large_coordinate_cutoff_C": 72 * n,
+        "modulus_cutoff_denominator_K": 250 * n*n,
+        "failure_bound_exponent": JL_BASE_FAILURE_BITS * k,
+        "requested_failure_bound_exponent": requested_bits,
+        "uniform_failure_bound": base["uniform_bound"]**k,
+        "honest_rejection_upper": F(8, 8 + 25*k),
+        "honest_acceptance_lower": F(25*k, 8 + 25*k),
+        "slack_squared": base["slack_squared"],
     }
 
 

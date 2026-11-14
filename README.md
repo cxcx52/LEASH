@@ -8,6 +8,7 @@ This repository develops explicit replacements for several numerical and algebra
 
 - **Uniform modular JL bound.** For a fixed centered integer vector with norm at least b, b<=q/250, a 1024-row ternary projection satisfies `Pr(||Pi w mod q||^2 <= 120 b^2) < 2^-164`. The proof covers all dimensions and all positive integer moduli, with closed-event boundaries.
 - **Honest projection completeness.** The threshold `552 beta^2` accepts a fixed honest vector of norm at most beta with probability at least `25/33`. The resulting norm slack is `sqrt(23/5)`.
+- **Security-parameter family.** For every integer `lambda>=128`, explicit integer parameters give a uniform projection error below `2^(-lambda-32)`, with the same norm slack. The all-parameter proof includes the growing wrap union bound; it does not rely on enumerating parameter examples.
 - **Exact challenge family.** Coefficients in `{-2,-1,0,1,2}` give exactly `5^64` challenges, with deterministic operator norm at most 128. Appropriate prime moduli ensure invertible differences. There is no rejection-sampling cardinality estimate in this choice.
 - **Affine-R1CS repair.** The proposed reduction specifies a constant wire, public-input constraints, centered lifts, both commitment equations, corrected aggregation indices and residual equations, and the sufficient lifting condition `sqrt(Md/2)*beta + beta^2/2 < q/2`.
 
@@ -34,6 +35,7 @@ The tests check exact rational constants, finite distributions, boundary counter
 ## Read the mathematics
 
 - [Uniform modular JL theorem](docs/modular-jl.md)
+- [JL family for every security parameter](docs/jl-security-family.md)
 - [Affine-R1CS reduction](docs/affine-r1cs.md)
 - [Challenge family and parameter obligations](docs/challenges.md)
 - [Conditional main-protocol algebra](docs/protocol-conditional.md)
