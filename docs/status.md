@@ -10,11 +10,13 @@
 | Centered-lift sufficient inequality | Proved | Coefficientwise Cauchy-Schwarz and disjoint quadratic blocks |
 | Affine-R1CS bare reduction | Proposed complete proof, internal review | Explicit chronology, composite-modulus aggregation, canonical-opening lemma |
 | Finite, gap-parameterized main-protocol extraction | Proved under explicit classical reset/MSIS model; independently reviewed | Full bounded samplers, norms, canonical-mass losses and runtime |
-| Exact paper-style universal main-protocol extractor | Not yet certified | Unknown-gap expected-time wrapper remains open here |
-| General knowledge composition and unknown-success extractor wrapper | Not yet certified here | Requires a complete quantified theorem |
+| Universal expected-time ordinary-core extractor | Proved under explicit classical reset/MSIS model; independently reviewed | Original accept gate, at most 1+r/(1-1/N) expected executions, additional r/N statistical loss |
+| Ordinary-core statistical parameter family | Proved | Ring degree, challenge size, aggregation count and JL parameters all scale; exact examples |
+| General recursive composition | Under separate review | Requires controlled late randomness, compatible relations and a polynomial total cost |
 | Optimized final round and all retry schedules | Not certified | Must be budgeted separately |
 | Fiat-Shamir / QROM | Not certified | Interactive extraction alone is insufficient |
 | 58 KB or refreshed 128-bit Module-SIS estimate | Not certified | Changed norms and ranks require new accounting |
+| Stronger backend or new security property | Research in progress | Parameter feasibility, structural limits and current prior art must be checked together |
 
 The code certifies arithmetic steps of the mathematical arguments. It is not a machine-checked proof in a proof assistant, and passing tests do not discharge the open obligations in this table.
 

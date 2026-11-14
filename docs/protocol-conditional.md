@@ -1,6 +1,6 @@
 # A parameterized repair of the LaBRADOR main-protocol argument
 
-Status: conditional algebraic/extraction theorem for the ordinary outer-commitment protocol. This is a repair specification and proof, **not a completed computational-security theorem for an implementation**, the optimized final round, or Fiat–Shamir.
+Status: conditional algebraic/extraction theorem for the ordinary outer-commitment protocol. This document isolates the algebraic argument. The [finite computational theorem](finite-extraction.md) and [universal expected-time extractor](unknown-gap-extraction.md) separately replace its uniqueness promises. These results do not certify an implementation, the optimized final round, or Fiat–Shamir.
 
 Source: the local 34-page LaBRADOR PDF, SHA-256 `87b99030c9cc11d922ebcb7cc475a5f44ccb20188ec18b1442c2d8f45412e581`; principally pp. 6–9, 12–19, and 32–34. The corrections below are derived from its equations. Date: 2026-11-14.
 
@@ -89,7 +89,7 @@ This statement deliberately distinguishes two claims:
 - the conditional algebraic/extraction theorem proved here;
 - the exact expected-polynomial/success-probability definition in a final computational proof of knowledge.
 
-An unknown-success-rate wrapper, the computational replacement of uniqueness, and the exact success/error convention of the final definition must be supplied before claiming the latter in full. The quadratic inverse-gap bound of the simple pair extractor is not falsely advertised as the paper's stated linear inverse-gap bound.
+The computational replacement of uniqueness is supplied in [finite-extraction.md](finite-extraction.md); [unknown-gap-extraction.md](unknown-gap-extraction.md) gives the universal extractor with the larger statistical error `κ_stat+r/N`. The quadratic inverse-gap bound of the simple pair extractor in this document is distinct from that accept-gated algorithm.
 
 ## 4. Extraction and its finite expected runtime
 
@@ -204,9 +204,9 @@ These bounds control collision-vector length; they do not by themselves establis
 
 For recursion, use the **actual extracted cap at each edge**, for example `B=s_next·β_next` if the next layer proves only that enlarged relation. Recompute all collision bounds at that B. State compatible completeness and soundness relations at each edge; applying the composition lemma to mismatched exact and slack relations is not justified merely by naming a slack factor. Once the relations and actual single-layer theorems match, the corrected composition lemma gives the sum of their individual knowledge errors.
 
-## 7. What a full computational theorem still requires
+## 7. Computational proof obligations and their resolution
 
-The phrase “MSIS is hard” cannot turn a computational commitment into an injective function on every mathematical opening. A proper proof must construct the following reduction or equivalent games.
+The phrase “MSIS is hard” cannot turn a computational commitment into an injective function on every mathematical opening. The separate finite and accept-gated proofs address the following obligations for the ordinary core:
 
 - Run a finite-time version of the relevant extractor with explicit time/oracle-call bounds.
 - Whenever the needed consistency fails on two sampled transcripts, output the corresponding nonzero MSIS vector, proving both the norm bound and nonzeroness.

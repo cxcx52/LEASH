@@ -17,7 +17,7 @@ For any gap parameter Δ>0 with ρ=κ_stat+Δ<1 and a finite sampling budget wit
 
 A negative right side is read as the trivial lower bound zero. The probability averages over the actual CRS, prover tape, and extractor randomness. No per-CRS binding assumption or per-CRS acceptance lower bound is smuggled into (F).
 
-This closes an asymptotic **computational soundness** consequence under the specified MSIS assumptions and the rigorous JL premise. It also provides a finite extraction family with explicit losses. It does not yet prove a single universal extractor with exactly the original Definition 3.3's expected-polynomial runtime and success `ε_bar−κ_stat−negl`; converting this family to that exact convention remains a separate wrapper obligation. Final-round optimization, Fiat–Shamir, QROM, retries, and concrete 128-bit parameters remain outside the theorem.
+This establishes an asymptotic **computational soundness** consequence and a finite extraction family under the specified MSIS assumptions and rigorous JL premise. A separate [accept-gated construction](unknown-gap-extraction.md) provides one universal expected-time extractor, with the explicitly larger statistical error `κ_stat+r/N`. The finite result here remains useful when a strict execution cap is required. Final-round optimization, Fiat–Shamir, QROM, retries, and concrete 128-bit parameters remain outside this theorem.
 
 ## 1. Parameters and conditioning discipline
 
@@ -250,7 +250,7 @@ For **witness-only** extraction, subtract the probability of E's collision outpu
 
 No assumption about all openings in the transcript tree appears in (F) or (W).
 
-## 8. Consequences and the remaining closure question
+## 8. Consequences and the separate universal extractor
 
 ### Established computational soundness consequence
 
@@ -266,14 +266,10 @@ This conclusion is conditional on an asymptotic parameter family satisfying the 
 
 Equation (W), including every norm, coordinate factor, sampling cap, and time parameter, supplies a gap-parameterized computational extraction theorem. For a known inverse-polynomial advantage gap, the extractor runs in polynomial time and obtains the appropriate witness except for its explicitly bounded losses. It does not rely on a computable global mode or on information-theoretic binding.
 
-### What has not been closed
+### Universal extraction uses a different construction
 
-The exact paper-style knowledge-soundness convention asks for a **single** extractor with expected polynomial time and success at least `ε_bar−κ_stat` (or its stated linear inverse-gap equivalent). The family (W) introduces a chosen Δ and bounded budgets. A universal unknown-gap scheduler with the required expected-time accounting and success guarantee has not been proved here.
+The knowledge-soundness convention asks for a **single** extractor with expected polynomial time. The family (W) introduces a chosen Δ and bounded budgets, so it does not by itself supply that algorithm. The [accept-gated theorem](unknown-gap-extraction.md) supplies it directly, with knowledge error `κ_stat+r/N+negl`. It does not claim the same statistical error as the finite family.
 
 Merely letting Δ tend to zero is not a proof: K grows roughly like `1/ρ²`, and L is the advantage of reductions whose time itself depends on K. A limiting argument must keep these dependencies and the negligible terms under control. Likewise, repeating an unbounded experiment and invoking PPT MSIS hardness is invalid without truncation.
 
-Accordingly, the defensible current wording is:
-
-> The repaired single-attempt main protocol admits the explicit finite computational witness-or-MSIS extraction bound (F), and computational soundness κ_stat+negl under the stated assumptions. Matching the precise expected-time knowledge-extractor convention remains a wrapper obligation.
-
-The optimized last round still requires a separate adaptive-interaction proof. All recursion edges must use their actual extracted norm cap B and a composition theorem compatible with the exact extraction notion finally adopted. Fiat–Shamir/QROM, honest completeness, strict numerical JL instantiation, and end-to-end concrete security remain separate tasks.
+The optimized last round still requires a separate adaptive-interaction proof. All recursion edges must use their actual extracted norm cap B and a compatible composition theorem. The separate JL documents supply strict fixed-parameter and asymptotic projection bounds; full protocol completeness and concrete security require the other norm and parameter conditions as well. Fiat–Shamir/QROM remains outside these interactive results.

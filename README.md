@@ -11,10 +11,12 @@ This repository develops explicit replacements for several numerical and algebra
 - **Security-parameter family.** For every integer `lambda>=128`, explicit integer parameters give a uniform projection error below `2^(-lambda-32)`, with the same norm slack. The all-parameter proof includes the growing wrap union bound; it does not rely on enumerating parameter examples.
 - **Exact challenge family.** Coefficients in `{-2,-1,0,1,2}` give exactly `5^64` challenges, with deterministic operator norm at most 128. Appropriate prime moduli ensure invertible differences. There is no rejection-sampling cardinality estimate in this choice.
 - **Affine-R1CS repair.** The proposed reduction specifies a constant wire, public-input constraints, centered lifts, both commitment equations, corrected aggregation indices and residual equations, and the sufficient lifting condition `sqrt(Md/2)*beta + beta^2/2 < q/2`.
+- **Universal ordinary-core extraction.** One classical expected-polynomial-time extractor needs no acceptance-rate estimate. Its statistical knowledge error is `delta_JL + q^(-m) + q^(-d/2) + (r+2)/|C|`, with explicit computational losses and MSIS assumptions. The output uses the stated relaxed norm relation.
+- **Full statistical parameter family.** Scaling the ring degree and aggregation count as well as the projection gives a negligible ordinary-core statistical budget. The arithmetic certificate separates this budget from lattice hardness and lifting conditions.
 
 ## What is not established
 
-The changed projection and challenge parameters do **not** certify the original 58 KB result. This package does not implement a cryptographic prover or verifier, rerun a Module-SIS hardness estimator, prove Fiat-Shamir or QROM security, or claim zero knowledge. The full main-protocol extraction and composition obligations are tracked separately; a conditional statistical budget is not a complete security level.
+The changed projection and challenge parameters do **not** certify the original 58 KB result. This package does not implement a cryptographic prover or verifier, rerun a Module-SIS hardness estimator, prove Fiat-Shamir or QROM security, or claim zero knowledge. General recursive composition, concrete parameter feasibility, and backend improvements are tracked separately; a statistical budget is not a complete security level.
 
 The source audit identifies the PDF by SHA-256 `87b99030c9cc11d922ebcb7cc475a5f44ccb20188ec18b1442c2d8f45412e581`. Third-party PDFs are not redistributed.
 
@@ -28,6 +30,8 @@ python -m venv .venv
 python -m pip install -e .
 python -m unittest discover -s tests -v
 python examples/certify.py
+python examples/statistical_family.py
+python examples/gated_rows.py
 ```
 
 The tests check exact rational constants, finite distributions, boundary counterexamples, all small NAF encodings, all degree-4 challenge differences, affine public-input pinning, and integer lifting. They support the proofs; finite tests do not prove universally quantified theorems by themselves.
@@ -40,6 +44,8 @@ The tests check exact rational constants, finite distributions, boundary counter
 - [Challenge family and parameter obligations](docs/challenges.md)
 - [Conditional main-protocol algebra](docs/protocol-conditional.md)
 - [Finite computational extraction theorem](docs/finite-extraction.md)
+- [Universal extraction without a known acceptance gap](docs/unknown-gap-extraction.md)
+- [Statistical parameter family](docs/statistical-family.md)
 - [Claim and verification ledger](docs/status.md)
 
 ## Contribute
