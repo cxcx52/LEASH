@@ -9,6 +9,9 @@ use leash::{prove, setup, verify, Config, Proof};
 use serde::Serialize;
 use serde_json::json;
 
+const SOURCE_VARIABLES: usize = 7 * D;
+const INNER_RANK: u128 = 24;
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize)]
 struct Rational {
     numerator: u128,
@@ -100,7 +103,7 @@ fn negacyclic_product(a: &[i64; D], b: &[i64; D]) -> [i64; D] {
 }
 
 fn identity_statement() -> (BinaryR1cs, Assignment) {
-    let variables = 3 * D;
+    let variables = SOURCE_VARIABLES;
     let identity: Vec<Vec<usize>> = (0..variables).map(|i| vec![i]).collect();
     (
         BinaryR1cs {
@@ -148,7 +151,7 @@ fn original_certificate() -> OriginalCertificate {
     // stated coefficientwise bitness semantics, not the ambiguous printed ring
     // constant "1" in those formulas. The public binary worst-case cap is
     // beta^2=2*(n_src+3*k_src), a valid strengthening of the source norm bound.
-    let source_variables = 3 * D;
+    let source_variables = SOURCE_VARIABLES;
     let source_constraints = source_variables;
     let n = source_variables / D;
     let j = [1i64; D];
@@ -188,7 +191,7 @@ fn original_certificate() -> OriginalCertificate {
     let t2 = nearest_log(gram_scale_squared, b);
     let b2 = nearest_root(gram_scale_squared, 2 * t2);
     assert_eq!(t2, 2); // The argument below specializes to two Gram digits.
-    let kappa = 1u128; // Explicit test rank; no hardness claim is attached to it.
+    let kappa = INNER_RANK;
 
     // Compute every Gram entry directly in Z[X]/(X^64+1), counting i<=j
     // once. No assumption about Gaussian or independent witness coefficients.
@@ -213,7 +216,7 @@ fn original_certificate() -> OriginalCertificate {
     }
     assert_eq!(gram_count, r * (r + 1) / 2);
 
-    // For ANY u0,u1 in R_q with g=u0+b2*u1 mod q, let L be centered
+    // For any u0,u1 in R_q with g=u0+b2*u1 mod q, let L be centered
     // coefficient lifting. L(g) has minimum coefficient magnitude among its
     // integer representatives. Thus
     // ||L(g)||^2 <= ||L(u0)+b2*L(u1)||^2
@@ -288,6 +291,7 @@ fn main() -> Result<(), String> {
 
     // Execute the complete LEASH path with its supported default profile.
     let parameters = setup(Config::default())?;
+    assert_eq!(parameters.config.core.inner_rank as u128, INNER_RANK);
     let proof = prove(&parameters, &instance, &assignment)?;
     let bytes = proof.to_bytes()?;
     let decoded = Proof::from_bytes(&bytes)?;
@@ -310,6 +314,7 @@ fn main() -> Result<(), String> {
             "canonical_round_trip_matches": true,
             "configuration": parameters.config,
             "same_profile_as_original_certificate": false,
+            "same_inner_commitment_rank": true,
             "proof_bytes": bytes.len(),
             "verification": report
         })
@@ -352,10 +357,10 @@ mod tests {
                 c.gram_digit_count_t2,
                 c.gram_base_b2
             ),
-            (9, 10, 10, 2, 8)
+            (9, 10, 10, 2, 10)
         );
-        assert_eq!(c.target_energy_lower_bound, Rational::new(28325376, 65));
-        assert_eq!(c.original_target_budget, Rational::new(7072256, 27));
-        assert_eq!(c.positive_gap, Rational::new(305088512, 1755));
+        assert_eq!(c.target_energy_lower_bound, Rational::new(154215936, 101));
+        assert_eq!(c.original_target_budget, Rational::new(102115328, 81));
+        assert_eq!(c.positive_gap, Rational::new(2177842688, 8181));
     }
 }
