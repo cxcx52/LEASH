@@ -1,0 +1,109 @@
+{
+  "document_kind": "experiment_comparison_plan",
+  "executable": false,
+  "parameter_A": {
+    "profile_id": "native-reference-rows16",
+    "implementation": "bare native frontend reference",
+    "q": 4294967197,
+    "d": 64,
+    "source_n_options": [
+      64,
+      256,
+      1024
+    ],
+    "source_rank": 2,
+    "source_aggregation_rows": 16,
+    "randomness": "deterministic benchmark PRNG",
+    "fixed_opening_source_error": "2^-16"
+  },
+  "parameter_B": {
+    "profile_id": "native-reference-rows160",
+    "implementation": "bare native frontend reference",
+    "q": 4294967197,
+    "d": 64,
+    "source_n_options": [
+      64,
+      256,
+      1024
+    ],
+    "source_rank": 2,
+    "source_aggregation_rows": 160,
+    "randomness": "deterministic benchmark PRNG",
+    "fixed_opening_source_error": "2^-160"
+  },
+  "same_security": false,
+  "interpretation": "Different row counts have different theorem errors; compare local work and byte counts only. Neither toy rank is a concrete security instantiation.",
+  "required_controls": [
+    "same n,k and sparse row density",
+    "same seed and generated source assignment",
+    "same q,d,source rank,layout and norm cap",
+    "record aggregation row count",
+    "same runtime/compiler/host and independent process repetitions"
+  ],
+  "smoke": {
+    "sizes": [
+      64,
+      256
+    ],
+    "seeds": [
+      1
+    ],
+    "repetitions": 1
+  },
+  "scale": {
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "repetitions_per_seed": 3,
+    "primary_config_family": "native-n<size>-seed<seed>.json"
+  },
+  "ablations": [
+    {
+      "name": "source scalar rows",
+      "implemented": true,
+      "values": [
+        16,
+        160
+      ],
+      "interpretation": "work/error tradeoff, not equal-security speedup"
+    },
+    {
+      "name": "source fingerprint versus independent rows",
+      "implemented": false,
+      "prerequisite": "Add field-point frontend without omitting integer range/parity and source binding"
+    },
+    {
+      "name": "core power aggregation versus independent aggregation",
+      "implemented": false,
+      "prerequisite": "Implement core and update statistical error/collision samplers"
+    },
+    {
+      "name": "energy-ball versus cube folding family",
+      "implemented": false,
+      "prerequisite": "Keep actual norm, cardinality, decomposition path and MSIS-role changes explicit"
+    }
+  ],
+  "success_metrics": [
+    "target_check_status",
+    "source_oracle_check_status",
+    "reference_wire_roundtrip",
+    "process completion status",
+    "phase times",
+    "actual full-witness transport bytes",
+    "Linux process peak RSS"
+  ],
+  "forbidden_inferences": [
+    "Compact proof benchmark from a fully transmitted witness",
+    "Identical security from identical q or dimensions",
+    "Observed soundness error from honest runs",
+    "Source-to-recursive-core E2E from native reference alone",
+    "GPU speedup from CPU-only measurements"
+  ]
+}

@@ -35,6 +35,11 @@ The source audit identifies the PDF by SHA-256 `87b99030c9cc11d922ebcb7cc475a5f4
 
 ## Reproduce
 
+The [recorded implementation experiments](experiments/README.md) add a portable
+native-frontend reference, full-witness encoding/decoding, exact-predicate
+microbenchmarks, and a subprocess recorder. Their scope is separate from a
+complete compact recursive prover or a numerical security certification.
+
 Python 3.10 or later; the package has no runtime dependencies.
 
 ```sh

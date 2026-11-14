@@ -25,3 +25,5 @@ jobs:
       - run: python examples/bounded_energy.py
       - run: python examples/refined_loss.py
       - run: python research/scripts/verify_archive.py
+      - run: python examples/native_frontend_smoke.py --log-size 6 --rows 16 --seed 1
+      - run: python experiments/benchmarks/challenge_membership.py --degree 8 --energy 12 --threshold 10 --samples 8

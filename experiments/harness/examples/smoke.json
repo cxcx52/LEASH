@@ -1,0 +1,14 @@
+{
+  "argv": ["python3", "-c", "import sys; print('HARNESS_SMOKE_OK'); print('diagnostic', file=sys.stderr)"],
+  "cwd": ".",
+  "timeout": 5,
+  "repetitions": 2,
+  "label": "recorder-smoke",
+  "source_revision": "caller-must-set-the-revision-for-a-measured-experiment",
+  "evidence_scope": "Recorder stdout/stderr, exit, repetition, and configured-marker smoke only.",
+  "expectations": {
+    "exit_codes": [0],
+    "stdout_contains": ["HARNESS_SMOKE_OK"],
+    "stderr_contains": ["diagnostic"]
+  }
+}
