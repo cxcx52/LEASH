@@ -103,10 +103,10 @@ cargo doc --workspace --no-deps --open
 
 | Dependency | Papers |
 | --- | --- |
-| Exact lower-tail bound | RoKoko, Orthus |
-| Numerical premise or norm slack | Grand Danois, Aggregating Falcon Signatures, Symphony, Toolkit, Lemur+ |
-| Backend or composition | Greyhound, Hachi, LaZer, Unmasking TRaccoon, LaBinius |
-| Optional LaBRADOR compression | RoK, Paper, SISsors; LatticeFold; Serval |
+| Exact lower-tail bound | RoKoko (ASIACRYPT), Orthus (CRYPTO) |
+| Numerical premise or norm slack | Grand Danois (ePrint), Aggregating Falcon Signatures (CRYPTO), Symphony (ASIACRYPT), Toolkit (CCS), Lemur+ (ePrint) |
+| Backend or composition | Greyhound (CRYPTO), Hachi (ePrint), LaZer (CCS), Unmasking TRaccoon (CRYPTO), LaBinius (ePrint) |
+| Optional LaBRADOR compression | RoK, Paper, SISsors (ASIACRYPT); LatticeFold (ASIACRYPT); Serval (ePrint) |
 
 The [paper table](impact/README.md) identifies the affected claim, configuration,
 and source pages. The [implementation table](impact/REPOSITORIES.md) covers
