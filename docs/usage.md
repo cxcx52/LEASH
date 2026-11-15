@@ -47,14 +47,14 @@ A project in a neighboring checkout can depend on the package by path:
 
 ```toml
 [dependencies]
-leash = { path = "../labrador-rigorous-repair/crates/leash" }
+leash = { path = "../LEASH/crates/leash" }
 ```
 
 For a Git dependency that follows the main branch:
 
 ```toml
 [dependencies]
-leash = { git = "https://github.com/cxcx52/labrador-rigorous-repair", branch = "main" }
+leash = { git = "https://github.com/cxcx52/LEASH", branch = "main" }
 ```
 
 Replace `branch` with `rev = "<commit>"` to pin a revision. Callers need read

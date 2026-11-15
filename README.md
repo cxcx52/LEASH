@@ -34,7 +34,7 @@ inputs and proof.
 
 ```toml
 [dependencies]
-leash = { git = "https://github.com/cxcx52/labrador-rigorous-repair", branch = "main" }
+leash = { git = "https://github.com/cxcx52/LEASH", branch = "main" }
 ```
 
 ```rust

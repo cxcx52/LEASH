@@ -6,7 +6,7 @@ resolver = "2"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-repository = "https://github.com/cxcx52/labrador-rigorous-repair"
+repository = "https://github.com/cxcx52/LEASH"
 rust-version = "1.85"
 
 [workspace.dependencies]
