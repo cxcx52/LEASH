@@ -165,3 +165,9 @@ relevant source code.
 ## License
 
 [MIT](LICENSE).
+
+## Contact and contributions
+
+If you'd like to improve LEASH, contribute additional implementations, or help
+build its community, please contact me at [728800377@qq.com](mailto:728800377@qq.com).
+I'd be grateful for your ideas and contributions, and would be glad to work together.
