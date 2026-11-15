@@ -151,9 +151,9 @@ cargo doc --workspace --no-deps --open
 | Dependency | Papers |
 | --- | --- |
 | Exact lower-tail bound | RoKoko (ASIACRYPT 2026), Orthus (CRYPTO 2026) |
-| Numerical premise or norm slack | Grand Danois (ePrint 2026), Aggregating Falcon Signatures (CRYPTO 2024), Symphony (ASIACRYPT 2026), Toolkit (CCS 2026), Lemur+ (ePrint 2026), Compact Aggregate Signature (ePrint 2023), LastRings (ISC 2025), Crypto Dark Matter on the Torus (EUROCRYPT 2024), Practical-ish and Thresholdisable VOPRF (ASIACRYPT 2024) |
+| Numerical premise or norm slack | Grand Danois (ePrint 2026), Aggregating Falcon Signatures (CRYPTO 2024), Symphony (ASIACRYPT 2026), Toolkit (CCS 2026), Lemur+ (ePrint 2026), Compact Aggregate Signature (ePrint 2023), LastRings (ISC 2025), Crypto Dark Matter on the Torus (EUROCRYPT 2024), Practical-ish and Thresholdisable VOPRF (ASIACRYPT 2024), Non-Malleable Reductions of Knowledge (ASIACRYPT 2026) |
 | Backend or composition | Greyhound (CRYPTO 2024), Hachi (ePrint 2026), LaZer (CCS 2024), Unmasking TRaccoon (CRYPTO 2025), LaBinius (ePrint 2026), BRaccoon (ePrint 2026), LeOPaRd (CRYPTO 2026) |
-| Optional LaBRADOR configuration | RoK, Paper, SISsors (ASIACRYPT 2024); LatticeFold (ASIACRYPT 2025); Serval (ePrint 2025); Lattice-based Threshold Blind Signatures (S&P 2026) |
+| Optional or proposed LaBRADOR configuration | RoK, Paper, SISsors (ASIACRYPT 2024); LatticeFold (ASIACRYPT 2025); Serval (ePrint 2025); Lattice-based Threshold Blind Signatures (S&P 2026); Efficient Verifiable Mixnets from Lattices, Revisited (PKC 2025); Lattice-Based Blind Signatures: Short, Efficient, and Round-Optimal (CCS 2023) |
 
 The [paper table](impact/README.md) identifies the affected claim, configuration,
 and source pages. The [implementation table](impact/REPOSITORIES.md) covers
