@@ -2,9 +2,17 @@
 
 # LEASH
 
-LEASH is a Rust library for binary R1CS proofs and recursive lattice arguments.
-It provides a circuit builder, a generic quadratic-relation backend, proof
-serialization, and a command-line prover and verifier.
+Our paper, *LEASH: When LaBRADOR's Guarantees Go Astray*, examines LaBRADOR's
+completeness and knowledge-extraction guarantees. We construct valid binary R1CS
+instances that exceed its concrete recursive norm budget, identify inconsistencies
+in recursive relation transformations, and correct probability estimates used in
+knowledge extraction. We develop targeted repairs and analyze how norm bounds,
+decomposition parameters, and challenge distributions affect security and efficiency.
+
+This repository provides a Rust library for binary R1CS proofs and recursive
+lattice arguments, reproducible experiments, and a runnable completeness
+counterexample. The library includes a circuit builder, a generic quadratic-relation
+backend, proof serialization, and a command-line prover and verifier.
 
 [Usage](docs/usage.md) · [Benchmarks](benchmarks/README.md) · [Affected papers](impact/README.md) · [Related implementations](impact/REPOSITORIES.md)
 
@@ -143,9 +151,9 @@ cargo doc --workspace --no-deps --open
 | Dependency | Papers |
 | --- | --- |
 | Exact lower-tail bound | RoKoko (ASIACRYPT 2026), Orthus (CRYPTO 2026) |
-| Numerical premise or norm slack | Grand Danois (ePrint 2026), Aggregating Falcon Signatures (CRYPTO 2024), Symphony (ASIACRYPT 2026), Toolkit (CCS 2026), Lemur+ (ePrint 2026) |
-| Backend or composition | Greyhound (CRYPTO 2024), Hachi (ePrint 2026), LaZer (CCS 2024), Unmasking TRaccoon (CRYPTO 2025), LaBinius (ePrint 2026) |
-| Optional LaBRADOR compression | RoK, Paper, SISsors (ASIACRYPT 2024); LatticeFold (ASIACRYPT 2025); Serval (ePrint 2025) |
+| Numerical premise or norm slack | Grand Danois (ePrint 2026), Aggregating Falcon Signatures (CRYPTO 2024), Symphony (ASIACRYPT 2026), Toolkit (CCS 2026), Lemur+ (ePrint 2026), Compact Aggregate Signature (ePrint 2023), LastRings (ISC 2025), Crypto Dark Matter on the Torus (EUROCRYPT 2024), Practical-ish and Thresholdisable VOPRF (ASIACRYPT 2024) |
+| Backend or composition | Greyhound (CRYPTO 2024), Hachi (ePrint 2026), LaZer (CCS 2024), Unmasking TRaccoon (CRYPTO 2025), LaBinius (ePrint 2026), BRaccoon (ePrint 2026), LeOPaRd (CRYPTO 2026) |
+| Optional LaBRADOR configuration | RoK, Paper, SISsors (ASIACRYPT 2024); LatticeFold (ASIACRYPT 2025); Serval (ePrint 2025); Lattice-based Threshold Blind Signatures (S&P 2026) |
 
 The [paper table](impact/README.md) identifies the affected claim, configuration,
 and source pages. The [implementation table](impact/REPOSITORIES.md) covers

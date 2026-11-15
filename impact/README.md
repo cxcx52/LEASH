@@ -1,46 +1,53 @@
 # Affected papers
 
-LaBRADOR's numerical bounds, norm slack, and proof backend appear in 12 substantive downstream dependencies and three optional configurations. The tables identify the specific claims and configurations involved. Page references use physical PDF pages unless printed pagination is also given.
+LaBRADOR's numerical bounds, norm slack, and proof backend appear in 18 substantive downstream dependencies and four optional configurations. The tables describe the affected bounds, parameter choices, and performance claims. References point to the linked papers unless another source is named. Page numbers use physical PDF pages unless printed pagination is also given.
 
 [Implementation dependencies](REPOSITORIES.md)
 
 ## LaBRADOR
 
-| Paper | Affected claim | Pages |
+| Paper | Impact | Source |
 | --- | --- | --- |
-| [LaBRADOR](https://eprint.iacr.org/2022/1341) ([CRYPTO 2023](https://link.springer.com/chapter/10.1007/978-3-031-38554-4_17)) | The exact lower-tail probability exceeds the nominal `2^-128` budget in its JL calibration. Parts of the paper use approximate notation; the discrepancy concerns the numerical calibration and its use in the projection analysis. | pp10,30–31 |
+| [LaBRADOR](https://eprint.iacr.org/2022/1341) ([CRYPTO 2023](https://link.springer.com/chapter/10.1007/978-3-031-38554-4_17)) | The fixed ordinary-round norm budget excludes a valid binary R1CS witness. The concrete JL calibration also fails to establish the nominal `2^-128` lower-tail budget: the exact probability exceeds it. These parameters do not establish the claimed completeness and extraction bounds. | pp10,30–31; [completeness counterexample](../docs/completeness.md) |
 
 ## Exact lower-tail statements
 
-| Paper | Affected claim | Pages |
+| Paper | Impact | Source |
 | --- | --- | --- |
-| [RoKoko](https://eprint.iacr.org/2026/575) ([ASIACRYPT 2026](https://eprint.iacr.org/2026/575)) | Lemma 5 repeats the exact 256-row, `sqrt(30)` lower-tail bound; Lemmas 6–7 use it for structured projections. | p19; pp21–23; p57 |
-| [Orthus](https://eprint.iacr.org/2026/398) ([CRYPTO 2026](https://link.springer.com/chapter/10.1007/978-3-032-35377-1_4)) | Theorem 5 repeats the strict L2 lower-tail bound, and Theorems 3–4 use its failure budget. | p32 (printed p30); pp20,22,38 |
+| [RoKoko](https://eprint.iacr.org/2026/575) ([ASIACRYPT 2026](https://eprint.iacr.org/2026/575)) | The exact 256-row, `sqrt(30)` lower-tail claim in Lemma 5 fails. Consequently, that lemma does not establish the failure budgets used by the structured projections in Lemmas 6–7. | p19; pp21–23; p57 |
+| [Orthus](https://eprint.iacr.org/2026/398) ([CRYPTO 2026](https://link.springer.com/chapter/10.1007/978-3-032-35377-1_4)) | The strict L2 lower-tail claim in Theorem 5 fails at the stated calibration. Its claimed failure budget therefore cannot be carried into Theorems 3–4 without revising the projection analysis. | p32 (printed p30); pp20,22,38 |
 
 ## Numerical premises and derived parameters
 
-| Paper | Affected claim or configuration | Pages |
+| Paper | Impact | Source |
 | --- | --- | --- |
-| [Grand Danois](https://eprint.iacr.org/2026/1196) (ePrint 2026) | Lemma 2.5 explicitly introduces the same numerical lower-tail premise as a heuristic. Later projection proofs use it; the strict lower-tail calculation also covers its norm-relative event. | p15; p17; p22 |
-| [Aggregating Falcon Signatures with LaBRADOR](https://eprint.iacr.org/2024/311) ([CRYPTO 2024](https://link.springer.com/chapter/10.1007/978-3-031-68376-3_3)) | The heuristic JL lemma sets `C2=30` at `lambda=128`; the later failure-density analysis uses a `2^-lambda` term. This numerical instantiation requires recalibration. | p10; p19; pp67–69 |
-| [Symphony](https://eprint.iacr.org/2025/1905) ([ASIACRYPT 2026](https://eprint.iacr.org/2025/1905)) | Lemma 2.2 imports approximate JL constants used in the range-proof slack, completeness budget, and extraction retries. LaBRADOR also appears as a candidate terminal backend. | p12; p24; p27; pp42–44 |
-| [A Toolkit for Succinct Lattice-Based Zero Knowledge Proofs](https://eprint.iacr.org/2026/1289) ([CCS 2026](https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html)) | The L2 terminal uses `sqrt(128/30)`, 256-row Bin1 projections, and the original LaBRADOR composition theorem. | p4; pp15–16; p27; p42 |
-| [Lemur+](https://eprint.iacr.org/2026/2054) (ePrint 2026) | The selected backend's extracted-norm and MSIS estimates use `delta_LB=sqrt(128/30)`. Its opening-soundness instantiation depends on that backend. | p15; p19 |
+| [Grand Danois](https://eprint.iacr.org/2026/1196) (ePrint 2026) | The norm-relative event in the heuristic Lemma 2.5 has the same numerical lower-tail discrepancy. The projection analyses using this premise need a corrected failure probability and corresponding parameters. | p15; p17; p22 |
+| [Aggregating Falcon Signatures with LaBRADOR](https://eprint.iacr.org/2024/311) ([CRYPTO 2024](https://link.springer.com/chapter/10.1007/978-3-031-68376-3_3)) | The heuristic JL lemma sets `C2=30` at `lambda=128`, but this calibration does not establish the `2^-lambda` term used in the failure-density analysis. The concrete extraction and parameter estimates require recalibration. | p10; p19; pp67–69 |
+| [Symphony](https://eprint.iacr.org/2025/1905) ([ASIACRYPT 2026](https://eprint.iacr.org/2025/1905)) | The approximate JL constants in Lemma 2.2 enter the range-proof slack, completeness budget, and extraction retries. These concrete guarantees require corrected projection estimates; choosing LaBRADOR as the terminal backend also imports its recursive bounds. | p12; p24; p27; pp42–44 |
+| [A Toolkit for Succinct Lattice-Based Zero Knowledge Proofs](https://eprint.iacr.org/2026/1289) ([CCS 2026](https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html)) | The L2 terminal combines `sqrt(128/30)`, 256-row Bin1 projections, and the original LaBRADOR composition theorem. Its concrete extraction budget requires recalibration, and the end-to-end guarantees require a valid recursive composition argument. | p4; pp15–16; p27; p42 |
+| [Lemur+](https://eprint.iacr.org/2026/2054) (ePrint 2026) | The extracted-norm and MSIS estimates use `delta_LB=sqrt(128/30)`. The concrete opening-soundness claim therefore depends on this backend calibration; changing the extraction bound requires recomputing the MSIS instance and resulting parameters. | p15; p19 |
+| [Compact Aggregate Signature from Module-Lattices](https://eprint.iacr.org/2023/471) (ePrint 2023) | The main construction uses LaBRADOR's Fiat–Shamir principal-relation protocol with `beta'=sqrt(128/30)*sqrt(Q)`. Its MSIS radii and aggregate-signature sizes inherit this calibration. The reported 128-bit instantiation needs a revised extraction analysis and parameter calculation. | p9 §3.1; pp19–20 §4.4 |
+| [LastRings](https://eprint.iacr.org/2025/1633) ([ISC 2025](https://link.springer.com/chapter/10.1007/978-3-032-08124-7_8)) | Theorem 3 imports `C2=30` at `lambda=128` and a `2^-lambda` knowledge-error term. That numerical premise does not establish the stated error budget. The recursive guarantee also relies on LaBRADOR's Lemma 3.7 and requires the corrected composition analysis. | [Publisher version, Appendix A.2, Theorem 3](https://link.springer.com/chapter/10.1007/978-3-032-08124-7_8) |
+| [Crypto Dark Matter on the Torus](https://eprint.iacr.org/2023/232) ([EUROCRYPT 2024](https://link.springer.com/chapter/10.1007/978-3-031-58751-1_16)) | The LNP compression uses `sqrt(128/30)` extraction slack. Appendix H fixes this value in `LABRADOR_SLACK`, which feeds the MSIS and size estimates. The reported key and ciphertext proof sizes do not establish the costs under revised recursive and norm bounds. | pp37–38 Appendix A.1–A.2; pp63–65 Appendix G; p67 Appendix H |
+| [Verifiable Oblivious Pseudorandom Functions from Lattices: Practical-ish and Thresholdisable](https://eprint.iacr.org/2024/1459) ([ASIACRYPT 2024](https://link.springer.com/chapter/10.1007/978-981-96-0894-2_7)) | The client proof `pi1` uses LaBRADOR. Appendix B sets `LABRADOR_SLACK=sqrt(128/30)` and uses it in the extracted-norm, MSIS, and proof-size calculations. The reported client-proof bandwidth therefore requires recalculation with corrected backend bounds. | p20 §5–6; pp46–48 Appendix B.3; p50 Appendix B.4 |
 
 ## Backend and composition dependencies
 
-| Paper | Affected configuration | Pages |
+| Paper | Impact | Source |
 | --- | --- | --- |
-| [Greyhound](https://eprint.iacr.org/2024/1293) ([CRYPTO 2024](https://link.springer.com/chapter/10.1007/978-3-031-68403-6_8)) | The succinct evaluation proof delegates its final short relation to LaBRADOR. The C implementation uses Rademacher projection entries, so the ternary calculation requires a separate implementation-level analysis. | p6; pp23–24; pp27–28 |
-| [Hachi](https://eprint.iacr.org/2026/156) (ePrint 2026) | The 55.1KB composition estimate includes a Greyhound terminal, which invokes LaBRADOR. The Rust prototype measures the first Hachi round. | p26; pp27–28 |
-| [LaZer](https://eprint.iacr.org/2024/1846) ([CCS 2024](https://doi.org/10.1145/3658644.3690330)) | The succinct-proof branch uses the LaBRADOR implementation and its parameter assumptions. | p8 §4; pp8–9 |
-| [Unmasking TRaccoon](https://eprint.iacr.org/2025/849) ([CRYPTO 2025](https://link.springer.com/chapter/10.1007/978-3-032-01887-8_14)) | The LaBRADOR-based ZK composition imports failure-density and knowledge-error premises from the Falcon analysis. Its binary-projection lemma uses a different distribution and constants. | p53 Lemma B.6; p67 §B.6.2 |
-| [LaBinius](https://eprint.iacr.org/2026/2103) (ePrint 2026) | Recursive opening links a vendored LaBRADOR backend; Theorem 2 explicitly includes `kappa_Lab`. | p23; p27; pp47–48 |
+| [Greyhound](https://eprint.iacr.org/2024/1293) ([CRYPTO 2024](https://link.springer.com/chapter/10.1007/978-3-031-68403-6_8)) | The final evaluation proof invokes LaBRADOR, so its end-to-end guarantee inherits the terminal backend's completeness and extraction requirements. The C implementation uses Rademacher projections and needs a calibration for that distribution. | p6; pp23–24; pp27–28 |
+| [Hachi](https://eprint.iacr.org/2026/156) (ePrint 2026) | The 55.1KB composition estimate includes a Greyhound terminal that invokes LaBRADOR. Correcting that backend requires recomputing the complete proof size. Measurements of the first Hachi round do not establish the size or security of the full composition. | p26; pp27–28 |
+| [LaZer](https://eprint.iacr.org/2024/1846) ([CCS 2024](https://doi.org/10.1145/3658644.3690330)) | The LaBRADOR succinct-proof branch inherits the backend's recursive norm budgets and extraction parameters. Its end-to-end guarantees and proof-size figures require these bounds to hold throughout the recursion. | p8 §4; pp8–9 |
+| [Unmasking TRaccoon](https://eprint.iacr.org/2025/849) ([CRYPTO 2025](https://link.springer.com/chapter/10.1007/978-3-032-01887-8_14)) | The LaBRADOR-based ZK composition imports failure-density and knowledge-error premises from the Falcon analysis. Its stated composition budget requires those premises to be corrected; its binary-projection component has its own distribution and constants. | p53 Lemma B.6; p67 §B.6.2 |
+| [LaBinius](https://eprint.iacr.org/2026/2103) (ePrint 2026) | Theorem 2 includes `kappa_Lab`, and recursive opening calls a vendored LaBRADOR backend. The claimed opening-soundness budget therefore depends on a valid bound for `kappa_Lab`; correcting that bound changes the composed error calculation. | p23; p27; pp47–48 |
+| [BRaccoon: Concurrently Secure Blind Lattice Signatures from Raccoon](https://eprint.iacr.org/2026/1084) (ePrint 2026) | Both protocol statements use the ZK-LaBRADOR Toolkit through mixed R1CS. Table 4 assigns approximately 110KB to each proof by importing Toolkit estimates. Those estimates do not establish the communication cost under revised backend parameters. | p24 §5.1; p26 Table 4; p60 Appendix H; p62 §H.3 |
+| [LeOPaRd](https://eprint.iacr.org/2024/1615) ([CRYPTO 2026](https://eprint.iacr.org/2024/1615)) | The client and server NIZKs combine LaBRADOR with LNP22. Their approximately 45KB sizes are extrapolated from earlier LaBRADOR applications. Revised backend bounds require new proof-size and batching estimates; the core OPRF measurements do not supply these missing NIZK costs. | pp31–33 §5; p40 Appendix C.1; p43 Appendix C.3 |
 
 ## Optional configurations
 
-| Paper | Affected configuration | Pages |
+| Paper | Impact | Source |
 | --- | --- | --- |
-| [RoK, Paper, SISsors](https://eprint.iacr.org/2024/1972) ([ASIACRYPT 2024](https://link.springer.com/chapter/10.1007/978-981-96-0935-2_7)) | An optional second compression with LaBRADOR underlies the roughly 100KB estimate. | p49; pp54–55 |
-| [LatticeFold](https://eprint.iacr.org/2024/257) ([ASIACRYPT 2025](https://link.springer.com/chapter/10.1007/978-981-95-5099-9_11)) | The configuration that uses LaBRADOR as the final compressor for the IVC proof. | p52; pp7,55 |
-| [Serval (formerly HyperWolf)](https://eprint.iacr.org/2025/1903) (ePrint 2025) | The optional compressed construction includes `epsilon_La` in its error expression. LaBRADOR compression is an analytical extension; the measured prototype implements the baseline. | pp25–27; p28; pp40–41 |
+| [RoK, Paper, SISsors](https://eprint.iacr.org/2024/1972) ([ASIACRYPT 2024](https://link.springer.com/chapter/10.1007/978-981-96-0935-2_7)) | The roughly 100KB estimate relies on an optional second compression with LaBRADOR. Establishing this size with valid recursive parameters requires recalculating that compression. | p49; pp54–55 |
+| [LatticeFold](https://eprint.iacr.org/2024/257) ([ASIACRYPT 2025](https://link.springer.com/chapter/10.1007/978-981-95-5099-9_11)) | The IVC configuration using LaBRADOR as its final compressor inherits its completeness and extraction requirements. The resulting compressed proof guarantees require valid parameters for this terminal step. | p52; pp7,55 |
+| [Serval (formerly HyperWolf)](https://eprint.iacr.org/2025/1903) (ePrint 2025) | The optional compressed construction includes `epsilon_La` in its error expression. Its soundness claim requires a corrected LaBRADOR error bound; baseline prototype measurements do not establish the compressed construction’s size or running time. | pp25–27; p28; pp40–41 |
+| [Lattice-based Threshold Blind Signatures](https://eprint.iacr.org/2025/1566) ([S&P 2026](https://eprint.iacr.org/2025/1566)) | The compact configuration combines LaBRADOR with LNP and inherits its extraction and compression requirements. Table 1 estimates 66KB signatures and 30.7KB communication per party under an online-extraction heuristic, or 188KB signatures without it. These sizes require reassessment under corrected backend parameters. | p4 Table 1; pp21–22 §6; p57 Appendix H |
