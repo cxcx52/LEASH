@@ -2,12 +2,17 @@
 
 # LEASH
 
-Our paper, *LEASH: When LaBRADOR's Guarantees Go Astray*, examines LaBRADOR's
-completeness and knowledge-extraction guarantees. We construct valid binary R1CS
+Our paper, *LEASH: When LaBRADOR's Guarantees Go Astray*, challenges LaBRADOR's
+core completeness and knowledge-extraction claims. We construct valid binary R1CS
 instances that exceed its concrete recursive norm budget, identify inconsistencies
-in recursive relation transformations, and correct probability estimates used in
-knowledge extraction. We develop targeted repairs and analyze how norm bounds,
-decomposition parameters, and challenge distributions affect security and efficiency.
+in recursive relation transformations, and expose incorrect probability bounds
+in its knowledge-extraction analysis.
+
+**Based on these findings, we conclude that LaBRADOR's core conclusions about its
+concrete construction are incorrect as stated.** The original analysis does not
+establish the advertised combination of compact proofs, completeness, and knowledge
+extraction. We develop targeted repairs and analyze how norm bounds, decomposition
+parameters, and challenge distributions affect security and efficiency.
 
 This repository provides a Rust library for binary R1CS proofs and recursive
 lattice arguments, reproducible experiments, and a runnable completeness
